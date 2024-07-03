@@ -43,7 +43,7 @@ jobs:
             git config --local user.name "GitHub Action"
             if [ -n "$(git status --porcelain)" ]; then
             git add  *.txt #*.m3u
-            git commit -am "Automatic update"
+            git commit -a "Automatic update"
             git push
             else
               echo "No changes detected, skipping commit."
