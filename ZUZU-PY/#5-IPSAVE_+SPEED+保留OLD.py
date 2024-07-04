@@ -54,7 +54,7 @@ import fileinput
 
 file_contents = []   #这里含义是打开当前目录下以下文件清单--必须要保证有文件--否则报错
 
-file_paths = ["天津联通.txt", "山西联通.txt","安徽电信.txt", "河南联通.txt", "河南电信.txt", "福建电信.txt", "贵州电信.txt", "四川联通.txt", "四川电信.txt", "重庆联通.txt", "重庆电信.txt","山东电信.txt","广东电信.txt","广西电信.txt","江西电信.txt","河北电信.txt","浙江电信.txt","湖北电信.txt","湖南电信.txt","辽宁联通.txt","陕西电信.txt"]  #替换为实际的文件路径列表
+file_paths = ["山西联通.txt","安徽电信.txt", "河南联通.txt", "河南电信.txt", "福建电信.txt", "贵州电信.txt", "四川联通.txt", "四川电信.txt", "重庆联通.txt", "重庆电信.txt","山东电信.txt","广东电信.txt","广西电信.txt","江西电信.txt","河北电信.txt","浙江电信.txt","湖北电信.txt","湖南电信.txt","辽宁联通.txt","陕西电信.txt"]  #替换为实际的文件路径列表
 
 for file_path in file_paths:
 
@@ -163,7 +163,7 @@ with open('K合并2H-SPEED.txt', 'w', encoding='utf-8') as file:
 
 file_contents = []   #这里含义是打开当前目录下以下文件清单--必须要保证有文件--否则报错
 
-file_paths = ["江苏电信.txt"]  #低速线路专用
+file_paths = ["天津联通.txt","江苏电信.txt"]  #低速线路专用
 
 for file_path in file_paths:
 
@@ -230,7 +230,7 @@ with open('K合并2H-低速线.txt', 'r', encoding='utf-8') as file:
                 frame_count += 1  # 成功读取一帧，计数器加1
 
             # 根据测试结果更新字典
-            if frame_count > 160:  # 限定合格IP判定的帧数
+            if frame_count > 150:  # 限定合格IP判定的帧数
                 tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
             else:
                 # 如果没有读取到足够帧，则标记为已测试
