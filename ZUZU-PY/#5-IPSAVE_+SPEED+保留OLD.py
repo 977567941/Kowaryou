@@ -429,44 +429,49 @@ with open('K合并-低码速OLD-SPEED.txt', 'w', encoding='utf-8') as file:
 
 
 
+
+
+
 # 打开文件K合并OLD.txt准备写入，如果文件不存在则创建，使用utf-8编码
 with open('K合并OLD.txt', 'w', encoding='utf-8') as f_out:
-# 循环遍历你想要读取的文件名列表
-for filename in ['K合并2H-SPEED.txt', 'K合并OLD-SPEED.txt']:
-try:
-# 打开每个文件准备读取，使用utf-8编码
-with open(filename, 'r', encoding='utf-8') as f_in:
-# 读取文件的每一行
-for line in f_in:
-# 写入到K合并OLD.txt文件中
-f_out.write(line)
-except FileNotFoundError:
-# 如果文件不存在，则打印一个错误消息
-print(f"文件 {filename} 未找到，跳过...")
+    # 循环遍历你想要读取的文件名列表
+    for filename in ['K合并2H-SPEED.txt', 'K合并OLD-SPEED.txt']:
+        try:
+            # 打开每个文件准备读取，使用utf-8编码
+            with open(filename, 'r', encoding='utf-8') as f_in:
+                # 读取文件的每一行
+                for line in f_in:
+                    # 写入到K合并OLD.txt文件中
+                    f_out.write(line)
+        except FileNotFoundError:
+            # 如果文件不存在，则打印一个错误消息
+            print(f"文件 {filename} 未找到，跳过...")
 
 print("完成文件写入到K合并OLD.txt。")
 
-
-
-
-
-
 # 打开文件K合并-低码速OLD.txt准备写入，如果文件不存在则创建，使用utf-8编码
 with open('K合并-低码速OLD.txt', 'w', encoding='utf-8') as f_out:
-# 循环遍历你想要读取的文件名列表
-for filename in ['K合并2H-低速线SPEED.txt', 'K合并-低码速OLD-SPEED.txt']:
-try:
-# 打开每个文件准备读取，使用utf-8编码
-with open(filename, 'r', encoding='utf-8') as f_in:
-# 读取文件的每一行
-for line in f_in:
-# 写入到K合并-低码速OLD.txt文件中
-f_out.write(line)
-except FileNotFoundError:
-# 如果文件不存在，则打印一个错误消息
-print(f"文件 {filename} 未找到，跳过...")
+    # 循环遍历你想要读取的文件名列表
+    for filename in ['K合并2H-低速线SPEED.txt', 'K合并-低码速OLD-SPEED.txt']:
+        try:
+            # 打开每个文件准备读取，使用utf-8编码
+            with open(filename, 'r', encoding='utf-8') as f_in:
+                # 读取文件的每一行
+                for line in f_in:
+                    # 写入到K合并-低码速OLD.txt文件中
+                    f_out.write(line)
+        except FileNotFoundError:
+            # 如果文件不存在，则打印一个错误消息
+            print(f"文件 {filename} 未找到，跳过...")
 
 print("完成文件写入到K合并-低码速OLD.txt。")
+
+
+
+
+
+
+
 
 
 	
