@@ -313,7 +313,7 @@ with open('K合并OLD.txt', 'r', encoding='utf-8') as file:
                 frame_count += 1  # 成功读取一帧，计数器加1
 
             # 根据测试结果更新字典
-            if frame_count > 200:  # 限定合格IP判定的帧数
+            if frame_count > 220:  # 限定合格IP判定的帧数
                 tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
             else:
                 # 如果没有读取到足够帧，则标记为已测试
@@ -3070,7 +3070,7 @@ os.remove("AMER-delete.txt")
 
 os.remove("AMER-start.txt")
 
-os.remove("合并.txt")
+#os.remove("合并.txt")
 
 os.remove("排序.txt")
 
