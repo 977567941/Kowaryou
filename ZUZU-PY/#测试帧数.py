@@ -11,7 +11,7 @@ import time
 tested_ips = {}
 
 # 打开文件，并设置编码为utf-8
-with open('合并IPkkk.txt', 'r', encoding='utf-8') as file:
+with open('M临时测速.txt', 'r', encoding='utf-8') as file:
     for line in file:
         # 检查行中是否包含1个逗号
         if line.count(',') == 1:
@@ -68,7 +68,7 @@ with open('合并IPkkk.txt', 'r', encoding='utf-8') as file:
             cap.release()
 
 # 测试结束后，将包含ok的IP的channel写入新文件，并追加测试时间和帧数
-with open('M测速值.txt', 'w', encoding='utf-8') as file:
+with open('M测速结果.txt', 'w', encoding='utf-8') as file:
     with open('M临时测速.txt', 'r', encoding='utf-8') as input_file:
         for line in input_file:
             # 检查行中是否包含1个逗号，以确保是channel
