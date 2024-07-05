@@ -35,7 +35,7 @@ jobs:
         run: pip install input
         
       - name: Run iptv
-        run: python ${{ github.workspace }}/ZUZU-PY/#测试帧数.py
+        run: python ${{ github.workspace }}/ZUZU-PY/705测试.py
          
       - name: Commit results
         run: |
