@@ -2,7 +2,7 @@ name: 003-HABI-PART02
 
 on:
   schedule:
-  - cron: '20 15,18,21,24,3,6,9,12 * * *'  #7,10,13,16,19,22,1,4&&&
+  - cron: '35 13,16,19,22,1,4,7,10 * * *'  #5,8,11,14,17,20,23,2&&
   workflow_dispatch:
     分支:
       - main
@@ -34,9 +34,8 @@ jobs:
       - name: Install dependencies
         run: pip install input
         
-      - name: Run iptv
-        run: python ${{ github.workspace }}/ZUZU-PY/#HABI.py
-         
+      - name: Run HABI-PART01
+        run: python ${{ github.workspace }}/ZUZU-PY/#HABI-PART02.py				         
       - name: Commit results
         run: |
             git config --local user.email "actions@github.com"
