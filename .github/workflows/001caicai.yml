@@ -2,7 +2,7 @@ name: 001caicai
 
 on:
   schedule:
-  - cron: '03 13,16,19,22,1,4,7,10 * * *'  #5,8,11,14,17,20,23,2&&
+  - cron: '02 14,16,18,20,22,0,2,4,6,8,10,12 * * *'  #every two hour》02分&&&
   workflow_dispatch:
     分支:
       - main
