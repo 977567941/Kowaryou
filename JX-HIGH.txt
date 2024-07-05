@@ -61,9 +61,6 @@ CHC高清电影,http://istore4.qnas.net:8889/udp/226.0.2.93:8004$山西联通3+
 CHC动作电影,http://istore4.qnas.net:8889/udp/226.0.2.94:8012$山西联通3+
 CHC家庭影院,http://istore4.qnas.net:8889/udp/226.0.2.240:9820$山西联通3+
 
-CHC高清电影,http://czkeji.vip:9000/udp/239.252.219.83:5140$江西电信1+
-CHC家庭影院,http://czkeji.vip:9000/udp/239.252.219.84:5140$江西电信1+
-CHC动作电影,http://czkeji.vip:9000/udp/239.252.219.85:5140$江西电信1+
 
 CHC高清电影,http://foxwywh.x3322.net:8888/udp/239.252.219.83:5140$江西电信2+
 CHC家庭影院,http://foxwywh.x3322.net:8888/udp/239.252.219.84:5140$江西电信2+
