@@ -37,8 +37,7 @@ jobs:
       - name: Run HABI-01
         run: python ${{ github.workspace }}/ZUZU-PY/#HABI-PART01.py
       - name: Run HABI-01
-        run: python ${{ github.workspace }}/ZUZU-PY/#HABI-PART02.py
-				         
+        run: python ${{ github.workspace }}/ZUZU-PY/#HABI-PART02.py			         
       - name: Commit results
         run: |
             git config --local user.email "actions@github.com"
