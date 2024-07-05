@@ -1,12 +1,12 @@
 name: 002-HABI-PART01
 
 on:
-  schedule:
-  - cron: '53 13,16,19,22,1,4,7,10 * * *'  #5,8,11,14,17,20,23,2&&
   workflow_dispatch:
-    分支:
-      - main
-      
+  schedule:
+    - cron: '45 13,16,19,22,1,4,7,10 * * *'  #5,8,11,14,17,20,23,2 推算HABI01中国时间
+# 提交报错解决方案_加入写入权限
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
