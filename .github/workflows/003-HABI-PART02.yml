@@ -35,8 +35,7 @@ jobs:
         run: pip install input
         
       - name: Run HABI-PART02
-        run: python ${{ github.workspace }}/ZUZU-PY/#HABI-PART02.py
-        
+        run: python ${{ github.workspace }}/ZUZU-PY/#HABI-PART02.py  
       - name: Commit results
         run: |
             git config --local user.email "actions@github.com"
