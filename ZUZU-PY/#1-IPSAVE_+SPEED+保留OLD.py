@@ -123,7 +123,7 @@ with open('K合并2H+OLD-SPEED.txt', 'w', encoding='utf-8') as file:
                 if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
                     # 如果在，就写入这个channel和帧数到输出文件
                     # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
-                    file.write(f"{line.strip()}>速度={tested_ips[channel_ip]['frame_count']}\n")
+                    file.write(f"{line.strip()} >速度{tested_ips[channel_ip]['frame_count']}\n")
 
 	
 	
@@ -232,7 +232,7 @@ with open('K合并低码2H+低码OLD-SPEED.txt', 'w', encoding='utf-8') as file:
                 if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
                     # 如果在，就写入这个channel和帧数到输出文件
                     # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
-                    file.write(f"{line.strip()}>速度={tested_ips[channel_ip]['frame_count']}\n")
+                    file.write(f"{line.strip()} >速度{tested_ips[channel_ip]['frame_count']}\n")
 
 
 
@@ -315,7 +315,7 @@ with open('JX-LOW-SPEED.txt', 'w', encoding='utf-8') as file:
                 if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
                     # 如果在，就写入这个channel和帧数到输出文件
                     # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
-                    file.write(f"{line.strip()}>速度={tested_ips[channel_ip]['frame_count']}\n")
+                    file.write(f"{line.strip()} >速度{tested_ips[channel_ip]['frame_count']}\n")
 
 
 
@@ -397,7 +397,7 @@ with open('JX-HIGH-SPEED.txt', 'w', encoding='utf-8') as file:
                 if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
                     # 如果在，就写入这个channel和帧数到输出文件
                     # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
-                    file.write(f"{line.strip()}>速度={tested_ips[channel_ip]['frame_count']}\n")
+                    file.write(f"{line.strip()} >速度{tested_ips[channel_ip]['frame_count']}\n")
 
 
 
