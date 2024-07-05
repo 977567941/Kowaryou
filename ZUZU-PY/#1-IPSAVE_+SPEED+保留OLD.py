@@ -1,27 +1,7 @@
-import cv2
+import cv2 
 import time
+
 from datetime import datetime, timedelta
-
-# 获取当前北京时间，由于搜索结果可能会有些许延迟，我们可以直接使用内置的datetime库来获取准确时间
-current_time = datetime.now()
-# 计算当前时间+8小时
-future_time = current_time + timedelta(hours=8)
-# 格式化时间字符串
-formatted_future_time = future_time.strftime("%Y-%m-%d %H:%M:%S")
-
-# 打开文件，以追加模式写入空白2行、计算后的时间和空白1行
-with open('IP_save.txt', 'a', encoding='utf-8') as file:
-    file.write('\n' * 2)  # 写入空白2行
-    file.write(formatted_future_time + '\n')  # 写入计算后的时间
-    file.write('\n')  # 写入空白1行
-
-print("文件操作已完成，已将当前时间+8小时的时间写入到'IP_save.txt'文件中。")
-#############################################################################split##
-#分割分割###################
-#分割分割###################
-
-
-import time
 
 import concurrent.futures
 
@@ -45,16 +25,14 @@ import replace
 
 import fileinput
 
-#上面载入需要在github运行的环境组件
+#载入组件
 
-
-# SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1
-## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1
-#提取IP前先合并自定义频道文件
+# merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1##
+## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## 
 
 file_contents = []   #这里含义是打开当前目录下以下文件清单--必须要保证有文件--否则报错
 
-file_paths = ["山西联通.txt","安徽电信.txt", "河南联通.txt", "河南电信.txt", "福建电信.txt", "贵州电信.txt", "四川联通.txt", "四川电信.txt", "重庆联通.txt", "重庆电信.txt","山东电信.txt","广东电信.txt","广西电信.txt","江西电信.txt","河北电信.txt","浙江电信.txt","湖北电信.txt","湖南电信.txt","辽宁联通.txt","陕西电信.txt"]  #替换为实际的文件路径列表
+file_paths = ["山西联通.txt","安徽电信.txt", "河南联通.txt", "河南电信.txt", "福建电信.txt", "贵州电信.txt", "四川联通.txt", "四川电信.txt", "重庆联通.txt", "重庆电信.txt","山东电信.txt","广东电信.txt","广西电信.txt","江西电信.txt","河北电信.txt","浙江电信.txt","湖北电信.txt","湖南电信.txt","辽宁联通.txt","陕西电信.txt","K合并OLD.txt"]  #替换为实际的文件路径列表
 
 for file_path in file_paths:
 
@@ -64,90 +42,88 @@ for file_path in file_paths:
 
         file_contents.append(content)
 
-
 #写入2小时内更新的地址
 
-with open("K合并2H.txt", "w", encoding="utf-8") as output:
+with open("K合并2H+OLD.txt", "w", encoding="utf-8") as output:
 
     output.write('\n'.join(file_contents))
 	
-	
-
-import cv2
-import time
+# SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1
+## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1
 
 # 用于存储已经测试过的IP和结果，以及对应的帧数
 tested_ips = {}
 
-# 打开文件，并设置编码为utf-8
-with open('K合并2H.txt', 'r', encoding='utf-8') as file:
-    for line in file:
-        # 检查行中是否包含1个逗号
+# 读取文件内容到列表中，避免重复打开文件
+lines = []
+with open('K合并2H+OLD.txt', 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+
+# 测试视频流
+for line in lines:
+    # 检查行中是否包含1个逗号
+    if line.count(',') == 1:
+        # 截取IP和URL
+        ip_start = line.find(',') + 1
+        rtp_pos = line.find('rtp')
+        if rtp_pos != -1:
+            ip_part = line[ip_start:rtp_pos].strip()
+        else:
+            # 如果没有找到'rtp'，则使用从逗号到行尾的部分作为IP（但请注意，这可能不是准确的IP）
+            ip_part = line[ip_start:].strip()
+
+        url_start = ip_start
+        url_end = line.find('$')
+        if url_end != -1:
+            url = line[url_start:url_end].strip()
+        else:
+            # 如果没有找到'$'，则使用从逗号到行尾的部分作为URL（但请注意，这可能需要调整）
+            url = line[url_start:].strip()
+
+        # 检查IP是否已经被测试过
+        if ip_part in tested_ips:
+            print(f"跳过已测试的IP: {ip_part}")
+            continue
+
+        # 使用cv2的VideoCapture来尝试打开视频流
+        cap = cv2.VideoCapture(url)
+
+        # 设置超时时间
+        start_time = time.time()
+        frame_count = 0
+
+        # 尝试读取视频
+        while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
+            ret, frame = cap.read()
+            if not ret:  # 检查是否成功读取到帧
+                break  # 如果没有读取到帧，则跳出循环
+            frame_count += 1  # 成功读取一帧，计数器加1
+
+        # 根据测试结果更新字典
+        if frame_count >220:  # 限定合格IP判定的帧数
+            tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
+        else:
+            tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
+
+        # 释放VideoCapture对象
+        cap.release()
+
+# 测试结束后，将包含ok的IP的channel及其帧数写入新文件
+with open('K合并2H+OLD-SPEED.txt', 'w', encoding='utf-8') as file:
+    for line in lines:
+        # 检查行中是否包含1个逗号，以确保是channel
         if line.count(',') == 1:
-            # 将整行定义为一个channel
-            channel = line.strip()
-            
-            # 截取IP和URL
+            # 截取IP部分
             ip_start = line.find(',') + 1
             rtp_pos = line.find('rtp')
             if rtp_pos != -1:
-                ip_part = line[ip_start:rtp_pos].strip()
-            
-            url_start = ip_start
-            url_end = line.find('$')
-            if url_end != -1:
-                url = line[url_start:url_end].strip()
-            else:
-                # 如果没有找到$，则使用从,到行尾的部分
-                url = line[url_start:].strip()
-            
-            # 检查IP是否已经被测试过
-            if ip_part in tested_ips:
-                # 如果IP已经存在，则跳过测试
-                print(f"跳过已测试的IP: {ip_part}")
-                continue
+                channel_ip = line[ip_start:rtp_pos].strip()
 
-            # 使用cv2的VideoCapture来尝试打开视频流
-            cap = cv2.VideoCapture(url)
-            
-            # 设置超时时间
-            start_time = time.time()
-            frame_count = 0
-            
-            # 尝试读取视频
-            while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
-                ret, frame = cap.read()
-                if not ret:  # 检查是否成功读取到帧
-                    break  # 如果没有读取到帧，则跳出循环
-                frame_count += 1  # 成功读取一帧，计数器加1
-
-            # 根据测试结果更新字典
-            if frame_count > 220:  # 限定合格IP判定的帧数
-                tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
-            else:
-                # 如果没有读取到足够帧，则标记为已测试
-                tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
-
-            # 释放VideoCapture对象
-            cap.release()
-
-# 测试结束后，将包含ok的IP的channel及其帧数写入新文件
-with open('K合并2H-SPEED.txt', 'w', encoding='utf-8') as file:
-    with open('K合并2H.txt', 'r', encoding='utf-8') as input_file:
-        for line in input_file:
-            # 检查行中是否包含1个逗号，以确保是channel
-            if line.count(',') == 1:
-                # 截取IP部分
-                ip_start = line.find(',') + 1
-                rtp_pos = line.find('rtp')
-                if rtp_pos != -1:
-                    channel_ip = line[ip_start:rtp_pos].strip()
-                    
-                    # 检查这个IP是否在测试成功的IP字典中
-                    if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                        # 如果在，就写入这个channel和帧数到输出文件
-                        # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
-                        file.write(f"{line}>速度={tested_ips[channel_ip]['frame_count']}\n")
+                # 检查这个IP是否在测试成功的IP字典中
+                if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
+                    # 如果在，就写入这个channel和帧数到输出文件
+                    # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
+                    file.write(f"{line.strip()}>速度={tested_ips[channel_ip]['frame_count']}\n")
 
 	
 	
@@ -155,15 +131,17 @@ with open('K合并2H-SPEED.txt', 'w', encoding='utf-8') as file:
 	
 	
 
-	
 
-# SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2
-## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2
-#提取IP前先合并自定义频道文件
+
+
+
+
+# merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2##
+## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## 
 
 file_contents = []   #这里含义是打开当前目录下以下文件清单--必须要保证有文件--否则报错
 
-file_paths = ["天津联通.txt","江苏电信.txt"]  #低速线路专用
+file_paths = ["天津联通.txt","江苏电信.txt","K合并低码OLD.txt"]  #替换为实际的文件路径列表
 
 for file_path in file_paths:
 
@@ -173,485 +151,320 @@ for file_path in file_paths:
 
         file_contents.append(content)
 
-
 #写入2小时内更新的地址
 
-with open("K合并2H-低速线.txt", "w", encoding="utf-8") as output:
+with open("K合并低码2H+低码OLD.txt", "w", encoding="utf-8") as output:
 
     output.write('\n'.join(file_contents))
 	
-	
-import cv2
-import time
+# SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2
+## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2
 
 # 用于存储已经测试过的IP和结果，以及对应的帧数
 tested_ips = {}
 
-# 打开文件，并设置编码为utf-8
-with open('K合并2H-低速线.txt', 'r', encoding='utf-8') as file:
-    for line in file:
-        # 检查行中是否包含1个逗号
+# 读取文件内容到列表中，避免重复打开文件
+lines = []
+with open('K合并低码2H+低码OLD.txt', 'r', encoding='utf-8') as file:
+    lines = file.readlines()
+
+# 测试视频流
+for line in lines:
+    # 检查行中是否包含1个逗号
+    if line.count(',') == 1:
+        # 截取IP和URL
+        ip_start = line.find(',') + 1
+        rtp_pos = line.find('rtp')
+        if rtp_pos != -1:
+            ip_part = line[ip_start:rtp_pos].strip()
+        else:
+            # 如果没有找到'rtp'，则使用从逗号到行尾的部分作为IP（但请注意，这可能不是准确的IP）
+            ip_part = line[ip_start:].strip()
+
+        url_start = ip_start
+        url_end = line.find('$')
+        if url_end != -1:
+            url = line[url_start:url_end].strip()
+        else:
+            # 如果没有找到'$'，则使用从逗号到行尾的部分作为URL（但请注意，这可能需要调整）
+            url = line[url_start:].strip()
+
+        # 检查IP是否已经被测试过
+        if ip_part in tested_ips:
+            print(f"跳过已测试的IP: {ip_part}")
+            continue
+
+        # 使用cv2的VideoCapture来尝试打开视频流
+        cap = cv2.VideoCapture(url)
+
+        # 设置超时时间
+        start_time = time.time()
+        frame_count = 0
+
+        # 尝试读取视频
+        while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
+            ret, frame = cap.read()
+            if not ret:  # 检查是否成功读取到帧
+                break  # 如果没有读取到帧，则跳出循环
+            frame_count += 1  # 成功读取一帧，计数器加1
+
+        # 根据测试结果更新字典
+        if frame_count >220:  # 限定合格IP判定的帧数
+            tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
+        else:
+            tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
+
+        # 释放VideoCapture对象
+        cap.release()
+
+# 测试结束后，将包含ok的IP的channel及其帧数写入新文件
+with open('K合并低码2H+低码OLD-SPEED.txt', 'w', encoding='utf-8') as file:
+    for line in lines:
+        # 检查行中是否包含1个逗号，以确保是channel
         if line.count(',') == 1:
-            # 将整行定义为一个channel
-            channel = line.strip()
-            
-            # 截取IP和URL
+            # 截取IP部分
             ip_start = line.find(',') + 1
             rtp_pos = line.find('rtp')
             if rtp_pos != -1:
-                ip_part = line[ip_start:rtp_pos].strip()
-            
-            url_start = ip_start
-            url_end = line.find('$')
-            if url_end != -1:
-                url = line[url_start:url_end].strip()
-            else:
-                # 如果没有找到$，则使用从,到行尾的部分
-                url = line[url_start:].strip()
-            
-            # 检查IP是否已经被测试过
-            if ip_part in tested_ips:
-                # 如果IP已经存在，则跳过测试
-                print(f"跳过已测试的IP: {ip_part}")
-                continue
+                channel_ip = line[ip_start:rtp_pos].strip()
 
-            # 使用cv2的VideoCapture来尝试打开视频流
-            cap = cv2.VideoCapture(url)
-            
-            # 设置超时时间
-            start_time = time.time()
-            frame_count = 0
-            
-            # 尝试读取视频
-            while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
-                ret, frame = cap.read()
-                if not ret:  # 检查是否成功读取到帧
-                    break  # 如果没有读取到帧，则跳出循环
-                frame_count += 1  # 成功读取一帧，计数器加1
-
-            # 根据测试结果更新字典
-            if frame_count > 150:  # 限定合格IP判定的帧数
-                tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
-            else:
-                # 如果没有读取到足够帧，则标记为已测试
-                tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
-
-            # 释放VideoCapture对象
-            cap.release()
-
-# 测试结束后，将包含ok的IP的channel及其帧数写入新文件
-with open('K合并2H-低速线SPEED.txt', 'w', encoding='utf-8') as file:
-    with open('K合并2H-低速线.txt', 'r', encoding='utf-8') as input_file:
-        for line in input_file:
-            # 检查行中是否包含1个逗号，以确保是channel
-            if line.count(',') == 1:
-                # 截取IP部分
-                ip_start = line.find(',') + 1
-                rtp_pos = line.find('rtp')
-                if rtp_pos != -1:
-                    channel_ip = line[ip_start:rtp_pos].strip()
-                    
-                    # 检查这个IP是否在测试成功的IP字典中
-                    if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                        # 如果在，就写入这个channel和帧数到输出文件
-                        # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
-                        file.write(f"{line}>速度={tested_ips[channel_ip]['frame_count']}\n")
-	
-	
-	
-	
+                # 检查这个IP是否在测试成功的IP字典中
+                if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
+                    # 如果在，就写入这个channel和帧数到输出文件
+                    # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
+                    file.write(f"{line.strip()}>速度={tested_ips[channel_ip]['frame_count']}\n")
 
 
-# SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3
-## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3
-import cv2
-import time
+
+
+
+
+
+# SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3
+## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3
 
 # 用于存储已经测试过的IP和结果，以及对应的帧数
 tested_ips = {}
 
-# 打开文件，并设置编码为utf-8
-with open('K合并OLD.txt', 'r', encoding='utf-8') as file:
-    for line in file:
-        # 检查行中是否包含1个逗号
-        if line.count(',') == 1:
-            # 将整行定义为一个channel
-            channel = line.strip()
-            
-            # 截取IP和URL
-            ip_start = line.find(',') + 1
-            rtp_pos = line.find('rtp')
-            if rtp_pos != -1:
-                ip_part = line[ip_start:rtp_pos].strip()
-            
-            url_start = ip_start
-            url_end = line.find('$')
-            if url_end != -1:
-                url = line[url_start:url_end].strip()
-            else:
-                # 如果没有找到$，则使用从,到行尾的部分
-                url = line[url_start:].strip()
-            
-            # 检查IP是否已经被测试过
-            if ip_part in tested_ips:
-                # 如果IP已经存在，则跳过测试
-                print(f"跳过已测试的IP: {ip_part}")
-                continue
-
-            # 使用cv2的VideoCapture来尝试打开视频流
-            cap = cv2.VideoCapture(url)
-            
-            # 设置超时时间
-            start_time = time.time()
-            frame_count = 0
-            
-            # 尝试读取视频
-            while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
-                ret, frame = cap.read()
-                if not ret:  # 检查是否成功读取到帧
-                    break  # 如果没有读取到帧，则跳出循环
-                frame_count += 1  # 成功读取一帧，计数器加1
-
-            # 根据测试结果更新字典
-            if frame_count > 220:  # 限定合格IP判定的帧数
-                tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
-            else:
-                # 如果没有读取到足够帧，则标记为已测试
-                tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
-
-            # 释放VideoCapture对象
-            cap.release()
-
-# 测试结束后，将包含ok的IP的channel及其帧数写入新文件
-with open('K合并OLD-SPEED.txt', 'w', encoding='utf-8') as file:
-    with open('K合并OLD.txt', 'r', encoding='utf-8') as input_file:
-        for line in input_file:
-            # 检查行中是否包含1个逗号，以确保是channel
-            if line.count(',') == 1:
-                # 截取IP部分
-                ip_start = line.find(',') + 1
-                rtp_pos = line.find('rtp')
-                if rtp_pos != -1:
-                    channel_ip = line[ip_start:rtp_pos].strip()
-                    
-                    # 检查这个IP是否在测试成功的IP字典中
-                    if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                        # 如果在，就写入这个channel和帧数到输出文件
-                        # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
-                        file.write(f"{line}>速度={tested_ips[channel_ip]['frame_count']}\n")
-
-
-
-
-
-
-# SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4
-## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4
-import cv2
-import time
-
-# 用于存储已经测试过的IP和结果，以及对应的帧数
-tested_ips = {}
-
-# 打开文件，并设置编码为utf-8
-with open('K合并-低码速OLD.txt', 'r', encoding='utf-8') as file:
-    for line in file:
-        # 检查行中是否包含1个逗号
-        if line.count(',') == 1:
-            # 将整行定义为一个channel
-            channel = line.strip()
-            
-            # 截取IP和URL
-            ip_start = line.find(',') + 1
-            rtp_pos = line.find('rtp')
-            if rtp_pos != -1:
-                ip_part = line[ip_start:rtp_pos].strip()
-            
-            url_start = ip_start
-            url_end = line.find('$')
-            if url_end != -1:
-                url = line[url_start:url_end].strip()
-            else:
-                # 如果没有找到$，则使用从,到行尾的部分
-                url = line[url_start:].strip()
-            
-            # 检查IP是否已经被测试过
-            if ip_part in tested_ips:
-                # 如果IP已经存在，则跳过测试
-                print(f"跳过已测试的IP: {ip_part}")
-                continue
-
-            # 使用cv2的VideoCapture来尝试打开视频流
-            cap = cv2.VideoCapture(url)
-            
-            # 设置超时时间
-            start_time = time.time()
-            frame_count = 0
-            
-            # 尝试读取视频
-            while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
-                ret, frame = cap.read()
-                if not ret:  # 检查是否成功读取到帧
-                    break  # 如果没有读取到帧，则跳出循环
-                frame_count += 1  # 成功读取一帧，计数器加1
-
-            # 根据测试结果更新字典
-            if frame_count > 150:  # 限定合格IP判定的帧数
-                tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
-            else:
-                # 如果没有读取到足够帧，则标记为已测试
-                tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
-
-            # 释放VideoCapture对象
-            cap.release()
-
-# 测试结束后，将包含ok的IP的channel及其帧数写入新文件
-with open('K合并-低码速OLD-SPEED.txt', 'w', encoding='utf-8') as file:
-    with open('K合并-低码速OLD.txt', 'r', encoding='utf-8') as input_file:
-        for line in input_file:
-            # 检查行中是否包含1个逗号，以确保是channel
-            if line.count(',') == 1:
-                # 截取IP部分
-                ip_start = line.find(',') + 1
-                rtp_pos = line.find('rtp')
-                if rtp_pos != -1:
-                    channel_ip = line[ip_start:rtp_pos].strip()
-                    
-                    # 检查这个IP是否在测试成功的IP字典中
-                    if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                        # 如果在，就写入这个channel和帧数到输出文件
-                        # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
-                        file.write(f"{line}>速度={tested_ips[channel_ip]['frame_count']}\n")
-
-
-
-
-
-
-
-
-
-
-# 打开文件K合并OLD.txt准备写入，如果文件不存在则创建，使用utf-8编码
-with open('K合并OLD.txt', 'w', encoding='utf-8') as f_out:
-    # 循环遍历你想要读取的文件名列表
-    for filename in ['K合并2H-SPEED.txt', 'K合并OLD-SPEED.txt']:
-        try:
-            # 打开每个文件准备读取，使用utf-8编码
-            with open(filename, 'r', encoding='utf-8') as f_in:
-                # 读取文件的每一行
-                for line in f_in:
-                    # 写入到K合并OLD.txt文件中
-                    f_out.write(line)
-        except FileNotFoundError:
-            # 如果文件不存在，则打印一个错误消息
-            print(f"文件 {filename} 未找到，跳过...")
-
-print("完成文件写入到K合并OLD.txt。")
-
-# 打开文件K合并-低码速OLD.txt准备写入，如果文件不存在则创建，使用utf-8编码
-with open('K合并-低码速OLD.txt', 'w', encoding='utf-8') as f_out:
-    # 循环遍历你想要读取的文件名列表
-    for filename in ['K合并2H-低速线SPEED.txt', 'K合并-低码速OLD-SPEED.txt']:
-        try:
-            # 打开每个文件准备读取，使用utf-8编码
-            with open(filename, 'r', encoding='utf-8') as f_in:
-                # 读取文件的每一行
-                for line in f_in:
-                    # 写入到K合并-低码速OLD.txt文件中
-                    f_out.write(line)
-        except FileNotFoundError:
-            # 如果文件不存在，则打印一个错误消息
-            print(f"文件 {filename} 未找到，跳过...")
-
-print("完成文件写入到K合并-低码速OLD.txt。")
-
-
-
-
-
-
-
-
-
-	
-
-# SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5
-## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5
-import cv2
-import time
-
-# 用于存储已经测试过的IP和结果，以及对应的帧数
-tested_ips = {}
-
-# 打开文件，并设置编码为utf-8
+# 读取文件内容到列表中，避免重复打开文件
+lines = []
 with open('JX-LOW.txt', 'r', encoding='utf-8') as file:
-    for line in file:
-        # 检查行中是否包含1个逗号
-        if line.count(',') == 1:
-            # 将整行定义为一个channel
-            channel = line.strip()
-            
-            # 截取IP和URL
-            ip_start = line.find(',') + 1
-            rtp_pos = line.find('rtp')
-            if rtp_pos != -1:
-                ip_part = line[ip_start:rtp_pos].strip()
-            
-            url_start = ip_start
-            url_end = line.find('$')
-            if url_end != -1:
-                url = line[url_start:url_end].strip()
-            else:
-                # 如果没有找到$，则使用从,到行尾的部分
-                url = line[url_start:].strip()
-            
-            # 检查IP是否已经被测试过
-            if ip_part in tested_ips:
-                # 如果IP已经存在，则跳过测试
-                print(f"跳过已测试的IP: {ip_part}")
-                continue
+    lines = file.readlines()
 
-            # 使用cv2的VideoCapture来尝试打开视频流
-            cap = cv2.VideoCapture(url)
-            
-            # 设置超时时间
-            start_time = time.time()
-            frame_count = 0
-            
-            # 尝试读取视频
-            while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
-                ret, frame = cap.read()
-                if not ret:  # 检查是否成功读取到帧
-                    break  # 如果没有读取到帧，则跳出循环
-                frame_count += 1  # 成功读取一帧，计数器加1
+# 测试视频流
+for line in lines:
+    # 检查行中是否包含1个逗号
+    if line.count(',') == 1:
+        # 截取IP和URL
+        ip_start = line.find(',') + 1
+        rtp_pos = line.find('rtp')
+        if rtp_pos != -1:
+            ip_part = line[ip_start:rtp_pos].strip()
+        else:
+            # 如果没有找到'rtp'，则使用从逗号到行尾的部分作为IP（但请注意，这可能不是准确的IP）
+            ip_part = line[ip_start:].strip()
 
-            # 根据测试结果更新字典
-            if frame_count > 200:  # 限定合格IP判定的帧数
-                tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
-            else:
-                # 如果没有读取到足够帧，则标记为已测试
-                tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
+        url_start = ip_start
+        url_end = line.find('$')
+        if url_end != -1:
+            url = line[url_start:url_end].strip()
+        else:
+            # 如果没有找到'$'，则使用从逗号到行尾的部分作为URL（但请注意，这可能需要调整）
+            url = line[url_start:].strip()
 
-            # 释放VideoCapture对象
-            cap.release()
+        # 检查IP是否已经被测试过
+        if ip_part in tested_ips:
+            print(f"跳过已测试的IP: {ip_part}")
+            continue
+
+        # 使用cv2的VideoCapture来尝试打开视频流
+        cap = cv2.VideoCapture(url)
+
+        # 设置超时时间
+        start_time = time.time()
+        frame_count = 0
+
+        # 尝试读取视频
+        while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
+            ret, frame = cap.read()
+            if not ret:  # 检查是否成功读取到帧
+                break  # 如果没有读取到帧，则跳出循环
+            frame_count += 1  # 成功读取一帧，计数器加1
+
+        # 根据测试结果更新字典
+        if frame_count >220:  # 限定合格IP判定的帧数
+            tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
+        else:
+            tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
+
+        # 释放VideoCapture对象
+        cap.release()
 
 # 测试结束后，将包含ok的IP的channel及其帧数写入新文件
 with open('JX-LOW-SPEED.txt', 'w', encoding='utf-8') as file:
-    with open('JX-LOW.txt', 'r', encoding='utf-8') as input_file:
-        for line in input_file:
-            # 检查行中是否包含1个逗号，以确保是channel
-            if line.count(',') == 1:
-                # 截取IP部分
-                ip_start = line.find(',') + 1
-                rtp_pos = line.find('rtp')
-                if rtp_pos != -1:
-                    channel_ip = line[ip_start:rtp_pos].strip()
-                    
-                    # 检查这个IP是否在测试成功的IP字典中
-                    if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                        # 如果在，就写入这个channel和帧数到输出文件
-                        # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
-                        file.write(f"{line}>速度={tested_ips[channel_ip]['frame_count']}\n")
+    for line in lines:
+        # 检查行中是否包含1个逗号，以确保是channel
+        if line.count(',') == 1:
+            # 截取IP部分
+            ip_start = line.find(',') + 1
+            rtp_pos = line.find('rtp')
+            if rtp_pos != -1:
+                channel_ip = line[ip_start:rtp_pos].strip()
 
-
-
-
-	
+                # 检查这个IP是否在测试成功的IP字典中
+                if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
+                    # 如果在，就写入这个channel和帧数到输出文件
+                    # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
+                    file.write(f"{line.strip()}>速度={tested_ips[channel_ip]['frame_count']}\n")
 
 
 
 
 
 
-# SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6
-## SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6## SPEEDTEST-6
-import cv2
-import time
+# SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4
+## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4
 
 # 用于存储已经测试过的IP和结果，以及对应的帧数
 tested_ips = {}
 
-# 打开文件，并设置编码为utf-8
+# 读取文件内容到列表中，避免重复打开文件
+lines = []
 with open('JX-HIGH.txt', 'r', encoding='utf-8') as file:
-    for line in file:
-        # 检查行中是否包含1个逗号
-        if line.count(',') == 1:
-            # 将整行定义为一个channel
-            channel = line.strip()
-            
-            # 截取IP和URL
-            ip_start = line.find(',') + 1
-            rtp_pos = line.find('rtp')
-            if rtp_pos != -1:
-                ip_part = line[ip_start:rtp_pos].strip()
-            
-            url_start = ip_start
-            url_end = line.find('$')
-            if url_end != -1:
-                url = line[url_start:url_end].strip()
-            else:
-                # 如果没有找到$，则使用从,到行尾的部分
-                url = line[url_start:].strip()
-            
-            # 检查IP是否已经被测试过
-            if ip_part in tested_ips:
-                # 如果IP已经存在，则跳过测试
-                print(f"跳过已测试的IP: {ip_part}")
-                continue
+    lines = file.readlines()
 
-            # 使用cv2的VideoCapture来尝试打开视频流
-            cap = cv2.VideoCapture(url)
-            
-            # 设置超时时间
-            start_time = time.time()
-            frame_count = 0
-            
-            # 尝试读取视频
-            while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
-                ret, frame = cap.read()
-                if not ret:  # 检查是否成功读取到帧
-                    break  # 如果没有读取到帧，则跳出循环
-                frame_count += 1  # 成功读取一帧，计数器加1
+# 测试视频流
+for line in lines:
+    # 检查行中是否包含1个逗号
+    if line.count(',') == 1:
+        # 截取IP和URL
+        ip_start = line.find(',') + 1
+        rtp_pos = line.find('rtp')
+        if rtp_pos != -1:
+            ip_part = line[ip_start:rtp_pos].strip()
+        else:
+            # 如果没有找到'rtp'，则使用从逗号到行尾的部分作为IP（但请注意，这可能不是准确的IP）
+            ip_part = line[ip_start:].strip()
 
-            # 根据测试结果更新字典
-            if frame_count > 150:  # 限定合格IP判定的帧数
-                tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
-            else:
-                # 如果没有读取到足够帧，则标记为已测试
-                tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
+        url_start = ip_start
+        url_end = line.find('$')
+        if url_end != -1:
+            url = line[url_start:url_end].strip()
+        else:
+            # 如果没有找到'$'，则使用从逗号到行尾的部分作为URL（但请注意，这可能需要调整）
+            url = line[url_start:].strip()
 
-            # 释放VideoCapture对象
-            cap.release()
+        # 检查IP是否已经被测试过
+        if ip_part in tested_ips:
+            print(f"跳过已测试的IP: {ip_part}")
+            continue
+
+        # 使用cv2的VideoCapture来尝试打开视频流
+        cap = cv2.VideoCapture(url)
+
+        # 设置超时时间
+        start_time = time.time()
+        frame_count = 0
+
+        # 尝试读取视频
+        while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
+            ret, frame = cap.read()
+            if not ret:  # 检查是否成功读取到帧
+                break  # 如果没有读取到帧，则跳出循环
+            frame_count += 1  # 成功读取一帧，计数器加1
+
+        # 根据测试结果更新字典
+        if frame_count >150:  # 限定合格IP判定的帧数
+            tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
+        else:
+            tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
+
+        # 释放VideoCapture对象
+        cap.release()
 
 # 测试结束后，将包含ok的IP的channel及其帧数写入新文件
 with open('JX-HIGH-SPEED.txt', 'w', encoding='utf-8') as file:
-    with open('JX-HIGH.txt', 'r', encoding='utf-8') as input_file:
-        for line in input_file:
-            # 检查行中是否包含1个逗号，以确保是channel
-            if line.count(',') == 1:
-                # 截取IP部分
-                ip_start = line.find(',') + 1
-                rtp_pos = line.find('rtp')
-                if rtp_pos != -1:
-                    channel_ip = line[ip_start:rtp_pos].strip()
-                    
-                    # 检查这个IP是否在测试成功的IP字典中
-                    if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                        # 如果在，就写入这个channel和帧数到输出文件
-                        # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
-                        file.write(f"{line}>速度={tested_ips[channel_ip]['frame_count']}\n")
+    for line in lines:
+        # 检查行中是否包含1个逗号，以确保是channel
+        if line.count(',') == 1:
+            # 截取IP部分
+            ip_start = line.find(',') + 1
+            rtp_pos = line.find('rtp')
+            if rtp_pos != -1:
+                channel_ip = line[ip_start:rtp_pos].strip()
 
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
+                # 检查这个IP是否在测试成功的IP字典中
+                if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
+                    # 如果在，就写入这个channel和帧数到输出文件
+                    # 注意：这里我们简单地在行末尾添加了帧数，你可以根据需要调整格式
+                    file.write(f"{line.strip()}>速度={tested_ips[channel_ip]['frame_count']}\n")
 
 
+
+
+#分割分割###################
+#分割分割###################
+#分割分割###################
+#分割分割###################
+#分割分割###################
+#分割分割###################
+#分割分割###################
+#分割分割###################
+
+
+
+
+# 写回+去重复操作1
+with open('K合并2H+OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
+    # 打开或创建文件以写入内容
+    with open('K合并2H+OLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
+        # 逐行读取
+        for line in file_in:
+            # 将读取到的内容写入
+            file_out.write(line)
+
+# 去重复--定义一个集合来存储已经遇到的URL，以便检查重复
+# 定义一个集合用于存储已经遇到的行
+seen_lines = set()
+
+# 使用 'with' 语句确保文件在操作完成后正确关闭
+with open('K合并2H+OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
+     open('K合并OLD.txt', 'w', encoding='utf-8') as file_out:
+    # 逐行读取文件
+    for line in file_in:
+        # 去除行尾的换行符，并检查该行是否已经在集合中
+        stripped_line = line.strip()
+        if stripped_line not in seen_lines:
+            # 如果不在集合中，将其写入添加到集合中
+            file_out.write(line)
+            seen_lines.add(stripped_line)
+			
+			
+
+# 写回+去重复操作2
+with open('K合并低码2H+低码OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
+    # 打开或创建文件以写入内容
+    with open('K合并低码2H+低码OLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
+        # 逐行读取
+        for line in file_in:
+            # 将读取到的内容写入
+            file_out.write(line)
+
+# 去重复--定义一个集合来存储已经遇到的URL，以便检查重复
+# 定义一个集合用于存储已经遇到的行
+seen_lines = set()
+
+# 使用 'with' 语句确保文件在操作完成后正确关闭
+with open('K合并低码2H+低码OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
+     open('K合并低码OLD.txt', 'w', encoding='utf-8') as file_out:
+    # 逐行读取文件
+    for line in file_in:
+        # 去除行尾的换行符，并检查该行是否已经在集合中
+        stripped_line = line.strip()
+        if stripped_line not in seen_lines:
+            # 如果不在集合中，将其写入添加到集合中
+            file_out.write(line)
+            seen_lines.add(stripped_line)
 
 
 
@@ -659,25 +472,59 @@ with open('JX-HIGH-SPEED.txt', 'w', encoding='utf-8') as file:
 
 #IP_SAVE运作流程
 
+# 获取当前北京时间，由于搜索结果可能会有些许延迟，我们可以直接使用内置的datetime库来获取准确时间
+current_time = datetime.now()
+# 计算当前时间+8小时
+future_time = current_time + timedelta(hours=8)
+# 格式化时间字符串
+formatted_future_time = future_time.strftime("%Y-%m-%d %H:%M:%S")
+
+# 打开文件，以追加模式写入空白2行、计算后的时间和空白1行
+with open('IP_save.txt', 'a', encoding='utf-8') as file:
+    file.write('\n' * 2)  # 写入空白2行
+    file.write(formatted_future_time + '\n')  # 写入计算后的时间
+    file.write('\n')  # 写入空白1行
+
+print("文件操作已完成，已将当前时间+8小时的时间写入到'IP_save.txt'文件中。")
+
+#1############################################################################split##
+
+
+#根据前面合并IP，一次顺序添加到IP_SAVE.txt  a模式
 # 需要提取的关键字列表
 keywords = ['S川A爱科幻','天JD都市高清','安HH生活时尚','山DB农科','山XD都市剧场','广DA经济科教','广XH南宁都市','江S南京生活','江XB都市剧场','河BA农民高清','河N民生频道','河NC电视剧频道','浙JC教育高清','湖N常德新闻','福JA少儿','辽LD沈阳新闻','重QD影视频道','陕XA新闻资讯']  
 pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
 
 #pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
 
-with open('K合并2H.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
+with open('K合并2H+OLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
 
     for line in file:
 
         if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
 
          IP_save.write(line)  # 将该行写入文件
+		 
+		 
+#根据前面合并低码IP，二次顺序添加到IP_SAVE.txt  a模式
+# 需要提取的关键字列表		 
+keywords = ['S川A爱科幻','天JD都市高清','安HH生活时尚','山DB农科','山XD都市剧场','广DA经济科教','广XH南宁都市','江S南京生活','江XB都市剧场','河BA农民高清','河N民生频道','河NC电视剧频道','浙JC教育高清','湖N常德新闻','福JA少儿','辽LD沈阳新闻','重QD影视频道','陕XA新闻资讯']  
+pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制	 
+with open('K合并低码2H+低码OLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
+
+    for line in file:
+
+        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+
+         IP_save.write(line)  # 将该行写入文件		 
 
 #########################split##
 
 
 
-# 打开IP_save.txt文件以读取内容
+# 写回+去重复操作
 with open('IP_save.txt', 'r', encoding='utf-8') as file_in:
     # 打开或创建IP_savejump.txt文件以写入内容
     with open('IP_savejump.txt', 'w', encoding='utf-8') as file_out:
@@ -686,9 +533,7 @@ with open('IP_save.txt', 'r', encoding='utf-8') as file_in:
             # 将读取到的内容写入IP_savejump.txt
             file_out.write(line)
 
-
-
-# 第二次去重复--定义一个集合来存储已经遇到的URL，以便检查重复
+# 去重复--定义一个集合来存储已经遇到的URL，以便检查重复
 # 定义一个集合用于存储已经遇到的行
 seen_lines = set()
 
@@ -748,10 +593,10 @@ import fileinput
 #重新载入一遍运行环境############################
 
 
-file_contents = []   #这里含义是打开当前目录下以下文件清单--必须要保证有文件--否则报错
+file_contents = []   #打开当前目录下以下文件清单
 
-
-file_paths = ['K合并2H-SPEED.txt','K合并2H-低速线SPEED.txt','K合并OLD-SPEED.txt','K合并-低码速OLD-SPEED.txt','JX-LOW-SPEED.txt','JX-HIGH-SPEED.txt',"JIEXI-OK.txt"]  #把测速结果合并到一起
+#此处-------K合并OLD.txt和K合并低码OLD.txt-------实际已经测速过写回去了--现在是调用
+file_paths = ['K合并OLD.txt','K合并低码OLD.txt','JX-LOW-SPEED.txt','JX-HIGH-SPEED.txt',"JIEXI-OK.txt"]  #把测速结果合并到一起 
 
 
 
@@ -3059,18 +2904,13 @@ with open('yesterdayoncemo.txt', 'w', encoding="utf-8") as file:
 
 #删除所有临时文件--删除清单在下面列出
 
-
-os.remove("K合并2H.txt")
-
-os.remove("K合并2H-低速线.txt")
-
 os.remove("IP_savejump.txt")
 
 os.remove("AMER-delete.txt")
 
 os.remove("AMER-start.txt")
 
-#os.remove("合并.txt")
+os.remove("合并.txt")
 
 os.remove("排序.txt")
 
