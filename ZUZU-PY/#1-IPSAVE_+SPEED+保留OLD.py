@@ -817,37 +817,35 @@ with open('TT1.txt', 'w', encoding='utf-8') as TT1:    #####定义临时文件�
 #对相同频道IP排序--域名在前###################
 import re
 
-#A倒字母版本--自定义排序键函数 固定域名--在前---固定域名字母倒序
+#A版本--自定义排序键函数 固定域名--在前
 def custom_sort_key(item):
     channel, url = item.split(',')
 
-    # 处理channel的字母和数字部分
     channel_letters = ''.join(filter(str.isalpha, channel))
     channel_numbers = ''.join(filter(str.isdigit, channel))
-    channel_sort_key = (channel_letters, int(channel_numbers) if channel_numbers.isdigit() else 0)
 
-    # 提取URL中的固定域名部分
+    if channel_numbers.isdigit():
+        channel_sort_key = (channel_letters, int(channel_numbers))
+    else:
+        channel_sort_key = (channel_letters, 0)
+
     sort_key = re.search(r"http://(.*?)\.", url)
     if sort_key:
         sort_key = sort_key.group(1)
     else:
         sort_key = url
 
-    # 修改sort_key的排序逻辑
+    # 检查sort_key是否为数字
     if sort_key[0].isalpha():
-        # 如果sort_key以字母开头，直接反转字符串并加上负数前缀（为了倒序排列）
-        # 注意：这里为了简化，我们假设sort_key中只包含ASCII字符，可以直接反转
-        sort_key = (-1, sort_key[::-1])
+        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
     elif sort_key.isdigit():
-        # 数字部分保持原样，但已经足够区分，因为之前的channel_sort_key会首先被考虑
-        sort_key = (1, -int(sort_key))
+        sort_key = (1, -int(sort_key))  # 数字从大到小排序
     else:
-        # 其他情况，我们保持原样，但赋予一个中等的优先级
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
-with open('T1.txt', 'r', encoding="utf-8") as input_file, open('TT1.txt', 'a', encoding="utf-8") as output_file:
+with open('T13.txt', 'r', encoding="utf-8") as input_file, open('TT13.txt', 'a', encoding="utf-8") as output_file:
     # 读取所有行并存储在列表中
     lines = input_file.readlines()
 
