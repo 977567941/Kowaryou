@@ -202,7 +202,7 @@ for line in lines:
             frame_count += 1  # 成功读取一帧，计数器加1
 
         # 根据测试结果更新字典
-        if frame_count >220:  # 限定合格IP判定的帧数
+        if frame_count >150:  # 限定合格IP判定的帧数
             tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
         else:
             tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
