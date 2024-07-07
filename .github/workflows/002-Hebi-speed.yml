@@ -35,7 +35,7 @@ jobs:
         run: pip install input
         
       - name: Run iptv
-        run: python ${{ github.workspace }}/ZUZU-PY/#1-IPSAVE_+SPEED+保留OLD.py
+        run: python ${{ github.workspace }}/ZUZU-PY/ZUZU-PY/#2-手动排序IPSAVE_+SPEED+保留OLD.py
          
       - name: Commit results
         run: |
