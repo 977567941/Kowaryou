@@ -1123,7 +1123,6 @@ X乐游频道,http://61.190.129.195:8686/rtp/238.1.78.151:7080$安/徽马鞍PLUS
 天JD都市高清,http://wow.lkzflzylzx.top:4022/rtp/225.1.1.128:5002$天/津联通5+
 天JE体育高清,http://wow.lkzflzylzx.top:4022/rtp/225.1.1.122:5002$天/津联通5+
 天JF科教高清,http://wow.lkzflzylzx.top:4022/rtp/225.1.1.129:5002$天/津联通5+
-天JG少儿高清,http://wow.lkzflzylzx.top:4022/rtp/225.1.1.125:5002$天/津联通5+
 天JH蓟州区,http://wow.lkzflzylzx.top:4022/rtp/225.1.1.82:5002$天/津联通5+
 天JI游戏风云,http://wow.lkzflzylzx.top:4022/rtp/225.1.1.135:5002$天/津联通5+
 天JJ欢笑剧场,http://wow.lkzflzylzx.top:4022/rtp/225.1.1.139:5002$天/津联通5+
@@ -1145,7 +1144,6 @@ X乐游频道,http://61.190.129.195:8686/rtp/238.1.78.151:7080$安/徽马鞍PLUS
 天JD都市高清,http://www.hhkb.site:5002/rtp/225.1.1.128:5002$天/津联通2+
 天JE体育高清,http://www.hhkb.site:5002/rtp/225.1.1.122:5002$天/津联通2+
 天JF科教高清,http://www.hhkb.site:5002/rtp/225.1.1.129:5002$天/津联通2+
-天JG少儿高清,http://www.hhkb.site:5002/rtp/225.1.1.125:5002$天/津联通2+
 天JH蓟州区,http://www.hhkb.site:5002/rtp/225.1.1.82:5002$天/津联通2+
 天JI游戏风云,http://www.hhkb.site:5002/rtp/225.1.1.135:5002$天/津联通2+
 天JJ欢笑剧场,http://www.hhkb.site:5002/rtp/225.1.1.139:5002$天/津联通2+
@@ -1167,7 +1165,6 @@ X乐游频道,http://61.190.129.195:8686/rtp/238.1.78.151:7080$安/徽马鞍PLUS
 天JD都市高清,http://nas.hssvm.com:8888/rtp/225.1.1.128:5002$天/津联通6+
 天JE体育高清,http://nas.hssvm.com:8888/rtp/225.1.1.122:5002$天/津联通6+
 天JF科教高清,http://nas.hssvm.com:8888/rtp/225.1.1.129:5002$天/津联通6+
-天JG少儿高清,http://nas.hssvm.com:8888/rtp/225.1.1.125:5002$天/津联通6+
 天JH蓟州区,http://nas.hssvm.com:8888/rtp/225.1.1.82:5002$天/津联通6+
 天JI游戏风云,http://nas.hssvm.com:8888/rtp/225.1.1.135:5002$天/津联通6+
 天JJ欢笑剧场,http://nas.hssvm.com:8888/rtp/225.1.1.139:5002$天/津联通6+
