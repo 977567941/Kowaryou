@@ -26,7 +26,6 @@ import replace
 
 import fileinput
 
-import shutil  # 导入shutil模块
 
 # merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1##
 ## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## 
@@ -128,11 +127,7 @@ with open('K合并2H+OLD-SPEED.txt', 'w', encoding='utf-8') as file:
                     # 然后在下一行写入帧数信息
                     frame_count = tested_ips[channel_ip]['frame_count']
                     file.write(f">速度{frame_count}\n")
-
-# 文件写入操作完成后，进行拷贝和重命名
-shutil.copy('K合并2H+OLD-SPEED.txt', 'K合并标准码SPEED-OUT.txt')
-print("文件已成功复制输出")	
-
+	
 
 # merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2##
 ## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## 
@@ -234,9 +229,8 @@ with open('K合并低码2H+低码OLD-SPEED.txt', 'w', encoding='utf-8') as file:
                     frame_count = tested_ips[channel_ip]['frame_count']
                     file.write(f">速度{frame_count}\n")
 
-# 文件写入操作完成后，进行拷贝和重命名
-shutil.copy('K合并低码2H+低码OLD-SPEED.txt', 'K合并低码SPEED-OUT.txt')
-print("文件已成功复制输出")	
+
+
 
 # merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3##
 ## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## 
@@ -339,9 +333,7 @@ with open('K合并超低码2H+超低码OLD-SPEED.txt', 'w', encoding='utf-8') as
                     file.write(f">速度{frame_count}\n")
 
 
-# 文件写入操作完成后，进行拷贝和重命名
-shutil.copy('K合并超低码2H+超低码OLD-SPEED.txt', 'K合并超低码SPEED-OUT.txt')
-print("文件已成功复制输出")	
+
 
 
 
@@ -425,9 +417,7 @@ with open('JX-LOW-SPEED.txt', 'w', encoding='utf-8') as file:
                     file.write(f">速度{frame_count}\n")
 
 
-# 文件写入操作完成后，进行拷贝和重命名
-shutil.copy('JX-LOW-SPEED.txt', 'JX-LOW-SPEED-OUT.txt')
-print("文件已成功复制输出")	
+
 
 
 # SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5
@@ -509,9 +499,7 @@ with open('JX-HIGH-SPEED.txt', 'w', encoding='utf-8') as file:
                     frame_count = tested_ips[channel_ip]['frame_count']
                     file.write(f">速度{frame_count}\n")
 
-# 文件写入操作完成后，进行拷贝和重命名
-shutil.copy('JX-HIGH-SPEED.txt', 'JX-HIGH-SPEED-OUT.txt')
-print("文件已成功复制输出")	
+
 
 #分割分割###################
 #分割分割###################
