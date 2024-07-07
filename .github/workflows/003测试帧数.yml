@@ -2,7 +2,7 @@ name: 003测试帧数
 
 on:
   schedule:
-  - cron: '55 4 * * *' 
+  - cron: '15 18 * * *' 
   workflow_dispatch:
     分支:
       - main
