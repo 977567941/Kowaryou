@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 
 # 获取rtp目录下的文件名
-files = os.listdir('ppt')
+files = os.listdir('rtp')
 
 files_name = []
 
