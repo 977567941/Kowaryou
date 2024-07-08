@@ -1574,7 +1574,6 @@ Y动漫秀场,http://mail.jiandjh.top:4022/rtp/239.76.253.218:9000$湖/南电信
 湖N国际,http://mail.jiandjh.top:4022/rtp/239.76.252.124:9000$湖/南电信44+
 湖N教育,http://mail.jiandjh.top:4022/rtp/239.76.252.233:9000$湖/南电信44+
 湖N经视,http://mail.jiandjh.top:4022/rtp/239.76.252.116:9000$湖/南电信44+
-湖N经视,http://mail.jiandjh.top:4022/rtp/239.76.253.103:9000$湖/南电信44+
 湖N娱乐,http://mail.jiandjh.top:4022/rtp/239.76.253.105:9000$湖/南电信44+
 湖N金色夕阳,http://mail.jiandjh.top:4022/rtp/239.76.254.43:9000$湖/南电信44+
 湖N津市TV,http://mail.jiandjh.top:4022/rtp/239.76.255.30:9000$湖/南电信44+
@@ -1614,7 +1613,6 @@ Y动漫秀场,http://demo1.ruisilink.top:9000/rtp/239.76.253.218:9000$湖/南电
 湖N国际,http://demo1.ruisilink.top:9000/rtp/239.76.252.124:9000$湖/南电信33+
 湖N教育,http://demo1.ruisilink.top:9000/rtp/239.76.252.233:9000$湖/南电信33+
 湖N经视,http://demo1.ruisilink.top:9000/rtp/239.76.252.116:9000$湖/南电信33+
-湖N经视,http://demo1.ruisilink.top:9000/rtp/239.76.253.103:9000$湖/南电信33+
 湖N娱乐,http://demo1.ruisilink.top:9000/rtp/239.76.253.105:9000$湖/南电信33+
 湖N金色夕阳,http://demo1.ruisilink.top:9000/rtp/239.76.254.43:9000$湖/南电信33+
 湖N津市TV,http://demo1.ruisilink.top:9000/rtp/239.76.255.30:9000$湖/南电信33+
@@ -1654,7 +1652,6 @@ Y动漫秀场,http://qh.mi4.xyz:8888/rtp/239.76.253.218:9000$湖/南电信22+
 湖N国际,http://qh.mi4.xyz:8888/rtp/239.76.252.124:9000$湖/南电信22+
 湖N教育,http://qh.mi4.xyz:8888/rtp/239.76.252.233:9000$湖/南电信22+
 湖N经视,http://qh.mi4.xyz:8888/rtp/239.76.252.116:9000$湖/南电信22+
-湖N经视,http://qh.mi4.xyz:8888/rtp/239.76.253.103:9000$湖/南电信22+
 湖N娱乐,http://qh.mi4.xyz:8888/rtp/239.76.253.105:9000$湖/南电信22+
 湖N金色夕阳,http://qh.mi4.xyz:8888/rtp/239.76.254.43:9000$湖/南电信22+
 湖N津市TV,http://qh.mi4.xyz:8888/rtp/239.76.255.30:9000$湖/南电信22+
@@ -1694,7 +1691,6 @@ Y动漫秀场,http://jiandjh.zicp.net:4022/rtp/239.76.253.218:9000$湖/南电信
 湖N国际,http://jiandjh.zicp.net:4022/rtp/239.76.252.124:9000$湖/南电信11+
 湖N教育,http://jiandjh.zicp.net:4022/rtp/239.76.252.233:9000$湖/南电信11+
 湖N经视,http://jiandjh.zicp.net:4022/rtp/239.76.252.116:9000$湖/南电信11+
-湖N经视,http://jiandjh.zicp.net:4022/rtp/239.76.253.103:9000$湖/南电信11+
 湖N娱乐,http://jiandjh.zicp.net:4022/rtp/239.76.253.105:9000$湖/南电信11+
 湖N金色夕阳,http://jiandjh.zicp.net:4022/rtp/239.76.254.43:9000$湖/南电信11+
 湖N津市TV,http://jiandjh.zicp.net:4022/rtp/239.76.255.30:9000$湖/南电信11+
@@ -1710,7 +1706,7 @@ Y动漫秀场,http://jiandjh.zicp.net:4022/rtp/239.76.253.218:9000$湖/南电信
 湖N长沙政法,http://jiandjh.zicp.net:4022/rtp/239.76.253.122:9000$湖/南电信11+
 
 
-
+Y动漫秀场,http://lede.medahl.com:10098/rtp/239.76.253.124:9000$湖/南长沙1+
 X金鹰纪实,http://lede.medahl.com:10098/rtp/239.76.252.122:9000$湖/南长沙1+
 Y金鹰卡通,http://lede.medahl.com:10098/rtp/239.76.253.107:9000$湖/南长沙1+
 WQ青海卫视,http://lede.medahl.com:10098/rtp/239.76.254.132:9000$湖/南长沙1+
@@ -1721,8 +1717,6 @@ WS陕西卫视,http://lede.medahl.com:10098/rtp/239.76.254.76:9000$湖/南长沙
 湖N常德新闻,http://lede.medahl.com:10098/rtp/239.76.255.10:9000$湖/南长沙1+
 湖N郴州新闻,http://lede.medahl.com:10098/rtp/239.76.253.75:9000$湖/南长沙1+
 湖N道县综合,http://lede.medahl.com:10098/rtp/239.76.255.28:9000$湖/南长沙1+
-Y动漫秀场,http://lede.medahl.com:10098/rtp/239.76.253.124:9000$湖/南长沙1+
-Y动漫秀场,http://lede.medahl.com:10098/rtp/239.76.253.218:9000$湖/南长沙1+
 湖N桂东融媒,http://lede.medahl.com:10098/rtp/239.76.253.231:9000$湖/南长沙1+
 湖N衡阳公共,http://lede.medahl.com:10098/rtp/239.76.255.14:9000$湖/南长沙1+
 湖N衡阳县台,http://lede.medahl.com:10098/rtp/239.76.255.26:9000$湖/南长沙1+
