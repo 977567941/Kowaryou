@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 
 # 获取rtp目录下的文件名
-files = os.listdir('ppt')
+files = os.listdir('rtp')
 
 files_name = []
 
@@ -29,7 +29,7 @@ keywords = []
 for province_isp in provinces_isps:
     # 读取文件并删除空白行
     try:
-        with open(f'ppt/{province_isp}.txt', 'r', encoding='utf-8') as file:
+        with open(f'rtp/{province_isp}.txt', 'r', encoding='utf-8') as file:
             lines = file.readlines()
             lines = [line.strip() for line in lines if line.strip()]
         # 获取第一行中以包含 "rtp://" 的值作为 mcast
@@ -117,7 +117,7 @@ for keyword in keywords:
             if valid_ips:
                 #生成节目列表 省份运营商.txt
                 rtp_filename = f'rtp/{province}_{isp}.txt'
-                with open(ppt_filename, 'r', encoding='utf-8') as file:
+                with open(rtp_filename, 'r', encoding='utf-8') as file:
                     data = file.read()
                 txt_filename = f'{province}{isp}.txt'
                 with open(txt_filename, 'w') as new_file:
@@ -136,4 +136,3 @@ for keyword in keywords:
             else:
                 print(f"{current_time} 搜索IPTV频道源[]，超时次数过多：{timeout_cnt} 次，停止处理")
 print('节目表制作完成！ 文件输出在当前文件夹！')
-
