@@ -3035,7 +3035,6 @@ os.remove("T25.txt")
 
 os.remove("T26.txt")
 
-os.remove("T30.txt")
 
 os.remove("TT1.txt")
 
