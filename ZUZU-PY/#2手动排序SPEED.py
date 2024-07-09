@@ -2909,88 +2909,11 @@ with open('T26.txt', 'r', encoding="utf-8") as input_file, open('TT26.txt', 'a',
 #结束########################################################
 ##################################################################################################################################SPLIT#
 
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
-
-keywords = ['GAT']  # 需要提取的关键字列表
-
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
-
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
-
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T30.txt', 'w', encoding='utf-8') as T30:    #####定义临时文件名
-
-    for line in file:
-
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
-
-         T30.write(line)  # 将该行写入输出文件 #####定义临时文件
-
-for line in fileinput.input("T30.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
-
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
-
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT30.txt', 'w', encoding='utf-8') as TT30:    #####定义临时文件名
-
-    TT30.write('\n👑中国香港澳门,#genre#\n')        
- 
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
-
-#对相同频道IP排序--域名在前###################
-import re
-
-# A版本--自定义排序键函数 固定域名--在前
-def custom_sort_key(item):
-    channel, url = item.split(',')
-
-    channel_letters = ''.join(filter(str.isalpha, channel))
-    channel_numbers = ''.join(filter(str.isdigit, channel))
-
-    if channel_numbers.isdigit():
-        channel_sort_key = (channel_letters, int(channel_numbers))
-    else:
-        channel_sort_key = (channel_letters, 0)
-
-    sort_key = re.search(r"http://(.*?)\.", url)
-    if sort_key:
-        sort_key = sort_key.group(1)
-    else:
-        sort_key = url
-
-    # 检查sort_key是否为数字
-    if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
-    elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
-    else:
-        sort_key = (2, sort_key)
-
-    return (channel_sort_key, sort_key)
-
-with open('T30.txt', 'r', encoding="utf-8") as input_file, open('TT30.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
-    lines = input_file.readlines()
-
-    # 过滤掉空白行
-    lines = [line.strip() for line in lines if line.strip()]
-    
-    sorted_data = sorted(lines, key=custom_sort_key)
-
-    # 将排序后的数据写入输出文件
-    for channels in sorted_data: 
-        output_file.write(f"{channels}\n")
-    sorted_data = sorted(lines, key=custom_sort_key)
-#结束########################################################
-   
-   
-##################################################################################################################################SPLIT#
 #开始合并多个文件到一个文件###########
 
 file_contents = []
 
-file_paths = ["TT1.txt", "TT2.txt", "TT4.txt", "TT5.txt", "TT6.txt", "TT7.txt", "TT8.txt", "TT9.txt", "TT10.txt", "TT11.txt", "TT12.txt", "TT13.txt", "TT14.txt", "TT15.txt", "TT16.txt", "TT17.txt", "TT18.txt", "TT19.txt", "TT20.txt", "TT21.txt", "TT22.txt", "TT23.txt", "TT24.txt", "TT25.txt", "TT26.txt", "TT30.txt"] 
+file_paths = ["TT1.txt", "TT2.txt", "TT4.txt", "TT5.txt", "TT6.txt", "TT7.txt", "TT8.txt", "TT9.txt", "TT10.txt", "TT11.txt", "TT12.txt", "TT13.txt", "TT14.txt", "TT15.txt", "TT16.txt", "TT17.txt", "TT18.txt", "TT19.txt", "TT20.txt", "TT21.txt", "TT22.txt", "TT23.txt", "TT24.txt", "TT25.txt", "TT26.txt"] 
 
 for file_path in file_paths:
 
@@ -3164,6 +3087,5 @@ os.remove("TT25.txt")
 
 os.remove("TT26.txt")
 
-os.remove("TT30.txt")
 
 print("任务运行完毕")
