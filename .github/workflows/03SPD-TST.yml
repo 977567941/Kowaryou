@@ -35,7 +35,7 @@ jobs:
         run: pip install input
         
       - name: Run iptv
-        run: python ${{ github.workspace }}/ZUZU-PY/#SPED-TEST.py
+        run: python ${{ github.workspace }}/ZUZU-PY/#SPED-TST.py
          
       - name: Commit results
         run: |
