@@ -49,8 +49,8 @@ with open("Kmerga2H+OLD.txt", "w", encoding="utf-8") as output:
 
 
 	
-# SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1
-## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1
+# SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1
+## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1
 
 #enter
 tested_ips = {}
@@ -110,7 +110,7 @@ for line in lines:
         cap.release()
 
 #enter
-with open('Kmerga2H+OLD-SPEED.txt', 'w', encoding='utf-8') as file:
+with open('Kmerga2H+OLD-SPD.txt', 'w', encoding='utf-8') as file:
     for line in lines:
         #enter，enter
         if line.count(',') == 1:
@@ -126,7 +126,7 @@ with open('Kmerga2H+OLD-SPEED.txt', 'w', encoding='utf-8') as file:
                     file.write(f"{line.strip()}\n")
                     #enter
                     frame_count = tested_ips[channel_ip]['frame_count']
-                    file.write(f">速度{frame_count}\n")
+                    file.write(f">SPD{frame_count}\n")
 	
 
 # merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2##
@@ -146,12 +146,12 @@ with open("Kmergalow2H+lowOLD.txt", "w", encoding="utf-8") as output:
             for line in file:
                 #enter
                 if not any(exclude_string in line for exclude_string in exclude_strings):
-                    #enter到输出文件
+                    #enter
                     output.write(line)
 
 
-# SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2
-## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2
+# SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2
+## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2
 
 #enter
 tested_ips = {}
@@ -211,7 +211,7 @@ for line in lines:
         cap.release()
 
 #enter
-with open('Kmergalow2H+lowOLD-SPEED.txt', 'w', encoding='utf-8') as file:
+with open('Kmergalow2H+lowOLD-SPD.txt', 'w', encoding='utf-8') as file:
     for line in lines:
         #enter，enter
         if line.count(',') == 1:
@@ -227,7 +227,7 @@ with open('Kmergalow2H+lowOLD-SPEED.txt', 'w', encoding='utf-8') as file:
                     file.write(f"{line.strip()}\n")
                     #enter
                     frame_count = tested_ips[channel_ip]['frame_count']
-                    file.write(f">速度{frame_count}\n")
+                    file.write(f">SPD{frame_count}\n")
 
 
 
@@ -249,12 +249,12 @@ with open("Kmergaverylow2H+verylowOLD.txt", "w", encoding="utf-8") as output:
             for line in file:
                 #enter
                 if not any(exclude_string in line for exclude_string in exclude_strings):
-                    #enter到输出文件
+                    #enter
                     output.write(line)
 
 
-# SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3
-## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3
+# SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3
+## SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3## SPDTST-3
 
 #enter
 tested_ips = {}
@@ -314,7 +314,7 @@ for line in lines:
         cap.release()
 
 #enter
-with open('Kmergaverylow2H+verylowOLD-SPEED.txt', 'w', encoding='utf-8') as file:
+with open('Kmergaverylow2H+verylowOLD-SPD.txt', 'w', encoding='utf-8') as file:
     for line in lines:
         #enter，enter
         if line.count(',') == 1:
@@ -330,15 +330,15 @@ with open('Kmergaverylow2H+verylowOLD-SPEED.txt', 'w', encoding='utf-8') as file
                     file.write(f"{line.strip()}\n")
                     #enter
                     frame_count = tested_ips[channel_ip]['frame_count']
-                    file.write(f">速度{frame_count}\n")
+                    file.write(f">SPD{frame_count}\n")
 
 
 
 
 
 
-# SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4
-## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4
+# SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4
+## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4
 
 #enter
 tested_ips = {}
@@ -398,7 +398,7 @@ for line in lines:
         cap.release()
 
 #enter
-with open('JX-LOW-SPEED.txt', 'w', encoding='utf-8') as file:
+with open('JX-LOW-SPD.txt', 'w', encoding='utf-8') as file:
     for line in lines:
         #enter，enter
         if line.count(',') == 1:
@@ -414,14 +414,14 @@ with open('JX-LOW-SPEED.txt', 'w', encoding='utf-8') as file:
                     file.write(f"{line.strip()}\n")
                     #enter
                     frame_count = tested_ips[channel_ip]['frame_count']
-                    file.write(f">速度{frame_count}\n")
+                    file.write(f">SPD{frame_count}\n")
 
 
 
 
 
-# SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5
-## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5
+# SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5
+## SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5## SPDTST-5
 
 #enter
 tested_ips = {}
@@ -481,7 +481,7 @@ for line in lines:
         cap.release()
 
 #enter
-with open('JX-HIGH-SPEED.txt', 'w', encoding='utf-8') as file:
+with open('JX-HIGH-SPD.txt', 'w', encoding='utf-8') as file:
     for line in lines:
         #enter，enter
         if line.count(',') == 1:
@@ -497,7 +497,7 @@ with open('JX-HIGH-SPEED.txt', 'w', encoding='utf-8') as file:
                     file.write(f"{line.strip()}\n")
                     #enter
                     frame_count = tested_ips[channel_ip]['frame_count']
-                    file.write(f">速度{frame_count}\n")
+                    file.write(f">SPD{frame_count}\n")
 
 
 
@@ -514,9 +514,9 @@ with open('JX-HIGH-SPEED.txt', 'w', encoding='utf-8') as file:
 
 
 #enter
-with open('Kmerga2H+OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
+with open('Kmerga2H+OLD-SPD.txt', 'r', encoding='utf-8') as file_in:
     #enter
-    with open('Kmerga2H+OLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
+    with open('Kmerga2H+OLD-SPDjump.txt', 'w', encoding='utf-8') as file_out:
         #enter
         for line in file_in:
             #enter
@@ -527,7 +527,7 @@ with open('Kmerga2H+OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
 seen_lines = set()
 
 #enter
-with open('Kmerga2H+OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
+with open('Kmerga2H+OLD-SPDjump.txt', 'r', encoding='utf-8') as file_in, \
      open('KmergaOLD.txt', 'w', encoding='utf-8') as file_out:
     #enter文件
     for line in file_in:
@@ -541,9 +541,9 @@ with open('Kmerga2H+OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
 			
 
 #enter
-with open('Kmergalow2H+lowOLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
+with open('Kmergalow2H+lowOLD-SPD.txt', 'r', encoding='utf-8') as file_in:
     #enter
-    with open('Kmergalow2H+lowOLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
+    with open('Kmergalow2H+lowOLD-SPDjump.txt', 'w', encoding='utf-8') as file_out:
         #enter
         for line in file_in:
             #enter
@@ -554,7 +554,7 @@ with open('Kmergalow2H+lowOLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
 seen_lines = set()
 
 #enter
-with open('Kmergalow2H+lowOLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
+with open('Kmergalow2H+lowOLD-SPDjump.txt', 'r', encoding='utf-8') as file_in, \
      open('KmergalowOLD.txt', 'w', encoding='utf-8') as file_out:
     #enter文件
     for line in file_in:
@@ -567,9 +567,9 @@ with open('Kmergalow2H+lowOLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in,
 
 
 #enter
-with open('Kmergaverylow2H+verylowOLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
+with open('Kmergaverylow2H+verylowOLD-SPD.txt', 'r', encoding='utf-8') as file_in:
     #enter
-    with open('Kmergaverylow2H+verylowOLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
+    with open('Kmergaverylow2H+verylowOLD-SPDjump.txt', 'w', encoding='utf-8') as file_out:
         #enter
         for line in file_in:
             #enter
@@ -580,7 +580,7 @@ with open('Kmergaverylow2H+verylowOLD-SPEED.txt', 'r', encoding='utf-8') as file
 seen_lines = set()
 
 #enter
-with open('Kmergaverylow2H+verylowOLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
+with open('Kmergaverylow2H+verylowOLD-SPDjump.txt', 'r', encoding='utf-8') as file_in, \
      open('KmergaverylowOLD.txt', 'w', encoding='utf-8') as file_out:
     #enter文件
     for line in file_in:
@@ -626,7 +626,7 @@ with open('Kmerga2H+OLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt'
 
         if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         IP_save.write(line)  # 将该行写入文件
+         IP_save.write(line)  #go
 		 
 		 
 #enter
@@ -666,9 +666,9 @@ with open('Kmergaverylow2H+verylowOLD.txt', 'r', encoding='utf-8') as file, open
 
 #enter
 with open('IP_save.txt', 'r', encoding='utf-8') as file_in:
-    # 打开或创建IP_savejump.txt文件以写入内容
+    # go
     with open('IP_savejump.txt', 'w', encoding='utf-8') as file_out:
-        #enterIP_save.txt的内容
+        #enterIP_save.txt
         for line in file_in:
             #enterIP_savejump.txt
             file_out.write(line)
@@ -680,7 +680,7 @@ seen_lines = set()
 #enter
 with open('IP_savejump.txt', 'r', encoding='utf-8') as file_in, \
      open('IP_save.txt', 'w', encoding='utf-8') as file_out:
-    #enter IP_savejump.txt 文件
+    #enter IP_savejump.txt
     for line in file_in:
         #enter
         stripped_line = line.strip()
@@ -729,13 +729,13 @@ import replace
 
 import fileinput
 
-#重新载入一遍运行环境############################
+
 
 
 file_contents = []   #enter
 
 #enter
-file_paths = ['KmergaOLD.txt','KmergalowOLD.txt','KmergaverylowOLD.txt','JX-LOW-SPEED.txt','JX-HIGH-SPEED.txt',"JIEXI-OK.txt"]  #把测速结果merga到一起 
+file_paths = ['KmergaOLD.txt','KmergalowOLD.txt','KmergaverylowOLD.txt','JX-LOW-SPD.txt','JX-HIGH-SPD.txt',"JX-PLUS.txt"]
 
 
 
@@ -755,7 +755,7 @@ with open("merga.txt", "w", encoding="utf-8") as output:
     output.write('\n'.join(file_contents))
 
 
-#替换多余的关键字词###################################################################################################
+#替换
 
 for line in fileinput.input("merga.txt", inplace=True):  #enter
 
@@ -966,7 +966,7 @@ for line in fileinput.input("T1.txt", inplace=True):  #enter
 #enter
 with open('TT1.txt', 'a', encoding='utf-8') as TT1:    #####enter
 
-    TT1.write('\n#以上手工排序\n')        
+    TT1.write('\n#shougong\n')        
  
     print(line, end="")  #enter 
 #enter
