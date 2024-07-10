@@ -33,10 +33,10 @@ import fileinput
 exclude_strings = ['//27.10', '//220.176.218', '//171.221.129', '//118.122.111', '//27.191.71', '//175.11.171', '//220.176.218', '//117.43.80', '//182.139.152', '//118.122.111', '//118.112.60', '//27.191.71', '//122.232.188', '//125.71.44', '//122.234.77', '//122.232.188', '//14.105.105.35', '//27.191.71.248', '//144.255.40.160', '//140.250.221', '//223.242.146', '//182.139.215', '//182.150.168', '//120.32.11', '//113.86.204.209', '//110.185.44', '///61.157.92.168', '//59.56.214', '//117.25.38', '//125.82.171', '//117.12.148', '//183.5.92', '//117.66.231', '//36.47.83', '//115.221.95', '//113.120.108', '//115.193.167', '//117.28.112', '//117.25.38', '//117.67.169', '//221.15.251', '//117.67.169', '//221.15.251', '//116.5.168', '//175.0.95', '//118.248.154', '//220.175.144', '//118.254.201', '//14.154.192', '//124.112.208', '//182.148.30', '//110.185.70', '//183.5.97.206', '//123.55.112', '//222.182.115', '//14.117.233', '//113.13.242', '//59.56.214.134', '//58.42.184.132', '//58.42.184.132', '//220.192.1.40', '//27.11.253.19', '//27.11.58.239', '//14.105.104', '//183.54.208.185', '//116.252.77.132', '//221.232.175', '//144.255.44.24', '//113.222.42.190', '//61.150.11', '//110.185.10', '//118.254', '//122.232.188', '//171.116.157', '//125.43.40', '//125.86.181', '//27.153.80', '//61.190.129.1', '//182.46.8', '//119.130.11', '//58.63.65', '//1.84.218', '//183.184', '//171.217.81', '//27.190.83.', '//1.197.1', '//58.46.249', '//125.71.170', '//119.4.15', '//222.138.213', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+']
 
 #enter
-file_paths = ["山西联通.txt", "安徽电信.txt", "北京联通.txt", "贵州电信.txt", "四川联通.txt", "四川电信.txt", "重庆联通.txt", "重庆电信.txt", "广东电信.txt", "广西电信.txt",  "河北电信.txt", "河南联通.txt", "浙江电信.txt", "湖北电信.txt", "辽宁联通.txt", "陕西电信.txt", "K合并OLD.txt"]
+file_paths = ["山西联通.txt", "安徽电信.txt", "北京联通.txt", "贵州电信.txt", "四川联通.txt", "四川电信.txt", "重庆联通.txt", "重庆电信.txt", "广东电信.txt", "广西电信.txt",  "河北电信.txt", "河南联通.txt", "浙江电信.txt", "湖北电信.txt", "辽宁联通.txt", "陕西电信.txt", "KmergaOLD.txt"]
 
 #enter
-with open("K合并2H+OLD.txt", "w", encoding="utf-8") as output:
+with open("Kmerga2H+OLD.txt", "w", encoding="utf-8") as output:
     #enter
     for file_path in file_paths:
         #enter
@@ -57,7 +57,7 @@ tested_ips = {}
 
 #enter
 lines = []
-with open('K合并2H+OLD.txt', 'r', encoding='utf-8') as file:
+with open('Kmerga2H+OLD.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
 #enter
@@ -110,7 +110,7 @@ for line in lines:
         cap.release()
 
 #enter
-with open('K合并2H+OLD-SPEED.txt', 'w', encoding='utf-8') as file:
+with open('Kmerga2H+OLD-SPEED.txt', 'w', encoding='utf-8') as file:
     for line in lines:
         #enter，enter
         if line.count(',') == 1:
@@ -135,10 +135,10 @@ with open('K合并2H+OLD-SPEED.txt', 'w', encoding='utf-8') as file:
 exclude_strings = ['//27.10', '//220.176.218', '//171.221.129', '//118.122.111', '//27.191.71', '//175.11.171', '//220.176.218', '//117.43.80', '//182.139.152', '//118.122.111', '//118.112.60', '//27.191.71', '//122.232.188', '//125.71.44', '//122.234.77', '//122.232.188', '//14.105.105.35', '//27.191.71.248', '//144.255.40.160', '//140.250.221', '//223.242.146', '//182.139.215', '//182.150.168', '//120.32.11', '//113.86.204.209', '//110.185.44', '///61.157.92.168', '//59.56.214', '//117.25.38', '//125.82.171', '//117.12.148', '//183.5.92', '//117.66.231', '//36.47.83', '//115.221.95', '//113.120.108', '//115.193.167', '//117.28.112', '//117.25.38', '//117.67.169', '//221.15.251', '//117.67.169', '//221.15.251', '//116.5.168', '//175.0.95', '//118.248.154', '//220.175.144', '//118.254.201', '//14.154.192', '//124.112.208', '//182.148.30', '//110.185.70', '//183.5.97.206', '//123.55.112', '//222.182.115', '//14.117.233', '//113.13.242', '//59.56.214.134', '//58.42.184.132', '//58.42.184.132', '//220.192.1.40', '//27.11.253.19', '//27.11.58.239', '//14.105.104', '//183.54.208.185', '//116.252.77.132', '//221.232.175', '//144.255.44.24', '//113.222.42.190', '//61.150.11', '//110.185.10', '//118.254', '//122.232.188', '//171.116.157', '//125.43.40', '//125.86.181', '//27.153.80', '//61.190.129.1', '//182.46.8', '//119.130.11', '//58.63.65', '//1.84.218', '//183.184', '//171.217.81', '//27.190.83.', '//1.197.1', '//58.46.249', '//125.71.170', '//119.4.15', '//222.138.213', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+']
 
 #enter
-file_paths = ["江苏电信.txt", "江西电信.txt","K合并低码OLD.txt"]
+file_paths = ["江苏电信.txt", "江西电信.txt","KmergalowOLD.txt"]
 
 #enter
-with open("K合并低码2H+低码OLD.txt", "w", encoding="utf-8") as output:
+with open("Kmergalow2H+lowOLD.txt", "w", encoding="utf-8") as output:
     #enter
     for file_path in file_paths:
         #enter
@@ -158,7 +158,7 @@ tested_ips = {}
 
 #enter
 lines = []
-with open('K合并低码2H+低码OLD.txt', 'r', encoding='utf-8') as file:
+with open('Kmergalow2H+lowOLD.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
 #enter
@@ -211,7 +211,7 @@ for line in lines:
         cap.release()
 
 #enter
-with open('K合并低码2H+低码OLD-SPEED.txt', 'w', encoding='utf-8') as file:
+with open('Kmergalow2H+lowOLD-SPEED.txt', 'w', encoding='utf-8') as file:
     for line in lines:
         #enter，enter
         if line.count(',') == 1:
@@ -238,10 +238,10 @@ with open('K合并低码2H+低码OLD-SPEED.txt', 'w', encoding='utf-8') as file:
 exclude_strings = ['//27.10', '//220.176.218', '//171.221.129', '//118.122.111', '//27.191.71', '//175.11.171', '//220.176.218', '//117.43.80', '//182.139.152', '//118.122.111', '//118.112.60', '//27.191.71', '//122.232.188', '//125.71.44', '//122.234.77', '//122.232.188', '//14.105.105.35', '//27.191.71.248', '//144.255.40.160', '//140.250.221', '//223.242.146', '//182.139.215', '//182.150.168', '//120.32.11', '//113.86.204.209', '//110.185.44', '///61.157.92.168', '//59.56.214', '//117.25.38', '//125.82.171', '//117.12.148', '//183.5.92', '//117.66.231', '//36.47.83', '//115.221.95', '//113.120.108', '//115.193.167', '//117.28.112', '//117.25.38', '//117.67.169', '//221.15.251', '//117.67.169', '//221.15.251', '//116.5.168', '//175.0.95', '//118.248.154', '//220.175.144', '//118.254.201', '//14.154.192', '//124.112.208', '//182.148.30', '//110.185.70', '//183.5.97.206', '//123.55.112', '//222.182.115', '//14.117.233', '//113.13.242', '//59.56.214.134', '//58.42.184.132', '//58.42.184.132', '//220.192.1.40', '//27.11.253.19', '//27.11.58.239', '//14.105.104', '//183.54.208.185', '//116.252.77.132', '//221.232.175', '//144.255.44.24', '//113.222.42.190', '//61.150.11', '//110.185.10', '//118.254', '//122.232.188', '//171.116.157', '//125.43.40', '//125.86.181', '//27.153.80', '//61.190.129.1', '//182.46.8', '//119.130.11', '//58.63.65', '//1.84.218', '//183.184', '//171.217.81', '//27.190.83.', '//1.197.1', '//58.46.249', '//125.71.170', '//119.4.15', '//222.138.213', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+']
 
 #enter
-file_paths = ["天津联通.txt", "河南电信.txt", "福建电信.txt", "湖南电信.txt", "山东电信.txt", "K合并超低码OLD.txt"]
+file_paths = ["天津联通.txt", "河南电信.txt", "福建电信.txt", "湖南电信.txt", "山东电信.txt", "KmergaverylowOLD.txt"]
 
 #enter
-with open("K合并超低码2H+超低码OLD.txt", "w", encoding="utf-8") as output:
+with open("Kmergaverylow2H+verylowOLD.txt", "w", encoding="utf-8") as output:
     #enter
     for file_path in file_paths:
         #enter
@@ -261,7 +261,7 @@ tested_ips = {}
 
 #enter
 lines = []
-with open('K合并超低码2H+超低码OLD.txt', 'r', encoding='utf-8') as file:
+with open('Kmergaverylow2H+verylowOLD.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
 #enter
@@ -314,7 +314,7 @@ for line in lines:
         cap.release()
 
 #enter
-with open('K合并超低码2H+超低码OLD-SPEED.txt', 'w', encoding='utf-8') as file:
+with open('Kmergaverylow2H+verylowOLD-SPEED.txt', 'w', encoding='utf-8') as file:
     for line in lines:
         #enter，enter
         if line.count(',') == 1:
@@ -514,9 +514,9 @@ with open('JX-HIGH-SPEED.txt', 'w', encoding='utf-8') as file:
 
 
 #enter
-with open('K合并2H+OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
+with open('Kmerga2H+OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
     #enter
-    with open('K合并2H+OLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
+    with open('Kmerga2H+OLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
         #enter
         for line in file_in:
             #enter
@@ -527,8 +527,8 @@ with open('K合并2H+OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
 seen_lines = set()
 
 #enter
-with open('K合并2H+OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
-     open('K合并OLD.txt', 'w', encoding='utf-8') as file_out:
+with open('Kmerga2H+OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
+     open('KmergaOLD.txt', 'w', encoding='utf-8') as file_out:
     #enter文件
     for line in file_in:
         #enter
@@ -541,9 +541,9 @@ with open('K合并2H+OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
 			
 
 #enter
-with open('K合并低码2H+低码OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
+with open('Kmergalow2H+lowOLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
     #enter
-    with open('K合并低码2H+低码OLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
+    with open('Kmergalow2H+lowOLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
         #enter
         for line in file_in:
             #enter
@@ -554,8 +554,8 @@ with open('K合并低码2H+低码OLD-SPEED.txt', 'r', encoding='utf-8') as file_
 seen_lines = set()
 
 #enter
-with open('K合并低码2H+低码OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
-     open('K合并低码OLD.txt', 'w', encoding='utf-8') as file_out:
+with open('Kmergalow2H+lowOLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
+     open('KmergalowOLD.txt', 'w', encoding='utf-8') as file_out:
     #enter文件
     for line in file_in:
         #enter
@@ -567,9 +567,9 @@ with open('K合并低码2H+低码OLD-SPEEDjump.txt', 'r', encoding='utf-8') as f
 
 
 #enter
-with open('K合并超低码2H+超低码OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
+with open('Kmergaverylow2H+verylowOLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
     #enter
-    with open('K合并超低码2H+超低码OLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
+    with open('Kmergaverylow2H+verylowOLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
         #enter
         for line in file_in:
             #enter
@@ -580,8 +580,8 @@ with open('K合并超低码2H+超低码OLD-SPEED.txt', 'r', encoding='utf-8') as
 seen_lines = set()
 
 #enter
-with open('K合并超低码2H+超低码OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
-     open('K合并超低码OLD.txt', 'w', encoding='utf-8') as file_out:
+with open('Kmergaverylow2H+verylowOLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
+     open('KmergaverylowOLD.txt', 'w', encoding='utf-8') as file_out:
     #enter文件
     for line in file_in:
         #enter
@@ -620,7 +620,7 @@ pattern = '|'.join(keywords)  #enter
 
 #pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('K合并2H+OLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
+with open('Kmerga2H+OLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
 
     for line in file:
 
@@ -635,7 +635,7 @@ keywords = ['S川A爱科幻','天JD都市高清','安HH生活时尚','山DB农�
 pattern = '|'.join(keywords)  #enter
 
 #pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter	 
-with open('K合并低码2H+低码OLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
+with open('Kmergalow2H+lowOLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
 
     for line in file:
 
@@ -652,7 +652,7 @@ keywords = ['S川A爱科幻','天JD都市高清','安HH生活时尚','山DB农�
 pattern = '|'.join(keywords)  #enterenter
 
 #pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter	 
-with open('K合并超低码2H+超低码OLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
+with open('Kmergaverylow2H+verylowOLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
 
     for line in file:
 
@@ -735,7 +735,7 @@ import fileinput
 file_contents = []   #enter
 
 #enter
-file_paths = ['K合并OLD.txt','K合并低码OLD.txt','K合并超低码OLD.txt','JX-LOW-SPEED.txt','JX-HIGH-SPEED.txt',"JIEXI-OK.txt"]  #把测速结果合并到一起 
+file_paths = ['KmergaOLD.txt','KmergalowOLD.txt','KmergaverylowOLD.txt','JX-LOW-SPEED.txt','JX-HIGH-SPEED.txt',"JIEXI-OK.txt"]  #把测速结果merga到一起 
 
 
 
@@ -750,14 +750,14 @@ for file_path in file_paths:
 
 #enter
 
-with open("合并.txt", "w", encoding="utf-8") as output:
+with open("merga.txt", "w", encoding="utf-8") as output:
 
     output.write('\n'.join(file_contents))
 
 
 #替换多余的关键字词###################################################################################################
 
-for line in fileinput.input("合并.txt", inplace=True):  #enter
+for line in fileinput.input("merga.txt", inplace=True):  #enter
 
     line = line.replace("CCTV10", "CCTW10")
 
@@ -859,7 +859,7 @@ for line in fileinput.input("合并.txt", inplace=True):  #enter
 
 #enter####################################################################################################
 
-for line in fileinput.input("合并.txt", inplace=True):  #enter
+for line in fileinput.input("merga.txt", inplace=True):  #enter
 
     
     line = line.replace("CCTV10", "CCTW10")
@@ -887,7 +887,7 @@ for line in fileinput.input("合并.txt", inplace=True):  #enter
 
 
 
-with open('合并.txt', 'r', encoding='utf-8') as f:
+with open('merga.txt', 'r', encoding='utf-8') as f:
 
     lines = f.readlines()
 
@@ -932,7 +932,7 @@ for line in fileinput.input("排序.txt", inplace=True):  #enter
  
 
 # enter
-with open('JIEXI手动排序央卫视.txt', 'r', encoding='utf-8') as file1:
+with open('JIEXI-MT.txt', 'r', encoding='utf-8') as file1:
   
     #enter
     with open('TT1.txt', 'w', encoding='utf-8') as file2:
@@ -2277,7 +2277,7 @@ with open('T18.txt', 'r', encoding="utf-8") as input_file, open('TT18.txt', 'a',
    
    ##################################################################################################################################SPLIT#
    # enter
-with open('JIEXI手动排序湖南.txt', 'r', encoding='utf-8') as file1:
+with open('JIEXI-MT_HUNAN.txt', 'r', encoding='utf-8') as file1:
   
     #enter
     with open('TT19.txt', 'w', encoding='utf-8') as file2:
@@ -2909,7 +2909,7 @@ with open('T26.txt', 'r', encoding="utf-8") as input_file, open('TT26.txt', 'a',
 #结束########################################################
 ##################################################################################################################################SPLIT#
 
-#star合并多个文件到一个文件###########
+#starmerga多个文件到一个文件###########
 
 file_contents = []
 
@@ -2981,7 +2981,7 @@ os.remove("AMER-delete.txt")
 
 os.remove("AMER-start.txt")
 
-os.remove("合并.txt")
+os.remove("merga.txt")
 
 os.remove("排序.txt")
 
