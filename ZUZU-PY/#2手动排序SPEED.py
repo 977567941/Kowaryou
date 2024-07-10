@@ -472,7 +472,7 @@ for line in lines:
             frame_count += 1  #enter
 
         #enter
-        if frame_count >120:  #enter
+        if frame_count >80:  #enter
             tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
         else:
             tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
