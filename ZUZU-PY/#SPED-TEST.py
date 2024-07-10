@@ -11,7 +11,7 @@ import time
 tested_ips = {}
 
 #SPD
-with open('M临时测速.txt', 'r', encoding='utf-8') as file:
+with open('M-SPD-TST.txt', 'r', encoding='utf-8') as file:
     for line in file:
         #SPD
         if line.count(',') == 1:
@@ -68,8 +68,8 @@ with open('M临时测速.txt', 'r', encoding='utf-8') as file:
             cap.release()
 
 #SPD
-with open('M测速结果.txt', 'w', encoding='utf-8') as file:
-    with open('M临时测速.txt', 'r', encoding='utf-8') as input_file:
+with open('M-SPD_OUT.txt', 'w', encoding='utf-8') as file:
+    with open('M-SPD_TST.txt', 'r', encoding='utf-8') as input_file:
         for line in input_file:
             #SPD
             if line.count(',') == 1:
@@ -84,5 +84,5 @@ with open('M测速结果.txt', 'w', encoding='utf-8') as file:
                 #SPD
                 if ip_part in tested_ips and tested_ips[ip_part]['status'] == 'ok':
                     #SPD
-                    result_line = line.strip() + f"速度{tested_ips[ip_part]['frames']}"
+                    result_line = line.strip() + f"SPD{tested_ips[ip_part]['frames']}"
                     file.write(result_line + '\n')
