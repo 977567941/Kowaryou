@@ -12,6 +12,15 @@ CHC家庭影院,http://n1.dddmmh.space:8088/rtp/225.0.4.228:7980$重庆uni1+
 CHC动作电影,http://n1.dddmmh.space:8088/rtp/225.0.4.229:7980$重庆uni1+
 CHC高清电影,http://n1.dddmmh.space:8088/rtp/225.0.4.230:7980$重庆uni1+
 
+CHC家庭影院,http://kms.erfiy.com:8884/rtp/225.0.4.228:7980$重庆uni2+
+CHC动作电影,http://kms.erfiy.com:8884/rtp/225.0.4.229:7980$重庆uni2+
+CHC高清电影,http://kms.erfiy.com:8884/rtp/225.0.4.230:7980$重庆uni2+
+
+CHC家庭影院,http://gpower.ltd:4022/rtp/225.0.4.228:7980$重庆uni3+
+CHC动作电影,http://gpower.ltd:4022/rtp/225.0.4.229:7980$重庆uni3+
+CHC高清电影,http://gpower.ltd:4022/rtp/225.0.4.230:7980$重庆uni3+
+
+
 CHC高清电影,http://www.lizhinas.top:8688/udp/239.252.219.83:5140$江西cmc3+
 CHC家庭影院,http://www.lizhinas.top:8688/udp/239.252.219.84:5140$江西cmc3+
 CHC动作电影,http://www.lizhinas.top:8688/udp/239.252.219.85:5140$江西cmc3+
@@ -470,7 +479,26 @@ Y嘉佳卡通,http://alvin.ergotron.net:8000/rtp/239.77.0.179:5146$广东cmc3+
 福JC武术世界,http://xwh.8211321.com:5550/rtp/239.61.3.22:9652$福建cmc1+
 
 
-
+福JA综合,http://212p3nas.mycloudnas.com:8848/rtp/239.61.3.4:9542$福建cmc2+
+福JA综合,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.1:8000$福建cmc2+
+福JA公共频道,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.3:8012$福建cmc2+
+福JA新闻,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.4:8018$福建cmc2+
+福JA电视剧,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.5:8024$福建cmc2+
+福JA旅游,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.6:8030$福建cmc2+
+福JA经济生活,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.7:8036$福建cmc2+
+福JA体育,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.160:8948$福建cmc2+
+福JA少儿,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.9:8048$福建cmc2+
+福JA教育频道,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.173:9026$福建cmc2+
+福JB厦门1套,http://212p3nas.mycloudnas.com:8848/rtp/239.61.3.55:9848$福建cmc2+
+福JB厦门2套,http://212p3nas.mycloudnas.com:8848/rtp/239.61.3.56:9854$福建cmc2+
+福JC欢笑剧场,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.146:8864$福建cmc2+
+福JC都市剧场,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.149:8882$福建cmc2+
+福JC游戏风云,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.145:8858$福建cmc2+
+福JC东方财经,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.76:8450$福建cmc2+
+福JC生活时尚,http://212p3nas.mycloudnas.com:8848/rtp/239.61.2.141:8834$福建cmc2+
+福JC梨园频道,http://212p3nas.mycloudnas.com:8848/rtp/239.61.3.19:9634$福建cmc2+
+福JC文物宝库,http://212p3nas.mycloudnas.com:8848/rtp/239.61.3.21:9646$福建cmc2+
+福JC武术世界,http://212p3nas.mycloudnas.com:8848/rtp/239.61.3.22:9652$福建cmc2+
 
 
 重QC新闻频道,http://n1.dddmmh.space:8088/rtp/225.0.4.188:7980$重庆uni1+
@@ -485,9 +513,26 @@ Y嘉佳卡通,http://alvin.ergotron.net:8000/rtp/239.77.0.179:5146$广东cmc3+
 
 
 
+重QC新闻频道,http://kms.erfiy.com:8884/rtp/225.0.4.188:7980$重庆uni2+
+重QD影视频道,http://kms.erfiy.com:8884/rtp/225.0.4.192:7980$重庆uni2+
+重QI社会与法,http://kms.erfiy.com:8884/rtp/225.0.4.190:7980$重庆uni2+
+重QF时尚生活,http://kms.erfiy.com:8884/rtp/225.0.4.196:7980$重庆uni2+
+重QG娱乐频道,http://kms.erfiy.com:8884/rtp/225.0.4.194:7980$重庆uni2+
+重QH新农村,http://kms.erfiy.com:8884/rtp/225.0.4.189:7980$重庆uni2+
+重QJ少儿频道,http://kms.erfiy.com:8884/rtp/225.0.4.191:7980$重庆uni2+
+重QK科教频道,http://kms.erfiy.com:8884/rtp/225.0.4.193:7980$重庆uni2+
+重QL汽摩频道,http://kms.erfiy.com:8884/rtp/225.0.4.195:7980$重庆uni2+
 
 
-
+重QC新闻频道,http://gpower.ltd:4022/rtp/225.0.4.188:7980$重庆uni3+
+重QD影视频道,http://gpower.ltd:4022/rtp/225.0.4.192:7980$重庆uni3+
+重QI社会与法,http://gpower.ltd:4022/rtp/225.0.4.190:7980$重庆uni3+
+重QF时尚生活,http://gpower.ltd:4022/rtp/225.0.4.196:7980$重庆uni3+
+重QG娱乐频道,http://gpower.ltd:4022/rtp/225.0.4.194:7980$重庆uni3+
+重QH新农村,http://gpower.ltd:4022/rtp/225.0.4.189:7980$重庆uni3+
+重QJ少儿频道,http://gpower.ltd:4022/rtp/225.0.4.191:7980$重庆uni3+
+重QK科教频道,http://gpower.ltd:4022/rtp/225.0.4.193:7980$重庆uni3+
+重QL汽摩频道,http://gpower.ltd:4022/rtp/225.0.4.195:7980$重庆uni3+
 
 
 X金鹰纪实,http://www.tk1986.top:8888/rtp/239.76.252.122:9000$湖南cmc66+
