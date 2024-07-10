@@ -29,22 +29,22 @@ import fileinput
 
 # merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1##
 ## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## 
-#需要排除的IP列表
+#enter
 exclude_strings = ['//27.10', '//220.176.218', '//171.221.129', '//118.122.111', '//27.191.71', '//175.11.171', '//220.176.218', '//117.43.80', '//182.139.152', '//118.122.111', '//118.112.60', '//27.191.71', '//122.232.188', '//125.71.44', '//122.234.77', '//122.232.188', '//14.105.105.35', '//27.191.71.248', '//144.255.40.160', '//140.250.221', '//223.242.146', '//182.139.215', '//182.150.168', '//120.32.11', '//113.86.204.209', '//110.185.44', '///61.157.92.168', '//59.56.214', '//117.25.38', '//125.82.171', '//117.12.148', '//183.5.92', '//117.66.231', '//36.47.83', '//115.221.95', '//113.120.108', '//115.193.167', '//117.28.112', '//117.25.38', '//117.67.169', '//221.15.251', '//117.67.169', '//221.15.251', '//116.5.168', '//175.0.95', '//118.248.154', '//220.175.144', '//118.254.201', '//14.154.192', '//124.112.208', '//182.148.30', '//110.185.70', '//183.5.97.206', '//123.55.112', '//222.182.115', '//14.117.233', '//113.13.242', '//59.56.214.134', '//58.42.184.132', '//58.42.184.132', '//220.192.1.40', '//27.11.253.19', '//27.11.58.239', '//14.105.104', '//183.54.208.185', '//116.252.77.132', '//221.232.175', '//144.255.44.24', '//113.222.42.190', '//61.150.11', '//110.185.10', '//118.254', '//122.232.188', '//171.116.157', '//125.43.40', '//125.86.181', '//27.153.80', '//61.190.129.1', '//182.46.8', '//119.130.11', '//58.63.65', '//1.84.218', '//183.184', '//171.217.81', '//27.190.83.', '//1.197.1', '//58.46.249', '//125.71.170', '//119.4.15', '//222.138.213', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+']
 
-# 加载文件
+#enter
 file_paths = ["山西联通.txt", "安徽电信.txt", "北京联通.txt", "贵州电信.txt", "四川联通.txt", "四川电信.txt", "重庆联通.txt", "重庆电信.txt", "广东电信.txt", "广西电信.txt",  "河北电信.txt", "河南联通.txt", "浙江电信.txt", "湖北电信.txt", "辽宁联通.txt", "陕西电信.txt", "K合并OLD.txt"]
 
-# 打开输出文件准备写入
+#enter
 with open("K合并2H+OLD.txt", "w", encoding="utf-8") as output:
-    # 遍历文件路径列表
+    #enter
     for file_path in file_paths:
-        # 打开当前文件并逐行读取
+        #enter
         with open(file_path, 'r', encoding="utf-8") as file:
             for line in file:
-                # 检查当前行是否不包含任何需要排除的字符串
+                #enter
                 if not any(exclude_string in line for exclude_string in exclude_strings):
-                    # 如果不包含，则写入
+                    #enter
                     output.write(line)
 
 
@@ -52,25 +52,25 @@ with open("K合并2H+OLD.txt", "w", encoding="utf-8") as output:
 # SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1
 ## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1## SPEEDTEST-1
 
-# 用于存储已经测试过的IP和结果，以及对应的帧数
+#enter
 tested_ips = {}
 
-# 读取文件内容到列表中，避免重复打开文件
+#enter
 lines = []
 with open('K合并2H+OLD.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
-# 测试视频流
+#enter
 for line in lines:
-    # 检查行中是否包含1个逗号
+    #enter
     if line.count(',') == 1:
-        # 截取IP和URL
+        #enter
         ip_start = line.find(',') + 1
         rtp_pos = line.find('rtp')
         if rtp_pos != -1:
             ip_part = line[ip_start:rtp_pos].strip()
         else:
-            # 如果没有找到'rtp'，则使用从逗号到行尾的部分作为IP
+            #enter
             ip_part = line[ip_start:].strip()
 
         url_start = ip_start
@@ -78,100 +78,100 @@ for line in lines:
         if url_end != -1:
             url = line[url_start:url_end].strip()
         else:
-            # 如果没有找到'$'，则使用从逗号到行尾的部分作为URL
+            #enter
             url = line[url_start:].strip()
 
-        # 检查IP是否已经被测试过
+        #enter
         if ip_part in tested_ips:
-            print(f"跳过已测试的IP: {ip_part}")
+            print(f"enterIP: {ip_part}")
             continue
 
-        # 使用cv2的VideoCapture来尝试打开视频流
+        #enter
         cap = cv2.VideoCapture(url)
 
-        # 设置超时时间
+        #enter
         start_time = time.time()
         frame_count = 0
 
-        # 尝试读取视频
-        while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
+        #enter
+        while frame_count < 9999 and (time.time() - start_time) < 10:  # enter
             ret, frame = cap.read()
-            if not ret:  # 检查是否成功读取到帧
-                break  # 如果没有读取到帧，则跳出循环
-            frame_count += 1  # 成功读取一帧，计数器加1
+            if not ret:  # enter
+                break  # enter
+            frame_count += 1  #enter
 
-        # 根据测试结果更新字典
-        if frame_count >200:  # 限定合格IP判定的帧数
+        #enter
+        if frame_count >200:  #enter
             tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
         else:
             tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
 
-        # 释放VideoCapture对象
+        #enter
         cap.release()
 
-# 测试结束后，将包含ok的IP的channel及其帧数写入新文件
+#enter
 with open('K合并2H+OLD-SPEED.txt', 'w', encoding='utf-8') as file:
     for line in lines:
-        # 检查行中是否包含1个逗号，以确保是channel
+        #enter，enter
         if line.count(',') == 1:
-            # 截取IP部分
+            #enter
             ip_start = line.find(',') + 1
             rtp_pos = line.find('rtp')
             if rtp_pos != -1:
                 channel_ip = line[ip_start:rtp_pos].strip()
 
-                # 检查这个IP是否在测试成功的IP字典中
+                #enter
                 if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                    # 如果在，先写入原始行
+                    #enter
                     file.write(f"{line.strip()}\n")
-                    # 然后在下一行写入帧数信息
+                    #enter
                     frame_count = tested_ips[channel_ip]['frame_count']
                     file.write(f">速度{frame_count}\n")
 	
 
 # merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2##
 ## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## 
-# 定义需要排除的IP列表
+#enter
 exclude_strings = ['//27.10', '//220.176.218', '//171.221.129', '//118.122.111', '//27.191.71', '//175.11.171', '//220.176.218', '//117.43.80', '//182.139.152', '//118.122.111', '//118.112.60', '//27.191.71', '//122.232.188', '//125.71.44', '//122.234.77', '//122.232.188', '//14.105.105.35', '//27.191.71.248', '//144.255.40.160', '//140.250.221', '//223.242.146', '//182.139.215', '//182.150.168', '//120.32.11', '//113.86.204.209', '//110.185.44', '///61.157.92.168', '//59.56.214', '//117.25.38', '//125.82.171', '//117.12.148', '//183.5.92', '//117.66.231', '//36.47.83', '//115.221.95', '//113.120.108', '//115.193.167', '//117.28.112', '//117.25.38', '//117.67.169', '//221.15.251', '//117.67.169', '//221.15.251', '//116.5.168', '//175.0.95', '//118.248.154', '//220.175.144', '//118.254.201', '//14.154.192', '//124.112.208', '//182.148.30', '//110.185.70', '//183.5.97.206', '//123.55.112', '//222.182.115', '//14.117.233', '//113.13.242', '//59.56.214.134', '//58.42.184.132', '//58.42.184.132', '//220.192.1.40', '//27.11.253.19', '//27.11.58.239', '//14.105.104', '//183.54.208.185', '//116.252.77.132', '//221.232.175', '//144.255.44.24', '//113.222.42.190', '//61.150.11', '//110.185.10', '//118.254', '//122.232.188', '//171.116.157', '//125.43.40', '//125.86.181', '//27.153.80', '//61.190.129.1', '//182.46.8', '//119.130.11', '//58.63.65', '//1.84.218', '//183.184', '//171.217.81', '//27.190.83.', '//1.197.1', '//58.46.249', '//125.71.170', '//119.4.15', '//222.138.213', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+']
 
-# 加载文件路径列表
+#enter
 file_paths = ["江苏电信.txt", "江西电信.txt","K合并低码OLD.txt"]
 
-# 打开输出文件准备写入
+#enter
 with open("K合并低码2H+低码OLD.txt", "w", encoding="utf-8") as output:
-    # 遍历文件路径列表
+    #enter
     for file_path in file_paths:
-        # 打开当前文件并逐行读取
+        #enter
         with open(file_path, 'r', encoding="utf-8") as file:
             for line in file:
-                # 检查当前行是否不包含任何需要排除的字符串
+                #enter
                 if not any(exclude_string in line for exclude_string in exclude_strings):
-                    # 如果不包含，则写入到输出文件
+                    #enter到输出文件
                     output.write(line)
 
 
 # SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2
 ## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2## SPEEDTEST-2
 
-# 用于存储已经测试过的IP和结果，以及对应的帧数
+#enter
 tested_ips = {}
 
-# 读取文件内容到列表中，避免重复打开文件
+#enter
 lines = []
 with open('K合并低码2H+低码OLD.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
-# 测试视频流
+#enter
 for line in lines:
-    # 检查行中是否包含1个逗号
+    #enter
     if line.count(',') == 1:
-        # 截取IP和URL
+        #enter
         ip_start = line.find(',') + 1
         rtp_pos = line.find('rtp')
         if rtp_pos != -1:
             ip_part = line[ip_start:rtp_pos].strip()
         else:
-            # 如果没有找到'rtp'，则使用从逗号到行尾的部分作为IP
+            #enter
             ip_part = line[ip_start:].strip()
 
         url_start = ip_start
@@ -179,53 +179,53 @@ for line in lines:
         if url_end != -1:
             url = line[url_start:url_end].strip()
         else:
-            # 如果没有找到'$'，则使用从逗号到行尾的部分作为URL
+            #enter
             url = line[url_start:].strip()
 
-        # 检查IP是否已经被测试过
+        #enter
         if ip_part in tested_ips:
-            print(f"跳过已测试的IP: {ip_part}")
+            print(f"enterIP: {ip_part}")
             continue
 
-        # 使用cv2的VideoCapture来尝试打开视频流
+        #enter
         cap = cv2.VideoCapture(url)
 
-        # 设置超时时间
+        #enter
         start_time = time.time()
         frame_count = 0
 
-        # 尝试读取视频
-        while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
+        #enter
+        while frame_count < 9999 and (time.time() - start_time) < 10:  # enter
             ret, frame = cap.read()
-            if not ret:  # 检查是否成功读取到帧
-                break  # 如果没有读取到帧，则跳出循环
-            frame_count += 1  # 成功读取一帧，计数器加1
+            if not ret:  # enter
+                break  # enter
+            frame_count += 1  #enter
 
-        # 根据测试结果更新字典
-        if frame_count >150:  # 限定合格IP判定的帧数
+        #enter
+        if frame_count >150:  #enter
             tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
         else:
             tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
 
-        # 释放VideoCapture对象
+        #enter
         cap.release()
 
-# 测试结束后，将包含ok的IP的channel及其帧数写入新文件
+#enter
 with open('K合并低码2H+低码OLD-SPEED.txt', 'w', encoding='utf-8') as file:
     for line in lines:
-        # 检查行中是否包含1个逗号，以确保是channel
+        #enter，enter
         if line.count(',') == 1:
-            # 截取IP部分
+            #enter
             ip_start = line.find(',') + 1
             rtp_pos = line.find('rtp')
             if rtp_pos != -1:
                 channel_ip = line[ip_start:rtp_pos].strip()
 
-                # 检查这个IP是否在测试成功的IP字典中
+                #enter
                 if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                    # 如果在，先写入原始行
+                    #enter
                     file.write(f"{line.strip()}\n")
-                    # 然后在下一行写入帧数信息
+                    #enter
                     frame_count = tested_ips[channel_ip]['frame_count']
                     file.write(f">速度{frame_count}\n")
 
@@ -234,47 +234,47 @@ with open('K合并低码2H+低码OLD-SPEED.txt', 'w', encoding='utf-8') as file:
 
 # merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3##
 ## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## merge-3## 
-# 定义需要排除的IP列表
+#enter
 exclude_strings = ['//27.10', '//220.176.218', '//171.221.129', '//118.122.111', '//27.191.71', '//175.11.171', '//220.176.218', '//117.43.80', '//182.139.152', '//118.122.111', '//118.112.60', '//27.191.71', '//122.232.188', '//125.71.44', '//122.234.77', '//122.232.188', '//14.105.105.35', '//27.191.71.248', '//144.255.40.160', '//140.250.221', '//223.242.146', '//182.139.215', '//182.150.168', '//120.32.11', '//113.86.204.209', '//110.185.44', '///61.157.92.168', '//59.56.214', '//117.25.38', '//125.82.171', '//117.12.148', '//183.5.92', '//117.66.231', '//36.47.83', '//115.221.95', '//113.120.108', '//115.193.167', '//117.28.112', '//117.25.38', '//117.67.169', '//221.15.251', '//117.67.169', '//221.15.251', '//116.5.168', '//175.0.95', '//118.248.154', '//220.175.144', '//118.254.201', '//14.154.192', '//124.112.208', '//182.148.30', '//110.185.70', '//183.5.97.206', '//123.55.112', '//222.182.115', '//14.117.233', '//113.13.242', '//59.56.214.134', '//58.42.184.132', '//58.42.184.132', '//220.192.1.40', '//27.11.253.19', '//27.11.58.239', '//14.105.104', '//183.54.208.185', '//116.252.77.132', '//221.232.175', '//144.255.44.24', '//113.222.42.190', '//61.150.11', '//110.185.10', '//118.254', '//122.232.188', '//171.116.157', '//125.43.40', '//125.86.181', '//27.153.80', '//61.190.129.1', '//182.46.8', '//119.130.11', '//58.63.65', '//1.84.218', '//183.184', '//171.217.81', '//27.190.83.', '//1.197.1', '//58.46.249', '//125.71.170', '//119.4.15', '//222.138.213', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+']
 
-# 加载文件路径列表
+#enter
 file_paths = ["天津联通.txt", "河南电信.txt", "福建电信.txt", "湖南电信.txt", "山东电信.txt", "K合并超低码OLD.txt"]
 
-# 打开输出文件准备写入
+#enter
 with open("K合并超低码2H+超低码OLD.txt", "w", encoding="utf-8") as output:
-    # 遍历文件路径列表
+    #enter
     for file_path in file_paths:
-        # 打开当前文件并逐行读取
+        #enter
         with open(file_path, 'r', encoding="utf-8") as file:
             for line in file:
-                # 检查当前行是否不包含任何需要排除的字符串
+                #enter
                 if not any(exclude_string in line for exclude_string in exclude_strings):
-                    # 如果不包含，则写入到输出文件
+                    #enter到输出文件
                     output.write(line)
 
 
 # SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3
 ## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3## SPEEDTEST-3
 
-# 用于存储已经测试过的IP和结果，以及对应的帧数
+#enter
 tested_ips = {}
 
-# 读取文件内容到列表中，避免重复打开文件
+#enter
 lines = []
 with open('K合并超低码2H+超低码OLD.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
-# 测试视频流
+#enter
 for line in lines:
-    # 检查行中是否包含1个逗号
+    #enter
     if line.count(',') == 1:
-        # 截取IP和URL
+        #enter
         ip_start = line.find(',') + 1
         rtp_pos = line.find('rtp')
         if rtp_pos != -1:
             ip_part = line[ip_start:rtp_pos].strip()
         else:
-            # 如果没有找到'rtp'，则使用从逗号到行尾的部分作为IP
+            #enter
             ip_part = line[ip_start:].strip()
 
         url_start = ip_start
@@ -282,53 +282,53 @@ for line in lines:
         if url_end != -1:
             url = line[url_start:url_end].strip()
         else:
-            # 如果没有找到'$'，则使用从逗号到行尾的部分作为URL
+            #enter
             url = line[url_start:].strip()
 
-        # 检查IP是否已经被测试过
+        #enter
         if ip_part in tested_ips:
-            print(f"跳过已测试的IP: {ip_part}")
+            print(f"enterIP: {ip_part}")
             continue
 
-        # 使用cv2的VideoCapture来尝试打开视频流
+        #enter
         cap = cv2.VideoCapture(url)
 
-        # 设置超时时间
+        #enter
         start_time = time.time()
         frame_count = 0
 
-        # 尝试读取视频
-        while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
+        #enter
+        while frame_count < 9999 and (time.time() - start_time) < 10:  # enter
             ret, frame = cap.read()
-            if not ret:  # 检查是否成功读取到帧
-                break  # 如果没有读取到帧，则跳出循环
-            frame_count += 1  # 成功读取一帧，计数器加1
+            if not ret:  # enter
+                break  # enter
+            frame_count += 1  #enter
 
-        # 根据测试结果更新字典
-        if frame_count >10:  # 限定合格IP判定的帧数
+        #enter
+        if frame_count >10:  #enter
             tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
         else:
             tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
 
-        # 释放VideoCapture对象
+        #enter
         cap.release()
 
-# 测试结束后，将包含ok的IP的channel及其帧数写入新文件
+#enter
 with open('K合并超低码2H+超低码OLD-SPEED.txt', 'w', encoding='utf-8') as file:
     for line in lines:
-        # 检查行中是否包含1个逗号，以确保是channel
+        #enter，enter
         if line.count(',') == 1:
-            # 截取IP部分
+            #enter
             ip_start = line.find(',') + 1
             rtp_pos = line.find('rtp')
             if rtp_pos != -1:
                 channel_ip = line[ip_start:rtp_pos].strip()
 
-                # 检查这个IP是否在测试成功的IP字典中
+                #enter
                 if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                    # 如果在，先写入原始行
+                    #enter
                     file.write(f"{line.strip()}\n")
-                    # 然后在下一行写入帧数信息
+                    #enter
                     frame_count = tested_ips[channel_ip]['frame_count']
                     file.write(f">速度{frame_count}\n")
 
@@ -340,25 +340,25 @@ with open('K合并超低码2H+超低码OLD-SPEED.txt', 'w', encoding='utf-8') as
 # SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4
 ## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4## SPEEDTEST-4
 
-# 用于存储已经测试过的IP和结果，以及对应的帧数
+#enter
 tested_ips = {}
 
-# 读取文件内容到列表中，避免重复打开文件
+#enter
 lines = []
 with open('JX-LOW.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
-# 测试视频流
+#enter
 for line in lines:
-    # 检查行中是否包含1个逗号
+    #enter
     if line.count(',') == 1:
-        # 截取IP和URL
+        #enter
         ip_start = line.find(',') + 1
         rtp_pos = line.find('rtp')
         if rtp_pos != -1:
             ip_part = line[ip_start:rtp_pos].strip()
         else:
-            # 如果没有找到'rtp'，则使用从逗号到行尾的部分作为IP
+            #enter
             ip_part = line[ip_start:].strip()
 
         url_start = ip_start
@@ -366,53 +366,53 @@ for line in lines:
         if url_end != -1:
             url = line[url_start:url_end].strip()
         else:
-            # 如果没有找到'$'，则使用从逗号到行尾的部分作为URL
+            #enter
             url = line[url_start:].strip()
 
-        # 检查IP是否已经被测试过
+        #enter
         if ip_part in tested_ips:
-            print(f"跳过已测试的IP: {ip_part}")
+            print(f"enterIP: {ip_part}")
             continue
 
-        # 使用cv2的VideoCapture来尝试打开视频流
+        #enter
         cap = cv2.VideoCapture(url)
 
-        # 设置超时时间
+        #enter
         start_time = time.time()
         frame_count = 0
 
-        # 尝试读取视频
-        while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
+        #enter
+        while frame_count < 9999 and (time.time() - start_time) < 10:  # enter
             ret, frame = cap.read()
-            if not ret:  # 检查是否成功读取到帧
-                break  # 如果没有读取到帧，则跳出循环
-            frame_count += 1  # 成功读取一帧，计数器加1
+            if not ret:  # enter
+                break  # enter
+            frame_count += 1  #enter
 
-        # 根据测试结果更新字典
-        if frame_count >190:  # 限定合格IP判定的帧数
+        #enter
+        if frame_count >190:  #enter
             tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
         else:
             tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
 
-        # 释放VideoCapture对象
+        #enter
         cap.release()
 
-# 测试结束后，将包含ok的IP的channel及其帧数写入新文件
+#enter
 with open('JX-LOW-SPEED.txt', 'w', encoding='utf-8') as file:
     for line in lines:
-        # 检查行中是否包含1个逗号，以确保是channel
+        #enter，enter
         if line.count(',') == 1:
-            # 截取IP部分
+            #enter
             ip_start = line.find(',') + 1
             rtp_pos = line.find('rtp')
             if rtp_pos != -1:
                 channel_ip = line[ip_start:rtp_pos].strip()
 
-                # 检查这个IP是否在测试成功的IP字典中
+                #enter
                 if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                    # 如果在，先写入原始行
+                    #enter
                     file.write(f"{line.strip()}\n")
-                    # 然后在下一行写入帧数信息
+                    #enter
                     frame_count = tested_ips[channel_ip]['frame_count']
                     file.write(f">速度{frame_count}\n")
 
@@ -423,25 +423,25 @@ with open('JX-LOW-SPEED.txt', 'w', encoding='utf-8') as file:
 # SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5
 ## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5## SPEEDTEST-5
 
-# 用于存储已经测试过的IP和结果，以及对应的帧数
+#enter
 tested_ips = {}
 
-# 读取文件内容到列表中，避免重复打开文件
+#enter
 lines = []
 with open('JX-HIGH.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
-# 测试视频流
+#enter
 for line in lines:
-    # 检查行中是否包含1个逗号
+    #enter
     if line.count(',') == 1:
-        # 截取IP和URL
+        #enter
         ip_start = line.find(',') + 1
         rtp_pos = line.find('rtp')
         if rtp_pos != -1:
             ip_part = line[ip_start:rtp_pos].strip()
         else:
-            # 如果没有找到'rtp'，则使用从逗号到行尾的部分作为IP
+            #enter
             ip_part = line[ip_start:].strip()
 
         url_start = ip_start
@@ -449,257 +449,257 @@ for line in lines:
         if url_end != -1:
             url = line[url_start:url_end].strip()
         else:
-            # 如果没有找到'$'，则使用从逗号到行尾的部分作为URL
+            #enter
             url = line[url_start:].strip()
 
-        # 检查IP是否已经被测试过
+        #enter
         if ip_part in tested_ips:
-            print(f"跳过已测试的IP: {ip_part}")
+            print(f"enterIP: {ip_part}")
             continue
 
-        # 使用cv2的VideoCapture来尝试打开视频流
+        #enter
         cap = cv2.VideoCapture(url)
 
-        # 设置超时时间
+        #enter
         start_time = time.time()
         frame_count = 0
 
-        # 尝试读取视频
-        while frame_count < 9999 and (time.time() - start_time) < 10:  # 超时时间
+        #enter
+        while frame_count < 9999 and (time.time() - start_time) < 10:  # enter
             ret, frame = cap.read()
-            if not ret:  # 检查是否成功读取到帧
-                break  # 如果没有读取到帧，则跳出循环
-            frame_count += 1  # 成功读取一帧，计数器加1
+            if not ret:  # enter
+                break  # enter
+            frame_count += 1  #enter
 
-        # 根据测试结果更新字典
-        if frame_count >120:  # 限定合格IP判定的帧数
+        #enter
+        if frame_count >120:  #enter
             tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
         else:
             tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
 
-        # 释放VideoCapture对象
+        #enter
         cap.release()
 
-# 测试结束后，将包含ok的IP的channel及其帧数写入新文件
+#enter
 with open('JX-HIGH-SPEED.txt', 'w', encoding='utf-8') as file:
     for line in lines:
-        # 检查行中是否包含1个逗号，以确保是channel
+        #enter，enter
         if line.count(',') == 1:
-            # 截取IP部分
+            #enter
             ip_start = line.find(',') + 1
             rtp_pos = line.find('rtp')
             if rtp_pos != -1:
                 channel_ip = line[ip_start:rtp_pos].strip()
 
-                # 检查这个IP是否在测试成功的IP字典中
+                #enter
                 if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                    # 如果在，先写入原始行
+                    #enter
                     file.write(f"{line.strip()}\n")
-                    # 然后在下一行写入帧数信息
+                    #enter
                     frame_count = tested_ips[channel_ip]['frame_count']
                     file.write(f">速度{frame_count}\n")
 
 
 
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
+#enter###################
+#enter###################
+#enter###################
+#enter###################
+#enter###################
+#enter###################
+#enter###################
+#enter###################
 
 
 
 
-# 写回+去重复操作1
+#enter
 with open('K合并2H+OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
-    # 打开或创建文件以写入内容
+    #enter
     with open('K合并2H+OLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
-        # 逐行读取
+        #enter
         for line in file_in:
-            # 将读取到的内容写入
+            #enter
             file_out.write(line)
 
-# 去重复--定义一个集合来存储已经遇到的URL，以便检查重复
-# 定义一个集合用于存储已经遇到的行
+# enter
+#enter
 seen_lines = set()
 
-# 使用 'with' 语句确保文件在操作完成后正确关闭
+#enter
 with open('K合并2H+OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
      open('K合并OLD.txt', 'w', encoding='utf-8') as file_out:
-    # 逐行读取文件
+    #enter文件
     for line in file_in:
-        # 去除行尾的换行符，并检查该行是否已经在集合中
+        #enter
         stripped_line = line.strip()
         if stripped_line not in seen_lines:
-            # 如果不在集合中，将其写入添加到集合中
+            #enter
             file_out.write(line)
             seen_lines.add(stripped_line)
 			
 			
 
-# 写回+去重复操作2
+#enter
 with open('K合并低码2H+低码OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
-    # 打开或创建文件以写入内容
+    #enter
     with open('K合并低码2H+低码OLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
-        # 逐行读取
+        #enter
         for line in file_in:
-            # 将读取到的内容写入
+            #enter
             file_out.write(line)
 
-# 去重复--定义一个集合来存储已经遇到的URL，以便检查重复
-# 定义一个集合用于存储已经遇到的行
+# enter
+#enter
 seen_lines = set()
 
-# 使用 'with' 语句确保文件在操作完成后正确关闭
+#enter
 with open('K合并低码2H+低码OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
      open('K合并低码OLD.txt', 'w', encoding='utf-8') as file_out:
-    # 逐行读取文件
+    #enter文件
     for line in file_in:
-        # 去除行尾的换行符，并检查该行是否已经在集合中
+        #enter
         stripped_line = line.strip()
         if stripped_line not in seen_lines:
-            # 如果不在集合中，将其写入添加到集合中
+            #enter
             file_out.write(line)
             seen_lines.add(stripped_line)
 
 
-# 写回+去重复操作3
+#enter
 with open('K合并超低码2H+超低码OLD-SPEED.txt', 'r', encoding='utf-8') as file_in:
-    # 打开或创建文件以写入内容
+    #enter
     with open('K合并超低码2H+超低码OLD-SPEEDjump.txt', 'w', encoding='utf-8') as file_out:
-        # 逐行读取
+        #enter
         for line in file_in:
-            # 将读取到的内容写入
+            #enter
             file_out.write(line)
 
-# 去重复--定义一个集合来存储已经遇到的URL，以便检查重复
-# 定义一个集合用于存储已经遇到的行
+# enter
+#enter
 seen_lines = set()
 
-# 使用 'with' 语句确保文件在操作完成后正确关闭
+#enter
 with open('K合并超低码2H+超低码OLD-SPEEDjump.txt', 'r', encoding='utf-8') as file_in, \
      open('K合并超低码OLD.txt', 'w', encoding='utf-8') as file_out:
-    # 逐行读取文件
+    #enter文件
     for line in file_in:
-        # 去除行尾的换行符，并检查该行是否已经在集合中
+        #enter
         stripped_line = line.strip()
         if stripped_line not in seen_lines:
-            # 如果不在集合中，将其写入添加到集合中
+            #enter
             file_out.write(line)
             seen_lines.add(stripped_line)
 
 
 
-#IP_SAVE运作流程
+#IP_SAVEenter
 
-# 获取当前北京时间
+#enter
 current_time = datetime.now()
-# 计算当前时间+8小时
+#enter
 future_time = current_time + timedelta(hours=8)
-# 格式化时间字符串
+#enter
 formatted_future_time = future_time.strftime("%Y-%m-%d %H:%M:%S")
 
-# 打开文件，以追加模式写入空白2行、计算后的时间和空白1行
+#enter
 with open('IP_save.txt', 'a', encoding='utf-8') as file:
-    file.write('\n' * 2)  # 写入空白2行
-    file.write(formatted_future_time + '\n')  # 写入计算后的时间
-    file.write('\n')  # 写入空白1行
+    file.write('\n' * 2)  # enter
+    file.write(formatted_future_time + '\n')  # enter
+    file.write('\n')  # enter
 
-print("文件操作已完成，已将当前时间+8小时的时间写入到'IP_save.txt'文件中。")
+print("enter ok。")
 
 #1############################################################################split##
 
 
-#根据前面合并IP，第一次顺序添加到IP_SAVE.txt  a模式
-# 需要提取的关键字列表
+#enter
+#enter
 keywords = ['S川A爱科幻','天JD都市高清','安HH生活时尚','山DB农科','山XD都市剧场','广DA经济科教','广XH南宁都市','江S南京生活','江XB都市剧场','河BA农民高清','河N民生频道','河NC电视剧频道','浙JC教育高清','湖N常德新闻','福JA少儿','辽LD沈阳新闻','重QD影视频道','陕XA新闻资讯']  
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
 with open('K合并2H+OLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
          IP_save.write(line)  # 将该行写入文件
 		 
 		 
-#根据前面合并低码IP，第二次顺序添加到IP_SAVE.txt  a模式
-# 需要提取的关键字列表		 
+#enter
+#enter		 
 keywords = ['S川A爱科幻','天JD都市高清','安HH生活时尚','山DB农科','山XD都市剧场','广DA经济科教','广XH南宁都市','江S南京生活','江XB都市剧场','河BA农民高清','河N民生频道','河NC电视剧频道','浙JC教育高清','湖N常德新闻','福JA少儿','辽LD沈阳新闻','重QD影视频道','陕XA新闻资讯']  
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制	 
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter	 
 with open('K合并低码2H+低码OLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         IP_save.write(line)  # 将该行写入文件		 
+         IP_save.write(line)  #enter 
 		 
 		 
 		 
 		 
-#根据前面合并低码IP，第三次顺序添加到IP_SAVE.txt  a模式
-# 需要提取的关键字列表		 
+#enter
+#enter		 
 keywords = ['S川A爱科幻','天JD都市高清','安HH生活时尚','山DB农科','山XD都市剧场','广DA经济科教','广XH南宁都市','江S南京生活','江XB都市剧场','河BA农民高清','河N民生频道','河NC电视剧频道','浙JC教育高清','湖N常德新闻','福JA少儿','辽LD沈阳新闻','重QD影视频道','陕XA新闻资讯']  
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enterenter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制	 
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter	 
 with open('K合并超低码2H+超低码OLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         IP_save.write(line)  # 将该行写入文件		 		 
+         IP_save.write(line)  #enter 		 
 
 #########################split##
 
 
 
-# 写回+去重复操作
+#enter
 with open('IP_save.txt', 'r', encoding='utf-8') as file_in:
     # 打开或创建IP_savejump.txt文件以写入内容
     with open('IP_savejump.txt', 'w', encoding='utf-8') as file_out:
-        # 逐行读取IP_save.txt的内容
+        #enterIP_save.txt的内容
         for line in file_in:
-            # 将读取到的内容写入IP_savejump.txt
+            #enterIP_savejump.txt
             file_out.write(line)
 
-# 去重复--定义一个集合来存储已经遇到的URL，以便检查重复
-# 定义一个集合用于存储已经遇到的行
+# enter
+#enter
 seen_lines = set()
 
-# 使用 'with' 语句确保文件在操作完成后正确关闭
+#enter
 with open('IP_savejump.txt', 'r', encoding='utf-8') as file_in, \
      open('IP_save.txt', 'w', encoding='utf-8') as file_out:
-    # 逐行读取 IP_savejump.txt 文件
+    #enter IP_savejump.txt 文件
     for line in file_in:
-        # 去除行尾的换行符，并检查该行是否已经在集合中
+        #enter
         stripped_line = line.strip()
         if stripped_line not in seen_lines:
-            # 如果不在集合中，将其写入到 IP_save.txt 并添加到集合中
+            #enter
             file_out.write(line)
             seen_lines.add(stripped_line)
 			
 			
 			
 			
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
-#分割分割###################
+#enter###################
+#enter###################
+#enter###################
+#enter###################
+#enter###################
+#enter###################
+#enter###################
+#enter###################
 
 
 
@@ -732,9 +732,9 @@ import fileinput
 #重新载入一遍运行环境############################
 
 
-file_contents = []   #打开当前目录下以下文件清单
+file_contents = []   #enter
 
-#此处-------K合并OLD.txt和K合并低码OLD.txt-------实际已经测速过写回去了--现在是调用
+#enter
 file_paths = ['K合并OLD.txt','K合并低码OLD.txt','K合并超低码OLD.txt','JX-LOW-SPEED.txt','JX-HIGH-SPEED.txt',"JIEXI-OK.txt"]  #把测速结果合并到一起 
 
 
@@ -748,7 +748,7 @@ for file_path in file_paths:
         file_contents.append(content)
 
 
-#写入合并后的文件
+#enter
 
 with open("合并.txt", "w", encoding="utf-8") as output:
 
@@ -757,7 +757,7 @@ with open("合并.txt", "w", encoding="utf-8") as output:
 
 #替换多余的关键字词###################################################################################################
 
-for line in fileinput.input("合并.txt", inplace=True):  #打开文件，并对其进行原地替换
+for line in fileinput.input("合并.txt", inplace=True):  #enter
 
     line = line.replace("CCTV10", "CCTW10")
 
@@ -775,7 +775,7 @@ for line in fileinput.input("合并.txt", inplace=True):  #打开文件，并对
 
     line = line.replace("CCTV17", "CCTW17")
 
-    #需要排在前面的频道
+    #enter
 
     line = line.replace("CCTV1综合", "CCTV1")
 
@@ -853,13 +853,13 @@ for line in fileinput.input("合并.txt", inplace=True):  #打开文件，并对
 
 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符
+    print(line, end="")  #enter
 
 
 
-#二次替换某些关键词为便于排序的自定义词####################################################################################################
+#enter####################################################################################################
 
-for line in fileinput.input("合并.txt", inplace=True):  #打开文件，并对其进行原地替换
+for line in fileinput.input("合并.txt", inplace=True):  #enter
 
     
     line = line.replace("CCTV10", "CCTW10")
@@ -879,11 +879,11 @@ for line in fileinput.input("合并.txt", inplace=True):  #打开文件，并对
     line = line.replace("CCTV17", "CCTW17")
 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符
+    print(line, end="")  #enter
 
 
 
-#对替换完成的文本进行排序#####################################################################################################################
+#enter####################################################################################################################
 
 
 
@@ -902,9 +902,9 @@ with open('排序.txt', 'w', encoding='UTF-8') as f:
         f.write(line)
 
 
-#再次替换自定义词为常规词##########################################################################################################################
+#enter##########################################################################################################################
 
-for line in fileinput.input("排序.txt", inplace=True):  #打开文件，并对其进行原地替换
+for line in fileinput.input("排序.txt", inplace=True):  #enter
 
     line = line.replace("CCTW10", "CCTV10")
 
@@ -923,7 +923,7 @@ for line in fileinput.input("排序.txt", inplace=True):  #打开文件，并对
     line = line.replace("CCTW17", "CCTV17")
 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符
+    print(line, end="")  #enter
 
  ##################################################################################################################################SPLIT#
  
@@ -931,50 +931,50 @@ for line in fileinput.input("排序.txt", inplace=True):  #打开文件，并对
  
  
 
-# 打开JIEXI手动排序央卫视.txt文件用于读取，并设置文件模式为'r'（只读）
+# enter
 with open('JIEXI手动排序央卫视.txt', 'r', encoding='utf-8') as file1:
   
-    #复制到新建文件TT1.TXT
+    #enter
     with open('TT1.txt', 'w', encoding='utf-8') as file2:
-        # 逐行JIEXI手动排序央卫视.txt文件的内容
+        #enter
         for line in file1:
-            # 写入到TT1.txt文件，包括行尾的换行符
+            #enter
             file2.write(line)
 
 
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['CCTV','CETV', 'CF', 'IPT淘', 'CHC', 'IWA', '凤凰卫视', '卫视', '金鹰卡通', '纪实科教', '卡酷少儿', '嘉佳卡通', '哈哈炫动', '乐游频道', '动漫秀场', '新动漫','纪实人文', '金色学堂',  '纪实科教', '金鹰纪实', '求索记录']  # 需要提取的关键字列表
+keywords = ['CCTV','CETV', 'CF', 'IPT淘', 'CHC', 'IWA', '凤凰卫视', '卫视', '金鹰卡通', '纪实科教', '卡酷少儿', '嘉佳卡通', '哈哈炫动', '乐游频道', '动漫秀场', '新动漫','纪实人文', '金色学堂',  '纪实科教', '金鹰纪实', '求索记录']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T1.txt', 'w', encoding='utf-8') as T1:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T1.txt', 'w', encoding='utf-8') as T1:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T1.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T1.write(line)  #enter
 
-for line in fileinput.input("T1.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T1.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#将就格式不改了 此步骤本来可以不要##################
-with open('TT1.txt', 'a', encoding='utf-8') as TT1:    #####定义临时文件名
+#enter
+with open('TT1.txt', 'a', encoding='utf-8') as TT1:    #####enter
 
     TT1.write('\n#以上手工排序\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -992,26 +992,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T1.txt', 'r', encoding="utf-8") as input_file, open('TT1.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1020,39 +1020,39 @@ with open('T1.txt', 'r', encoding="utf-8") as input_file, open('TT1.txt', 'a', e
 
  ##################################################################################################################################SPLIT#
 
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['电Y']  # 需要提取的关键字列表
+keywords = ['电Y']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T2.txt', 'w', encoding='utf-8') as T2:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T2.txt', 'w', encoding='utf-8') as T2:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T2.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T2.write(line)  #enter
 
-for line in fileinput.input("T2.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T2.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT2.txt', 'w', encoding='utf-8') as TT2:    #####定义临时文件名
+#enter-genre###################
+with open('TT2.txt', 'w', encoding='utf-8') as TT2:    #####enter
 
     TT2.write('\n🎬电影轮播标清频道,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -1070,26 +1070,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T2.txt', 'r', encoding="utf-8") as input_file, open('TT2.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1100,39 +1100,39 @@ with open('T2.txt', 'r', encoding="utf-8") as input_file, open('TT2.txt', 'a', e
 
     ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['老DY']  # 需要提取的关键字列表
+keywords = ['老DY']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T4.txt', 'w', encoding='utf-8') as T4:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T4.txt', 'w', encoding='utf-8') as T4:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T4.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T4.write(line)  #enter
 
-for line in fileinput.input("T4.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T4.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT4.txt', 'w', encoding='utf-8') as TT4:    #####定义临时文件名
+#enter-genre###################
+with open('TT4.txt', 'w', encoding='utf-8') as TT4:    #####enter
 
     TT4.write('\n🎬老电影黑白频道,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -1150,26 +1150,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T4.txt', 'r', encoding="utf-8") as input_file, open('TT4.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1178,39 +1178,39 @@ with open('T4.txt', 'r', encoding="utf-8") as input_file, open('TT4.txt', 'a', e
    
     ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['重Q']  # 需要提取的关键字列表
+keywords = ['重Q']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T5.txt', 'w', encoding='utf-8') as T5:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T5.txt', 'w', encoding='utf-8') as T5:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T5.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T5.write(line)  #enter
 
-for line in fileinput.input("T5.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T5.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT5.txt', 'w', encoding='utf-8') as TT5:    #####定义临时文件名
+#enter-genre###################
+with open('TT5.txt', 'w', encoding='utf-8') as TT5:    #####enter
 
     TT5.write('\n👑重庆数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -1228,26 +1228,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T5.txt', 'r', encoding="utf-8") as input_file, open('TT5.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1256,78 +1256,78 @@ with open('T5.txt', 'r', encoding="utf-8") as input_file, open('TT5.txt', 'a', e
    
     ##################################################################################################################################SPLIT#
    
-   #开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+   #star#########################
+#enter#############################################################################################
 
-keywords = ['北J']  # 需要提取的关键字列表
+keywords = ['北J']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T6.txt', 'w', encoding='utf-8') as T6:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T6.txt', 'w', encoding='utf-8') as T6:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T6.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T6.write(line)  #enter
 
-for line in fileinput.input("T6.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T6.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT6.txt', 'w', encoding='utf-8') as TT6:    #####定义临时文件名
+#enter-genre###################
+with open('TT6.txt', 'w', encoding='utf-8') as TT6:    #####enter
 
     TT6.write('\n👑北京数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-##A倒字母版本--自定义排序键函数 固定域名--在前---固定域名字母倒序
+##enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
-    # 处理channel的字母和数字部分
+    #enter
     channel_letters = ''.join(filter(str.isalpha, channel))
     channel_numbers = ''.join(filter(str.isdigit, channel))
     channel_sort_key = (channel_letters, int(channel_numbers) if channel_numbers.isdigit() else 0)
 
-    # 提取URL中的固定域名部分
+    #enter
     sort_key = re.search(r"http://(.*?)\.", url)
     if sort_key:
         sort_key = sort_key.group(1)
     else:
         sort_key = url
 
-    # 修改sort_key的排序逻辑
+    #enter
     if sort_key[0].isalpha():
-        # 如果sort_key以字母开头，直接反转字符串并加上负数前缀（为了倒序排列）
-        # 注意：这里为了简化，我们假设sort_key中只包含ASCII字符，可以直接反转
+        #enter
+        #enter
         sort_key = (-1, sort_key[::-1])
     elif sort_key.isdigit():
-        # 数字部分保持原样，但已经足够区分，因为之前的channel_sort_key会首先被考虑
+        #enter
         sort_key = (1, -int(sort_key))
     else:
-        # 其他情况，我们保持原样，但赋予一个中等的优先级
+        #enter
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T6.txt', 'r', encoding="utf-8") as input_file, open('TT6.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1336,39 +1336,39 @@ with open('T6.txt', 'r', encoding="utf-8") as input_file, open('TT6.txt', 'a', e
    
     ##################################################################################################################################SPLIT#
    
-      #开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+   #star#########################
+#enter#############################################################################################
 
-keywords = ['河B']  # 需要提取的关键字列表
+keywords = ['河B']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T7.txt', 'w', encoding='utf-8') as T7:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T7.txt', 'w', encoding='utf-8') as T7:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T7.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T7.write(line)  #enter
 
-for line in fileinput.input("T7.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T7.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT7.txt', 'w', encoding='utf-8') as TT7:    #####定义临时文件名
+#enter-genre###################
+with open('TT7.txt', 'w', encoding='utf-8') as TT7:    #####enter
 
     TT7.write('\n👑河北数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -1386,26 +1386,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, int(sort_key))  # 数字从小到大排序
+        sort_key = (1, int(sort_key))  #enter-
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T7.txt', 'r', encoding="utf-8") as input_file, open('TT7.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1415,39 +1415,39 @@ with open('T7.txt', 'r', encoding="utf-8") as input_file, open('TT7.txt', 'a', e
 ##################################################################################################################################SPLIT#
 
 
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['河N']  # 需要提取的关键字列表
+keywords = ['河N']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T8.txt', 'w', encoding='utf-8') as T8:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T8.txt', 'w', encoding='utf-8') as T8:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T8.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T8.write(line)  #enter
 
-for line in fileinput.input("T8.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T8.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT8.txt', 'w', encoding='utf-8') as TT8:    #####定义临时文件名
+#enter-genre###################
+with open('TT8.txt', 'w', encoding='utf-8') as TT8:    #####enter
 
     TT8.write('\n👑河南数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-# A版本--自定义排序键函数 固定域名--在前
+# enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -1465,26 +1465,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T8.txt', 'r', encoding="utf-8") as input_file, open('TT8.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1494,39 +1494,39 @@ with open('T8.txt', 'r', encoding="utf-8") as input_file, open('TT8.txt', 'a', e
    
  ##################################################################################################################################SPLIT#
 
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['天J']  # 需要提取的关键字列表
+keywords = ['天J']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T9.txt', 'w', encoding='utf-8') as T9:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T9.txt', 'w', encoding='utf-8') as T9:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T9.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T9.write(line)  #enter
 
-for line in fileinput.input("T9.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T9.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT9.txt', 'w', encoding='utf-8') as TT9:    #####定义临时文件名
+#enter-genre###################
+with open('TT9.txt', 'w', encoding='utf-8') as TT9:    #####enter
 
     TT9.write('\n👑天津数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -1544,26 +1544,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, int(sort_key))  # 数字从小到大排序
+        sort_key = (1, int(sort_key))  #enter-
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T9.txt', 'r', encoding="utf-8") as input_file, open('TT9.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1574,39 +1574,39 @@ with open('T9.txt', 'r', encoding="utf-8") as input_file, open('TT9.txt', 'a', e
    
  ##################################################################################################################################SPLIT#
 
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['广D']  # 需要提取的关键字列表
+keywords = ['广D']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T10.txt', 'w', encoding='utf-8') as T10:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T10.txt', 'w', encoding='utf-8') as T10:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T10.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T10.write(line)  #enter
 
-for line in fileinput.input("T10.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T10.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT10.txt', 'w', encoding='utf-8') as TT10:    #####定义临时文件名
+#enter-genre###################
+with open('TT10.txt', 'w', encoding='utf-8') as TT10:    #####enter
 
     TT10.write('\n👑广东数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -1624,26 +1624,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T10.txt', 'r', encoding="utf-8") as input_file, open('TT10.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1652,39 +1652,39 @@ with open('T10.txt', 'r', encoding="utf-8") as input_file, open('TT10.txt', 'a',
    
    
  ##################################################################################################################################SPLIT#
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['广X']  # 需要提取的关键字列表
+keywords = ['广X']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T11.txt', 'w', encoding='utf-8') as T11:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T11.txt', 'w', encoding='utf-8') as T11:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T11.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T11.write(line)  #enter
 
-for line in fileinput.input("T11.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T11.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT11.txt', 'w', encoding='utf-8') as TT11:    #####定义临时文件名
+#enter-genre###################
+with open('TT11.txt', 'w', encoding='utf-8') as TT11:    #####enter
 
     TT11.write('\n👑广西数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -1702,26 +1702,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, int(sort_key))  # 数字从小到大排序
+        sort_key = (1, int(sort_key))  #enter-
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T11.txt', 'r', encoding="utf-8") as input_file, open('TT11.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1731,39 +1731,39 @@ with open('T11.txt', 'r', encoding="utf-8") as input_file, open('TT11.txt', 'a',
    
  ##################################################################################################################################SPLIT# 
 
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['湖B']  # 需要提取的关键字列表
+keywords = ['湖B']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T12.txt', 'w', encoding='utf-8') as T12:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T12.txt', 'w', encoding='utf-8') as T12:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T12.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T12.write(line)  #enter
 
-for line in fileinput.input("T12.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T12.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT12.txt', 'w', encoding='utf-8') as TT12:    #####定义临时文件名
+#enter-genre###################
+with open('TT12.txt', 'w', encoding='utf-8') as TT12:    #####enter
 
     TT12.write('\n👑湖北数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -1781,26 +1781,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T12.txt', 'r', encoding="utf-8") as input_file, open('TT12.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1809,39 +1809,39 @@ with open('T12.txt', 'r', encoding="utf-8") as input_file, open('TT12.txt', 'a',
 
  ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['山DA','山DB','山DC','山DD','山DE','山DF','山DG','山DK','山DZ']  # 需要提取的关键字列表
+keywords = ['山DA','山DB','山DC','山DD','山DE','山DF','山DG','山DK','山DZ']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T13.txt', 'w', encoding='utf-8') as T13:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T13.txt', 'w', encoding='utf-8') as T13:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T13.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T13.write(line)  #enter
 
-for line in fileinput.input("T13.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T13.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT13.txt', 'w', encoding='utf-8') as TT13:    #####定义临时文件名
+#enter-genre###################
+with open('TT13.txt', 'w', encoding='utf-8') as TT13:    #####enter
 
     TT13.write('\n👑山东数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -1859,26 +1859,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T13.txt', 'r', encoding="utf-8") as input_file, open('TT13.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1887,39 +1887,39 @@ with open('T13.txt', 'r', encoding="utf-8") as input_file, open('TT13.txt', 'a',
    
    ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['安H']  # 需要提取的关键字列表
+keywords = ['安H']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T14.txt', 'w', encoding='utf-8') as T14:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T14.txt', 'w', encoding='utf-8') as T14:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T14.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T14.write(line)  #enter
 
-for line in fileinput.input("T14.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T14.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT14.txt', 'w', encoding='utf-8') as TT14:    #####定义临时文件名
+#enter-genre###################
+with open('TT14.txt', 'w', encoding='utf-8') as TT14:    #####enter
 
     TT14.write('\n👑安徽数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -1937,26 +1937,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, int(sort_key))  # 数字从小到大排序
+        sort_key = (1, int(sort_key))  #enter-
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T14.txt', 'r', encoding="utf-8") as input_file, open('TT14.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -1965,39 +1965,39 @@ with open('T14.txt', 'r', encoding="utf-8") as input_file, open('TT14.txt', 'a',
    
    ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['江S']  # 需要提取的关键字列表
+keywords = ['江S']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T15.txt', 'w', encoding='utf-8') as T15:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T15.txt', 'w', encoding='utf-8') as T15:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T15.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T15.write(line)  #enter
 
-for line in fileinput.input("T15.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T15.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT15.txt', 'w', encoding='utf-8') as TT15:    #####定义临时文件名
+#enter-genre###################
+with open('TT15.txt', 'w', encoding='utf-8') as TT15:    #####enter
 
     TT15.write('\n👑江苏数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2015,26 +2015,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T15.txt', 'r', encoding="utf-8") as input_file, open('TT15.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2043,39 +2043,39 @@ with open('T15.txt', 'r', encoding="utf-8") as input_file, open('TT15.txt', 'a',
    
    ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['江XA','江XB','江XC','江XD','江XE']  # 需要提取的关键字列表
+keywords = ['江XA','江XB','江XC','江XD','江XE']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T16.txt', 'w', encoding='utf-8') as T16:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T16.txt', 'w', encoding='utf-8') as T16:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T16.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T16.write(line)  #enter
 
-for line in fileinput.input("T16.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T16.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT16.txt', 'w', encoding='utf-8') as TT16:    #####定义临时文件名
+#enter-genre###################
+with open('TT16.txt', 'w', encoding='utf-8') as TT16:    #####enter
 
     TT16.write('\n👑江西数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2093,26 +2093,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T16.txt', 'r', encoding="utf-8") as input_file, open('TT16.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2121,39 +2121,39 @@ with open('T16.txt', 'r', encoding="utf-8") as input_file, open('TT16.txt', 'a',
    
    ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['山X']  # 需要提取的关键字列表
+keywords = ['山X']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T17.txt', 'w', encoding='utf-8') as T17:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T17.txt', 'w', encoding='utf-8') as T17:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T17.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T17.write(line)  #enter
 
-for line in fileinput.input("T17.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T17.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT17.txt', 'w', encoding='utf-8') as TT17:    #####定义临时文件名
+#enter-genre###################
+with open('TT17.txt', 'w', encoding='utf-8') as TT17:    #####enter
 
     TT17.write('\n👑山西数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2171,26 +2171,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T17.txt', 'r', encoding="utf-8") as input_file, open('TT17.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2199,39 +2199,39 @@ with open('T17.txt', 'r', encoding="utf-8") as input_file, open('TT17.txt', 'a',
  
  ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['浙J']  # 需要提取的关键字列表
+keywords = ['浙J']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T18.txt', 'w', encoding='utf-8') as T18:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T18.txt', 'w', encoding='utf-8') as T18:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T18.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T18.write(line)  #enter
 
-for line in fileinput.input("T18.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T18.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT18.txt', 'w', encoding='utf-8') as TT18:    #####定义临时文件名
+#enter-genre###################
+with open('TT18.txt', 'w', encoding='utf-8') as TT18:    #####enter
 
     TT18.write('\n👑浙江数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2249,26 +2249,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T18.txt', 'r', encoding="utf-8") as input_file, open('TT18.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2276,50 +2276,50 @@ with open('T18.txt', 'r', encoding="utf-8") as input_file, open('TT18.txt', 'a',
    #结束########################################################
    
    ##################################################################################################################################SPLIT#
-   # 打开JIEXI手动排序央卫视.txt文件用于读取，并设置文件模式为'r'（只读）
+   # enter
 with open('JIEXI手动排序湖南.txt', 'r', encoding='utf-8') as file1:
   
-    #复制到新建文件TT1.TXT
+    #enter
     with open('TT19.txt', 'w', encoding='utf-8') as file2:
-        # 逐行JIEXI手动排序央卫视.txt文件的内容
+        #enter
         for line in file1:
-            # 写入到TT1.txt文件，包括行尾的换行符
+            #enter
             file2.write(line)
    
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['湖N']  # 需要提取的关键字列表
+keywords = ['湖N']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T19.txt', 'w', encoding='utf-8') as T19:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T19.txt', 'w', encoding='utf-8') as T19:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T19.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T19.write(line)  #enter
 
-for line in fileinput.input("T19.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T19.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT19.txt', 'a', encoding='utf-8') as TT19:    #####定义临时文件名
+#enter-genre###################
+with open('TT19.txt', 'a', encoding='utf-8') as TT19:    #####enter
 
     TT19.write('\n以上手工录入\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2337,26 +2337,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T19.txt', 'r', encoding="utf-8") as input_file, open('TT19.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2365,39 +2365,39 @@ with open('T19.txt', 'r', encoding="utf-8") as input_file, open('TT19.txt', 'a',
    
    ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['辽L']  # 需要提取的关键字列表
+keywords = ['辽L']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T20.txt', 'w', encoding='utf-8') as T20:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T20.txt', 'w', encoding='utf-8') as T20:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T20.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T20.write(line)  #enter
 
-for line in fileinput.input("T20.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T20.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT20.txt', 'w', encoding='utf-8') as TT20:    #####定义临时文件名
+#enter-genre###################
+with open('TT20.txt', 'w', encoding='utf-8') as TT20:    #####enter
 
     TT20.write('\n👑辽宁数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2415,26 +2415,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, int(sort_key))  # 数字从小到大排序
+        sort_key = (1, int(sort_key))  #enter-
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T20.txt', 'r', encoding="utf-8") as input_file, open('TT20.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2443,39 +2443,39 @@ with open('T20.txt', 'r', encoding="utf-8") as input_file, open('TT20.txt', 'a',
    
    ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['吉L']  # 需要提取的关键字列表
+keywords = ['吉L']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T21.txt', 'w', encoding='utf-8') as T21:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T21.txt', 'w', encoding='utf-8') as T21:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T21.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T21.write(line)  #enter
 
-for line in fileinput.input("T21.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T21.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT21.txt', 'w', encoding='utf-8') as TT21:    #####定义临时文件名
+#enter-genre###################
+with open('TT21.txt', 'w', encoding='utf-8') as TT21:    #####enter
 
     TT21.write('\n👑吉林地方频道,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2493,26 +2493,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T21.txt', 'r', encoding="utf-8") as input_file, open('TT21.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2521,39 +2521,39 @@ with open('T21.txt', 'r', encoding="utf-8") as input_file, open('TT21.txt', 'a',
    
    ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['贵Z','习水']  # 需要提取的关键字列表
+keywords = ['贵Z','习水']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T22.txt', 'w', encoding='utf-8') as T22:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T22.txt', 'w', encoding='utf-8') as T22:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T22.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T22.write(line)  #enter
 
-for line in fileinput.input("T22.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T22.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT22.txt', 'w', encoding='utf-8') as TT22:    #####定义临时文件名
+#enter-genre###################
+with open('TT22.txt', 'w', encoding='utf-8') as TT22:    #####enter
 
     TT22.write('\n👑贵州地方频道,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-#A版本--自定义排序键函数 固定域名--在前
+#enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2571,26 +2571,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T22.txt', 'r', encoding="utf-8") as input_file, open('TT22.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2599,39 +2599,39 @@ with open('T22.txt', 'r', encoding="utf-8") as input_file, open('TT22.txt', 'a',
    
    ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['陕X']  # 需要提取的关键字列表
+keywords = ['陕X']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T23.txt', 'w', encoding='utf-8') as T23:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T23.txt', 'w', encoding='utf-8') as T23:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T23.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T23.write(line)  #enter
 
-for line in fileinput.input("T23.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T23.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT23.txt', 'w', encoding='utf-8') as TT23:    #####定义临时文件名
+#enter-genre###################
+with open('TT23.txt', 'w', encoding='utf-8') as TT23:    #####enter
 
     TT23.write('\n👑陕西数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-# A版本--自定义排序键函数 固定域名--在前
+# enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2649,26 +2649,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, int(sort_key))  # 数字从小到大排序
+        sort_key = (1, int(sort_key))  #enter-
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T23.txt', 'r', encoding="utf-8") as input_file, open('TT23.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2677,39 +2677,39 @@ with open('T23.txt', 'r', encoding="utf-8") as input_file, open('TT23.txt', 'a',
    
       ##################################################################################################################################SPLIT#
    
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['新J']  # 需要提取的关键字列表
+keywords = ['新J']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T24.txt', 'w', encoding='utf-8') as T24:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T24.txt', 'w', encoding='utf-8') as T24:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T24.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T24.write(line)  #enter
 
-for line in fileinput.input("T24.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T24.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT24.txt', 'w', encoding='utf-8') as TT24:    #####定义临时文件名
+#enter-genre###################
+with open('TT24.txt', 'w', encoding='utf-8') as TT24:    #####enter
 
     TT24.write('\n👑新疆数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-# A版本--自定义排序键函数 固定域名--在前
+# enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2727,26 +2727,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T24.txt', 'r', encoding="utf-8") as input_file, open('TT24.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2755,39 +2755,39 @@ with open('T24.txt', 'r', encoding="utf-8") as input_file, open('TT24.txt', 'a',
    
    
          ##################################################################################################################################SPLIT#
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['S川']  # 需要提取的关键字列表
+keywords = ['S川']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T25.txt', 'w', encoding='utf-8') as T25:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T25.txt', 'w', encoding='utf-8') as T25:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T25.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T25.write(line)  #enter
 
-for line in fileinput.input("T25.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T25.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT25.txt', 'w', encoding='utf-8') as TT25:    #####定义临时文件名
+#enter-genre###################
+with open('TT25.txt', 'w', encoding='utf-8') as TT25:    #####enter
 
     TT25.write('\n👑四川数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-# A版本--自定义排序键函数 固定域名--在前
+# enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2805,26 +2805,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T25.txt', 'r', encoding="utf-8") as input_file, open('TT25.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2832,39 +2832,39 @@ with open('T25.txt', 'r', encoding="utf-8") as input_file, open('TT25.txt', 'a',
    #结束########################################################
    ##################################################################################################################################SPLIT#
            
-#开始#########################
-#从整理好的文本中按类别进行特定关键词提取#############################################################################################
+#star#########################
+#enter#############################################################################################
 
-keywords = ['福JA','福JB','福JC']  # 需要提取的关键字列表
+keywords = ['福JA','福JB','福JC']  #enter
 
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
+pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('排序.txt', 'r', encoding='utf-8') as file, open('T26.txt', 'w', encoding='utf-8') as T26:    #####定义临时文件名
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T26.txt', 'w', encoding='utf-8') as T26:    #####enter
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  # 如果行中有任意关键字而且行内只有一个逗号
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T26.write(line)  # 将该行写入输出文件 #####定义临时文件
+         T26.write(line)  #enter
 
-for line in fileinput.input("T26.txt", inplace=True):  #打开文件，并对其进行关键词原地替换    
+for line in fileinput.input("T26.txt", inplace=True):  #enter 
 
-    print(line, end="")  #设置end=""，避免输出多余的换行符          
+    print(line, end="")  #enter          
 
-#新建待合并临时TTxxx.TXT文件并在抬头写入频道编码genre###################
-with open('TT26.txt', 'w', encoding='utf-8') as TT26:    #####定义临时文件名
+#enter-genre###################
+with open('TT26.txt', 'w', encoding='utf-8') as TT26:    #####enter
 
     TT26.write('\n👑福建数字高清,#genre#\n')        
  
-    print(line, end="")  #设置end=""，避免输出多余的换行符 
-#写入完成-进入下一步排序######################
+    print(line, end="")  #enter 
+#enter
 
-#对相同频道IP排序--域名在前###################
+#enter
 import re
 
-# A版本--自定义排序键函数 固定域名--在前
+# enter
 def custom_sort_key(item):
     channel, url = item.split(',')
 
@@ -2882,26 +2882,26 @@ def custom_sort_key(item):
     else:
         sort_key = url
 
-    # 检查sort_key是否为数字
+    # enter
     if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # 字母开头的sort_key排在最前面
+        sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  # 数字从大到小排序
+        sort_key = (1, -int(sort_key))  #enter
     else:
         sort_key = (2, sort_key)
 
     return (channel_sort_key, sort_key)
 
 with open('T26.txt', 'r', encoding="utf-8") as input_file, open('TT26.txt', 'a', encoding="utf-8") as output_file:
-    # 读取所有行并存储在列表中
+    #enter
     lines = input_file.readlines()
 
-    # 过滤掉空白行
+    #enter
     lines = [line.strip() for line in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    # 将排序后的数据写入输出文件
+    #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
@@ -2909,7 +2909,7 @@ with open('T26.txt', 'r', encoding="utf-8") as input_file, open('TT26.txt', 'a',
 #结束########################################################
 ##################################################################################################################################SPLIT#
 
-#开始合并多个文件到一个文件###########
+#star合并多个文件到一个文件###########
 
 file_contents = []
 
@@ -2925,55 +2925,55 @@ for file_path in file_paths:
 
 
 
-# 写入合并后的文件
+# enter
 
 with open("AMER-start.txt", "w", encoding="utf-8") as output:
 
     output.write('\n'.join(file_contents))
 
-#结束合并
+#enter
 ##################################################################################################################################SPLIT#
   
   
 
-#开始对输出文件Americam.txt修改违规字操作如下
+#star
 with open('AMER-start.txt', 'r', encoding='utf-8') as file:
     content = file.read()
 
-#键入需要修改关键字
+#enter
 content = content.replace("福JA", "福建").replace("福JB", "福建").replace("福JC", "福建").replace("WA", "").replace("WB", "").replace("WC", "").replace("WD", "").replace("WE", "").replace("WF", "").replace("WG", "").replace("WH", "").replace("WI", "").replace("WJ", "").replace("WK", "").replace("WL", "").replace("WM", "").replace("WN", "").replace("WO", "").replace("WP", "").replace("WP", "").replace("WQ", "").replace("WR", "").replace("WS", "").replace("WT", "").replace("WU", "").replace("WV", "").replace("WW", "").replace("WX", "").replace("WY", "").replace("WZ", "").replace("CF", "").replace("IV", "").replace("X纪实", "X纪实").replace("Y卡酷", "卡酷").replace("Y动漫", "动漫").replace("Y金色学堂", "金色学堂").replace("电Y", "电影").replace("老DY", "老电影").replace("X乐", "乐").replace("X求", "求").replace("X纪", "纪").replace("X记", "记").replace("X金", "金").replace("Y动", "动").replace("Y卡", "卡").replace("Y咔", "咔").replace("Y嘉", "嘉").replace("Y新", "新").replace("剧J", "连续剧").replace("重Q", "重庆").replace("北J", "北京").replace("河B", "河北").replace("河N", "河南").replace("天J", "天津").replace("广D", "广东").replace("湖B", "湖北").replace("湖N", "湖南").replace("山D", "山东").replace("安H", "安徽").replace("江S", "江苏").replace("山X", "山西").replace("浙J", "浙江").replace("辽L", "辽宁").replace("吉L", "吉林").replace("贵Z", "贵州").replace("陕X", "陕西").replace("S川", "四川").replace("褔J", "福建").replace("GAT-", "").replace("裾J", "裾集").replace("江X", "江西").replace("新J", "新疆").replace("褔JA", "福建").replace("褔JB", "福建").replace("褔JC", "福建").replace("褔JD", "福建").replace("广X", "广西").replace("A", "").replace("B", "").replace("F", "").replace("G", "").replace("I", "").replace("J", "").replace("K", "").replace("L", "").replace("M", "").replace("N", "").replace("O", "").replace("P", "").replace("Q", "").replace("R", "").replace("S", "").replace("U", "").replace("W", "").replace("X", "").replace("Y", "").replace("Z", "").replace("C新闻", "新闻").replace("电映C", "电映").replace("电映E", "电映").replace("电映H", "电映").replace("D影视", "影视").replace("E都市", "都市").replace("H新农", "新农").replace("河北C", "河北").replace("河北D", "河北").replace("河南C", "河南").replace("河南D", "河南").replace("天津C", "天津").replace("天津D", "天津").replace("天津E", "天津").replace("广东C", "广东").replace("广东H", "广东").replace("广西C", "广西").replace("广西D", "广西").replace("广西E", "广西").replace("广西H", "广西").replace("湖北C", "湖北").replace("湖北D", "湖北").replace("山东C", "山东").replace("山东D", "山东").replace("山东E", "山东").replace("山东H", "山东").replace("安徽C", "安徽").replace("安徽D", "安徽").replace("安徽E", "安徽").replace("安徽H", "安徽").replace("江西C", "江西").replace("江西D", "江西").replace("江西E", "江西").replace("江西H", "江西").replace("陕西C", "陕西").replace("陕西D", "陕西").replace("陕西E", "陕西").replace("陕西H", "陕西").replace("浙江C", "浙江").replace("浙江D", "浙江").replace("浙江E", "浙江").replace("浙江H", "浙江").replace("四川C", "四川").replace("四川D", "四川").replace("四川E", "四川").replace("四川H", "四川").replace("辽宁C", "辽宁").replace("辽宁D", "辽宁").replace("辽宁E", "辽宁").replace("辽宁H", "辽宁").replace("吉林C", "吉林").replace("山西C", "山西").replace("山西D", "山西").replace("山西E", "山西").replace("山西H", "山西").replace("少_儿", "少儿").replace("少*儿", "少儿")
 
 with open('AMER-delete.txt', 'w', encoding='utf-8') as file:
     file.write(content)
 	
-#结束对关键字替换
+#enter
 	
   ##################################################################################################################################SPLIT#
   
 
-#开始去重复-打开文档并读取所有行 
+#enter
 with open('AMER-delete.txt', 'r', encoding="utf-8") as file:
  lines = file.readlines()
  
-#使用列表来存储唯一的行的顺序 
+#enter
  unique_lines = [] 
  seen_lines = set() 
 
-#遍历每一行，如果是新的就加入unique_lines 
+#enter
 for line in lines:
  if line not in seen_lines:
   unique_lines.append(line)
   seen_lines.add(line)
 
-#将唯一的行写入新的文档 
+#enter
 with open('yesterdayoncemo.txt', 'w', encoding="utf-8") as file:
  file.writelines(unique_lines)
 
-#结束去重复
+#enter
 
 ##################################################################################################################################SPLIT#
 
-#删除所有临时文件--删除清单在下面列出
+#enter
 
 os.remove("IP_savejump.txt")
 
@@ -3087,4 +3087,4 @@ os.remove("TT25.txt")
 os.remove("TT26.txt")
 
 
-print("任务运行完毕")
+print("over")
