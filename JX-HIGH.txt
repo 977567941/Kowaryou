@@ -1,6 +1,4 @@
 
-##本页存放--变化版 帧采集标准低>150即可
-
 CETV1,http://ds920.dsmynas.net:5555/rtp/226.0.2.181:9360$山西uni2+
 CETV5,http://ds920.dsmynas.net:5555/rtp/226.0.2.99:8704$山西uni2+
 
