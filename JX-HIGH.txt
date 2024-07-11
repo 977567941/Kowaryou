@@ -2132,7 +2132,29 @@ WS陕西卫视,http://lede.medahl.com:10098/rtp/239.76.254.76:9000$湖南长沙1
 广XYIPV8,http://www.dsmcloud.top:8888/rtp/239.81.0.208:4056$广西cmc2+
 广XE热播剧场,http://www.dsmcloud.top:8888/rtp/239.81.0.85:4056$广西cmc2+
 
-
+广XA新闻,http://nb8.xyz:4000/rtp/239.81.0.248:4056$广西cmc4+
+广XB影视,http://nb8.xyz:4000/rtp/239.81.0.250:4056$广西cmc4+
+广XC都市,http://nb8.xyz:4000/rtp/239.81.0.247:4056$广西cmc4+
+广XD综艺,http://nb8.xyz:4000/rtp/239.81.0.214:4056$广西cmc4+
+广XE_12tv,http://nb8.xyz:4000/rtp/239.81.0.124:4056$广西cmc4+
+广XF影院,http://nb8.xyz:4000/rtp/239.81.0.100:4056$广西cmc4+
+广XG玉林新闻,http://nb8.xyz:4000/rtp/239.81.0.138:4056$广西cmc4+
+广XH南宁都市,http://nb8.xyz:4000/rtp/239.81.0.127:4056$广西cmc4+
+广XH南宁公共,http://nb8.xyz:4000/rtp/239.81.0.129:4056$广西cmc4+
+广XI南宁新闻,http://nb8.xyz:4000/rtp/239.81.0.126:4056$广西cmc4+
+广XI南宁新闻,http://nb8.xyz:4000/rtp/239.81.0.241:4056$广西cmc4+
+广XI南宁影视,http://nb8.xyz:4000/rtp/239.81.0.128:4056$广西cmc4+
+广XJ柳州新闻,http://nb8.xyz:4000/rtp/239.81.0.134:4056$广西cmc4+
+广XJ北海新闻,http://nb8.xyz:4000/rtp/239.81.0.136:4056$广西cmc4+
+广XJ桂林新闻,http://nb8.xyz:4000/rtp/239.81.0.135:4056$广西cmc4+
+广XK贺州新闻,http://nb8.xyz:4000/rtp/239.81.0.137:4056$广西cmc4+
+广XZ电竞1,http://nb8.xyz:4000/rtp/239.81.0.203:4056$广西cmc4+
+广XZ电竞2,http://nb8.xyz:4000/rtp/239.81.0.201:4056$广西cmc4+
+广XE都市剧场,http://nb8.xyz:4000/rtp/239.81.0.81:4056$广西cmc4+
+广XE法治天地,http://nb8.xyz:4000/rtp/239.81.0.79:4056$广西cmc4+
+广XYIPV7,http://nb8.xyz:4000/rtp/239.81.0.253:4056$广西cmc4+
+广XYIPV8,http://nb8.xyz:4000/rtp/239.81.0.208:4056$广西cmc4+
+广XE热播剧场,http://nb8.xyz:4000/rtp/239.81.0.85:4056$广西cmc4+
 
 湖BA新闻,http://p.hzzzz530.com:4022/rtp/239.69.1.40:9880$湖北cmc3+
 湖BA经视,http://p.hzzzz530.com:4022/rtp/239.69.1.41:9886$湖北cmc3+
