@@ -223,6 +223,58 @@ S川P游戏,http://xeace.cn:8888/rtp/239.93.0.136:5140$四川cmc2+
 
 
 
+山DA教育,http://sunny2017.forver.one:4022/rtp/239.21.1.169:5002$山东cmc2+
+山DB农科,http://sunny2017.forver.one:4022/rtp/239.21.1.183:5002$山东cmc2+
+山DC齐鲁,http://sunny2017.forver.one:4022/rtp/239.21.1.134:5002$山东cmc2+
+山DD少_儿,http://sunny2017.forver.one:4022/rtp/239.21.1.208:5002$山东cmc2+
+山DD生活,http://sunny2017.forver.one:4022/rtp/239.21.1.175:5002$山东cmc2+
+山DD体育,http://sunny2017.forver.one:4022/rtp/239.21.1.141:5002$山东cmc2+
+山DD文旅,http://sunny2017.forver.one:4022/rtp/239.21.1.176:5002$山东cmc2+
+山DD新闻,http://sunny2017.forver.one:4022/rtp/239.21.1.140:5002$山东cmc2+
+山DD综艺,http://sunny2017.forver.one:4022/rtp/239.21.1.177:5002$山东cmc2+
+山DE济南教育,http://sunny2017.forver.one:4022/rtp/239.21.1.133:5002$山东cmc2+
+山DE烟台公共,http://sunny2017.forver.one:4022/rtp/239.21.1.117:5002$山东cmc2+
+山DE烟台经济,http://sunny2017.forver.one:4022/rtp/239.21.1.205:5002$山东cmc2+
+山DE烟台新闻,http://sunny2017.forver.one:4022/rtp/239.21.1.116:5002$山东cmc2+
+山DE烟台影视,http://sunny2017.forver.one:4022/rtp/239.21.1.204:5002$山东cmc2+
+山DF德州公共,http://sunny2017.forver.one:4022/rtp/239.21.1.76:5002$山东cmc2+
+山DF德州新闻,http://sunny2017.forver.one:4022/rtp/239.21.1.75:5002$山东cmc2+
+山DF齐河新闻,http://sunny2017.forver.one:4022/rtp/239.21.1.230:5002$山东cmc2+
+山DG潍坊TV-1,http://sunny2017.forver.one:4022/rtp/239.21.1.77:5002$山东cmc2+
+山DG潍坊TV-2,http://sunny2017.forver.one:4022/rtp/239.21.1.78:5002$山东cmc2+
+山DG淄博公共,http://sunny2017.forver.one:4022/rtp/239.21.1.182:5002$山东cmc2+
+山DG淄博新闻,http://sunny2017.forver.one:4022/rtp/239.21.1.84:5002$山东cmc2+
+山DG淄博都市,http://sunny2017.forver.one:4022/rtp/239.21.1.83:5002$山东cmc2+
+山DG淄博生活,http://sunny2017.forver.one:4022/rtp/239.21.1.109:5002$山东cmc2+
+山DG滨州公共,http://sunny2017.forver.one:4022/rtp/239.21.1.119:5002$山东cmc2+
+山DG滨州新闻,http://sunny2017.forver.one:4022/rtp/239.21.1.118:5002$山东cmc2+
+山DZ财富天下,http://sunny2017.forver.one:4022/rtp/239.21.1.127:5002$山东cmc2+
+山DH东营公共,http://sunny2017.forver.one:4022/rtp/239.21.1.82:5002$山东cmc2+
+山DH东营新闻,http://sunny2017.forver.one:4022/rtp/239.21.1.81:5002$山东cmc2+
+山DZ光影,http://sunny2017.forver.one:4022/rtp/239.21.1.131:5002$山东cmc2+
+山DG菏泽1,http://sunny2017.forver.one:4022/rtp/239.21.1.103:5002$山东cmc2+
+山DG菏泽2,http://sunny2017.forver.one:4022/rtp/239.21.2.18:5002$山东cmc2+
+山DE济南都市,http://sunny2017.forver.one:4022/rtp/239.21.1.63:5002$山东cmc2+
+山DE济南少_儿,http://sunny2017.forver.one:4022/rtp/239.21.1.68:5002$山东cmc2+
+山DE济南生活,http://sunny2017.forver.one:4022/rtp/239.21.1.64:5002$山东cmc2+
+山DE济南新闻,http://sunny2017.forver.one:4022/rtp/239.21.1.62:5002$山东cmc2+
+山DE济南新闻,http://sunny2017.forver.one:4022/rtp/239.21.1.94:5002$山东cmc2+
+山DE济南影视,http://sunny2017.forver.one:4022/rtp/239.21.1.65:5002$山东cmc2+
+山DE济南娱乐,http://sunny2017.forver.one:4022/rtp/239.21.1.66:5002$山东cmc2+
+山DK济宁公共,http://sunny2017.forver.one:4022/rtp/239.21.2.20:5002$山东cmc2+
+山DK济宁教育,http://sunny2017.forver.one:4022/rtp/239.21.1.139:5002$山东cmc2+
+山DK济宁综合,http://sunny2017.forver.one:4022/rtp/239.21.1.138:5002$山东cmc2+
+山DK济宁综合,http://sunny2017.forver.one:4022/rtp/239.21.2.19:5002$山东cmc2+
+山DK聊城公共,http://sunny2017.forver.one:4022/rtp/239.21.1.254:5002$山东cmc2+
+山DK聊城综合,http://sunny2017.forver.one:4022/rtp/239.21.1.253:5002$山东cmc2+
+山DZ墨宝,http://sunny2017.forver.one:4022/rtp/239.21.1.130:5002$山东cmc2+
+山DE青岛1,http://sunny2017.forver.one:4022/rtp/239.21.1.69:5002$山东cmc2+
+山DE青岛2,http://sunny2017.forver.one:4022/rtp/239.21.1.70:5002$山东cmc2+
+山DE青岛3,http://sunny2017.forver.one:4022/rtp/239.21.1.71:5002$山东cmc2+
+山DE青岛4,http://sunny2017.forver.one:4022/rtp/239.21.1.72:5002$山东cmc2+
+山DE青岛5,http://sunny2017.forver.one:4022/rtp/239.21.1.73:5002$山东cmc2+
+山DE青岛6,http://sunny2017.forver.one:4022/rtp/239.21.1.74:5002$山东cmc2+
+
 
 
 山DA教育,http://oscam.picp.net:4020/rtp/239.21.1.169:5002$山东cmc2+
