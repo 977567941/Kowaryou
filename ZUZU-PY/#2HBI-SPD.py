@@ -1941,7 +1941,7 @@ def custom_sort_key(item):
     if sort_key[0].isalpha():
         sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
-        sort_key = (1, int(sort_key))  #enter-
+        sort_key = (1, -int(sort_key))  #enter-
     else:
         sort_key = (2, sort_key)
 
