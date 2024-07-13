@@ -225,37 +225,6 @@ S川P游戏,http://xeace.cn:8888/rtp/239.93.0.136:5140$四川cmc2+
 
 
 
-WA安徽卫视,http://oscam.picp.net:4020/rtp/239.21.1.159:5002$山东cmc2+
-WB北京卫视,http://oscam.picp.net:4020/rtp/239.21.1.88:5002$山东cmc2+
-兵团卫视,http://oscam.picp.net:4020/rtp/239.21.1.234:5002$山东cmc2+
-WD东方卫视,http://oscam.picp.net:4020/rtp/239.21.1.111:5002$山东cmc2+
-WD东南卫视,http://oscam.picp.net:4020/rtp/239.21.1.113:5002$山东cmc2+
-WG甘肃卫视,http://oscam.picp.net:4020/rtp/239.21.2.22:5002$山东cmc2+
-WG广东卫视,http://oscam.picp.net:4020/rtp/239.21.1.92:5002$山东cmc2+
-WG贵州卫视,http://oscam.picp.net:4020/rtp/239.21.1.166:5002$山东cmc2+
-WH河北卫视,http://oscam.picp.net:4020/rtp/239.21.1.168:5002$山东cmc2+
-WH河南卫视,http://oscam.picp.net:4020/rtp/239.21.2.37:5002$山东cmc2+
-WH黑龙江卫视,http://oscam.picp.net:4020/rtp/239.21.1.91:5002$山东cmc2+
-WH湖北卫视,http://oscam.picp.net:4020/rtp/239.21.1.163:5002$山东cmc2+
-WH湖南卫视,http://oscam.picp.net:4020/rtp/239.21.1.158:5002$山东cmc2+
-WH湖南卫视,http://oscam.picp.net:4020/rtp/239.21.1.18:5002$山东cmc2+
-X纪实科教,http://oscam.picp.net:4020/rtp/239.21.1.172:5002$山东cmc2+
-WJ江苏卫视,http://oscam.picp.net:4020/rtp/239.21.1.89:5002$山东cmc2+
-WJ江西卫视,http://oscam.picp.net:4020/rtp/239.21.1.167:5002$山东cmc2+
-X金鹰纪实,http://oscam.picp.net:4020/rtp/239.21.1.170:5002$山东cmc2+
-WL辽宁卫视,http://oscam.picp.net:4020/rtp/239.21.1.164:5002$山东cmc2+
-内蒙古卫视,http://oscam.picp.net:4020/rtp/239.21.1.41:5002$山东cmc2+
-宁夏卫视,http://oscam.picp.net:4020/rtp/239.21.1.44:5002$山东cmc2+
-农林卫视,http://oscam.picp.net:4020/rtp/239.21.1.235:5002$山东cmc2+
-WQ青海卫视,http://oscam.picp.net:4020/rtp/239.21.1.43:5002$山东cmc2+
-WS山东卫视,http://oscam.picp.net:4020/rtp/239.21.1.87:5002$山东cmc2+
-WS深圳卫视,http://oscam.picp.net:4020/rtp/239.21.1.93:5002$山东cmc2+     
-WS四川卫视,http://oscam.picp.net:4020/rtp/239.21.2.15:5002$山东cmc2+
-WS天津卫视,http://oscam.picp.net:4020/rtp/239.21.1.165:5002$山东cmc2+
-西藏卫视,http://oscam.picp.net:4020/rtp/239.21.1.46:5002$山东cmc2+
-新疆卫视,http://oscam.picp.net:4020/rtp/239.21.1.45:5002$山东cmc2+
-WZ浙江卫视,http://oscam.picp.net:4020/rtp/239.21.1.90:5002$山东cmc2+
-WC重庆卫视,http://oscam.picp.net:4020/rtp/239.21.1.233:5002$山东cmc2+
 山DA教育,http://oscam.picp.net:4020/rtp/239.21.1.169:5002$山东cmc2+
 山DB农科,http://oscam.picp.net:4020/rtp/239.21.1.183:5002$山东cmc2+
 山DC齐鲁,http://oscam.picp.net:4020/rtp/239.21.1.134:5002$山东cmc2+
