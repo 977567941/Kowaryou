@@ -2966,7 +2966,7 @@ for line in lines:
   seen_lines.add(line)
 
 #enter
-with open('yesterdayoncemo.txt', 'w', encoding="utf-8") as file:
+with open('gotostill.txt', 'w', encoding="utf-8") as file:
  file.writelines(unique_lines)
 
 #enter
