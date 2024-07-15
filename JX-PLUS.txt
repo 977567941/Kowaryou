@@ -214,10 +214,11 @@ S川N黑水新闻,http://live.schstv.com:90/live/xwzh.m3u8
 
 湖N湘潭新闻综合,http://live.hnxttv.com:9601/live/xwzh/800K/tzwj_video.m3u8?zhund
 
-黑龙江｜哈尔滨新闻综合,http://stream.hrbtv.net/xwzh/sd/live.m3u8?zheild
-黑龙江｜哈尔滨影视,http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild
-黑龙江｜哈尔滨生活,http://stream.hrbtv.net/shpd/sd/live.m3u8?zheild
-黑龙江｜哈尔滨生活,https://stream.hrbtv.net/shpd/sd/live.m3u8
+
+黑龙J哈尔滨新闻综合,http://stream.hrbtv.net/xwzh/sd/live.m3u8?zheild
+黑龙J哈尔滨影视,http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild
+黑龙J哈尔滨生活,http://stream.hrbtv.net/shpd/sd/live.m3u8?zheild
+黑龙J哈尔滨生活,https://stream.hrbtv.net/shpd/sd/live.m3u8
 
 江S常熟民生经济,http://cstvplay.21cs.cn/cstv2/cstv2.m3u8
 江S常熟综合,http://cstvplay.21cs.cn/cstv1/cstv1.m3u8
