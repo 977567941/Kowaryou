@@ -2046,7 +2046,7 @@ with open('T15.txt', 'r', encoding="utf-8") as input_file, open('TT15.txt', 'a',
 #star#########################
 #enter#############################################################################################
 
-keywords = ['江XA','江XB','江XC','江XD','江XE']  #enter
+keywords = ['江XA','江XB','江XC','江XD','江XE','江X']  #enter
 
 pattern = '|'.join(keywords)  #enter
 
@@ -2446,7 +2446,7 @@ with open('T20.txt', 'r', encoding="utf-8") as input_file, open('TT20.txt', 'a',
 #star#########################
 #enter#############################################################################################
 
-keywords = ['吉L']  #enter
+keywords = ['吉L','黑龙J']  #enter
 
 pattern = '|'.join(keywords)  #enter
 
@@ -2467,7 +2467,7 @@ for line in fileinput.input("T21.txt", inplace=True):  #enter
 #enter-genre###################
 with open('TT21.txt', 'w', encoding='utf-8') as TT21:    #####enter
 
-    TT21.write('\n👑吉林地方频道,#genre#\n')        
+    TT21.write('\n👑吉林黑龙江频道,#genre#\n')        
  
     print(line, end="")  #enter 
 #enter
@@ -2835,7 +2835,7 @@ with open('T25.txt', 'r', encoding="utf-8") as input_file, open('TT25.txt', 'a',
 #star#########################
 #enter#############################################################################################
 
-keywords = ['福JA','福JB','福JC']  #enter
+keywords = ['福JA','福JB','福JC','福J']  #enter
 
 pattern = '|'.join(keywords)  #enter
 
@@ -2907,6 +2907,80 @@ with open('T26.txt', 'r', encoding="utf-8") as input_file, open('TT26.txt', 'a',
     sorted_data = sorted(lines, key=custom_sort_key)
 
 #结束########################################################
+#star#########################
+#enter#############################################################################################
+
+keywords = ['宁X','青H']  #enter
+
+pattern = '|'.join(keywords)  #enter
+
+#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
+
+with open('排序.txt', 'r', encoding='utf-8') as file, open('T27.txt', 'w', encoding='utf-8') as T27:    #####enter
+
+    for line in file:
+
+        if re.search(pattern, line) and line.count(',') == 1:  #enter
+
+         T27.write(line)  #enter
+
+for line in fileinput.input("T27.txt", inplace=True):  #enter 
+
+    print(line, end="")  #enter          
+
+#enter-genre###################
+with open('TT27.txt', 'w', encoding='utf-8') as TT27:    #####enter
+
+    TT27.write('\n👑宁夏青海地方,#genre#\n')        
+ 
+    print(line, end="")  #enter 
+#enter
+
+#enter
+import re
+
+# enter
+def custom_sort_key(item):
+    channel, url = item.split(',')
+
+    channel_letters = ''.join(filter(str.isalpha, channel))
+    channel_numbers = ''.join(filter(str.isdigit, channel))
+
+    if channel_numbers.isdigit():
+        channel_sort_key = (channel_letters, int(channel_numbers))
+    else:
+        channel_sort_key = (channel_letters, 0)
+
+    sort_key = re.search(r"http://(.*?)\.", url)
+    if sort_key:
+        sort_key = sort_key.group(1)
+    else:
+        sort_key = url
+
+    # enter
+    if sort_key[0].isalpha():
+        sort_key = (0, sort_key)  # enter
+    elif sort_key.isdigit():
+        sort_key = (1, -int(sort_key))  #enter
+    else:
+        sort_key = (2, sort_key)
+
+    return (channel_sort_key, sort_key)
+
+with open('T27.txt', 'r', encoding="utf-8") as input_file, open('TT27.txt', 'a', encoding="utf-8") as output_file:
+    #enter
+    lines = input_file.readlines()
+
+    #enter
+    lines = [line.strip() for line in lines if line.strip()]
+    
+    sorted_data = sorted(lines, key=custom_sort_key)
+
+    #enter
+    for channels in sorted_data: 
+        output_file.write(f"{channels}\n")
+    sorted_data = sorted(lines, key=custom_sort_key)
+#结束########################################################
 ##################################################################################################################################SPLIT#
 
 #starmerga多个文件到一个文件###########
@@ -2941,7 +3015,7 @@ with open('AMER-start.txt', 'r', encoding='utf-8') as file:
     content = file.read()
 
 #enter
-content = content.replace("福JA", "福建").replace("福JB", "福建").replace("福JC", "福建").replace("WA", "").replace("WB", "").replace("WC", "").replace("WD", "").replace("WE", "").replace("WF", "").replace("WG", "").replace("WH", "").replace("WI", "").replace("WJ", "").replace("WK", "").replace("WL", "").replace("WM", "").replace("WN", "").replace("WO", "").replace("WP", "").replace("WP", "").replace("WQ", "").replace("WR", "").replace("WS", "").replace("WT", "").replace("WU", "").replace("WV", "").replace("WW", "").replace("WX", "").replace("WY", "").replace("WZ", "").replace("CF", "").replace("IV", "").replace("X纪实", "X纪实").replace("Y卡酷", "卡酷").replace("Y动漫", "动漫").replace("Y金色学堂", "金色学堂").replace("电Y", "电影").replace("老DY", "老电影").replace("X乐", "乐").replace("X求", "求").replace("X纪", "纪").replace("X记", "记").replace("X金", "金").replace("Y动", "动").replace("Y卡", "卡").replace("Y咔", "咔").replace("Y嘉", "嘉").replace("Y新", "新").replace("剧J", "连续剧").replace("重Q", "重庆").replace("北J", "北京").replace("河B", "河北").replace("河N", "河南").replace("天J", "天津").replace("广D", "广东").replace("湖B", "湖北").replace("湖N", "湖南").replace("山D", "山东").replace("安H", "安徽").replace("江S", "江苏").replace("山X", "山西").replace("浙J", "浙江").replace("辽L", "辽宁").replace("吉L", "吉林").replace("贵Z", "贵州").replace("陕X", "陕西").replace("S川", "四川").replace("褔J", "福建").replace("GAT-", "").replace("裾J", "裾集").replace("江X", "江西").replace("新J", "新疆").replace("褔JA", "福建").replace("褔JB", "福建").replace("褔JC", "福建").replace("褔JD", "福建").replace("广X", "广西").replace("A", "").replace("B", "").replace("F", "").replace("G", "").replace("I", "").replace("J", "").replace("K", "").replace("L", "").replace("M", "").replace("N", "").replace("O", "").replace("P", "").replace("Q", "").replace("R", "").replace("S", "").replace("U", "").replace("W", "").replace("X", "").replace("Y", "").replace("Z", "").replace("C新闻", "新闻").replace("电映C", "电映").replace("电映E", "电映").replace("电映H", "电映").replace("D影视", "影视").replace("E都市", "都市").replace("H新农", "新农").replace("河北C", "河北").replace("河北D", "河北").replace("河南C", "河南").replace("河南D", "河南").replace("天津C", "天津").replace("天津D", "天津").replace("天津E", "天津").replace("广东C", "广东").replace("广东H", "广东").replace("广西C", "广西").replace("广西D", "广西").replace("广西E", "广西").replace("广西H", "广西").replace("湖北C", "湖北").replace("湖北D", "湖北").replace("山东C", "山东").replace("山东D", "山东").replace("山东E", "山东").replace("山东H", "山东").replace("安徽C", "安徽").replace("安徽D", "安徽").replace("安徽E", "安徽").replace("安徽H", "安徽").replace("江西C", "江西").replace("江西D", "江西").replace("江西E", "江西").replace("江西H", "江西").replace("陕西C", "陕西").replace("陕西D", "陕西").replace("陕西E", "陕西").replace("陕西H", "陕西").replace("浙江C", "浙江").replace("浙江D", "浙江").replace("浙江E", "浙江").replace("浙江H", "浙江").replace("四川C", "四川").replace("四川D", "四川").replace("四川E", "四川").replace("四川H", "四川").replace("辽宁C", "辽宁").replace("辽宁D", "辽宁").replace("辽宁E", "辽宁").replace("辽宁H", "辽宁").replace("吉林C", "吉林").replace("山西C", "山西").replace("山西D", "山西").replace("山西E", "山西").replace("山西H", "山西").replace("少_儿", "少儿").replace("少*儿", "少儿")
+content = content.replace("WA", "").replace("WB", "").replace("WC", "").replace("WD", "").replace("WE", "").replace("WF", "").replace("WG", "").replace("WH", "").replace("WI", "").replace("WJ", "").replace("WK", "").replace("WL", "").replace("WM", "").replace("WN", "").replace("WO", "").replace("WP", "").replace("WP", "").replace("WQ", "").replace("WR", "").replace("WS", "").replace("WT", "").replace("WU", "").replace("WV", "").replace("WW", "").replace("WX", "").replace("WY", "").replace("WZ", "").replace("CF", "").replace("IV", "").replace("X纪实", "X纪实").replace("Y卡酷", "卡酷").replace("Y动漫", "动漫").replace("Y金色学堂", "金色学堂").replace("电Y", "电影").replace("老DY", "老电影").replace("X乐", "乐").replace("X求", "求").replace("X纪", "纪").replace("X记", "记").replace("X金", "金").replace("Y动", "动").replace("Y卡", "卡").replace("Y咔", "咔").replace("Y嘉", "嘉").replace("Y新", "新").replace("剧J", "连续剧").replace("重Q", "重庆").replace("北J", "北京").replace("河B", "河北").replace("河N", "河南").replace("天J", "天津").replace("广D", "广东").replace("湖B", "湖北").replace("湖N", "湖南").replace("山D", "山东").replace("安H", "安徽").replace("江S", "江苏").replace("山X", "山西").replace("浙J", "浙江").replace("辽L", "辽宁").replace("吉L", "吉林").replace("贵Z", "贵州").replace("陕X", "陕西").replace("S川", "四川").replace("褔J", "福建").replace("GAT-", "").replace("裾J", "裾集").replace("江X", "江西").replace("新J", "新疆").replace("褔JA", "福建").replace("褔JB", "福建").replace("褔JC", "福建").replace("褔JD", "福建").replace("福J", "福建").("广X", "广西").replace("A", "").replace("B", "").replace("F", "").replace("G", "").replace("I", "").replace("J", "").replace("K", "").replace("L", "").replace("M", "").replace("N", "").replace("O", "").replace("P", "").replace("Q", "").replace("R", "").replace("S", "").replace("U", "").replace("W", "").replace("X", "").replace("Y", "").replace("Z", "").replace("C新闻", "新闻").replace("电映C", "电映").replace("电映E", "电映").replace("电映H", "电映").replace("D影视", "影视").replace("E都市", "都市").replace("H新农", "新农").replace("河北C", "河北").replace("河北D", "河北").replace("河南C", "河南").replace("河南D", "河南").replace("天津C", "天津").replace("天津D", "天津").replace("天津E", "天津").replace("广D", "广东").replace("广东C", "广东").replace("广东H", "广东").replace("广西C", "广西").replace("广西D", "广西").replace("广西E", "广西").replace("广西H", "广西").replace("湖北C", "湖北").replace("湖北D", "湖北").replace("山东C", "山东").replace("山东D", "山东").replace("山东E", "山东").replace("山东H", "山东").replace("安徽C", "安徽").replace("安徽D", "安徽").replace("安徽E", "安徽").replace("安徽H", "安徽").replace("江西C", "江西").replace("江西D", "江西").replace("江西E", "江西").replace("江西H", "江西").replace("陕西C", "陕西").replace("陕西D", "陕西").replace("陕西E", "陕西").replace("陕西H", "陕西").replace("浙江C", "浙江").replace("浙江D", "浙江").replace("浙江E", "浙江").replace("浙江H", "浙江").replace("四川C", "四川").replace("四川D", "四川").replace("四川E", "四川").replace("四川H", "四川").replace("辽宁C", "辽宁").replace("辽宁D", "辽宁").replace("辽宁E", "辽宁").replace("辽宁H", "辽宁").replace("吉林C", "吉林").replace("山西C", "山西").replace("山西D", "山西").replace("山西E", "山西").replace("山西H", "山西").replace("宁X", "宁夏").replace("青H", "青海").replace("黑龙J", "黑龙江").replace("少_儿", "少儿").replace("少*儿", "少儿")
 
 with open('AMER-delete.txt', 'w', encoding='utf-8') as file:
     file.write(content)
@@ -3035,6 +3109,7 @@ os.remove("T25.txt")
 
 os.remove("T26.txt")
 
+os.remove("T27.txt")
 
 os.remove("TT1.txt")
 
@@ -3086,5 +3161,6 @@ os.remove("TT25.txt")
 
 os.remove("TT26.txt")
 
+os.remove("TT27.txt")
 
 print("over")
