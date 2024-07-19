@@ -19,16 +19,8 @@ CHC家庭影院,http://istore4.qnas.net:8889/rtp/226.0.2.240:9820$山西uni3+
 CHC高清电影,http://czkeji.vip:9000/rtp/239.252.219.83:5140$江西cmc1+
 CHC家庭影院,http://czkeji.vip:9000/rtp/239.252.219.84:5140$江西cmc1+
 CHC动作电影,http://czkeji.vip:9000/rtp/239.252.219.85:5140$江西cmc1+
-
-
-
 IV凤凰卫视中文台,http://xubo0712.asuscomm.cn:9999/rtp/239.93.0.162:2192$四川cmc1+
 IV凤凰卫视资讯台,http://xubo0712.asuscomm.cn:9999/rtp/239.93.0.118:2191$四川cmc1+
-
-IV凤凰卫视中文台,http://xeace.cn:8888/rtp/239.93.0.162:2192$四川cmc2+
-IV凤凰卫视资讯台,http://xeace.cn:8888/rtp/239.93.0.118:2191$四川cmc2+
-
-
 康巴卫视,http://xubo0712.asuscomm.cn:9999/rtp/239.93.0.41:5140$四川cmc1+
 S川A星光院线,http://xubo0712.asuscomm.cn:9999/rtp/239.93.0.139:5140$四川cmc1+
 S川A全球大片,http://xubo0712.asuscomm.cn:9999/rtp/239.93.0.105:5140$四川cmc1+
