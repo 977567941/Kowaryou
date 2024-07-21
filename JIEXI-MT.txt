@@ -23,12 +23,11 @@ CCTV17,http://tnvcn.com:8012/rtp/239.3.1.151:8144$北京uni1+
 CCTV4U,http://www.lizhinas.top:8688/rtp/239.252.219.192:5140$江西cmc3+
 CCTV4M,http://www.lizhinas.top:8688/rtp/239.252.219.193:5140$江西cmc3+
 
-CETV1,http://ds920.dsmynas.net:5555/rtp/226.0.2.181:9360$山西uni2+
-CETV1,http://www.recker.cc:4022/rtp/239.77.0.200:5146$广东cmc6+
-CETV2,http://www.recker.cc:4022/udp/239.77.1.69:5146$广东cmc6+
-CETV4,http://www.recker.cc:4022/udp/239.253.43.114:5146$广东cmc6+
-CETV5,http://www.recker.cc:4022/rtp/239.77.0.180:5146$广东cmc6+
-CETV5,http://ds920.dsmynas.net:5555/rtp/226.0.2.99:8704$山西uni2+
+CETV1,http://op.sev7.net:4022/rtp/239.254.200.225:6259$河北cmc5+
+CETV2,http://media.shaohong86.cn:8888/rtp/238.255.2.221:5999$毕节\电信1+
+CETV4,http://op.sev7.net:4022/rtp/239.254.200.227:6261$河北cmc5+
+CETV5,http://op.sev7.net:4022/rtp/239.254.201.230:7253$河北cmc5+
+
 
 CF文化精品,http://www.lizhinas.top:8688/rtp/239.252.219.81:5140$江西cmc3+
 CF央视台球,http://www.lizhinas.top:8688/rtp/239.252.219.80:5140$江西cmc3+
