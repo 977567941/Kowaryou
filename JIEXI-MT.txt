@@ -53,8 +53,8 @@ CHC家庭影院,http://n1.dddmmh.space:8088/rtp/225.0.4.228:7980$重庆uni2+
 CHC动作电影,http://n1.dddmmh.space:8088/rtp/225.0.4.229:7980$重庆uni2+
 CHC高清电影,http://n1.dddmmh.space:8088/rtp/225.0.4.230:7980$重庆uni2+
 ##1080P
-IV凤凰卫视中文台,http://xeace.cn:8888/udp/239.93.0.162:2192$四川cmc2+
-IV凤凰卫视资讯台,http://xeace.cn:8888/udp/239.93.0.118:2191$四川cmc2+
+IV凤凰卫视中文台,http://xubo0712.asuscomm.cn:9999/rtp/239.93.0.162:2192$四川cmc1+
+IV凤凰卫视资讯台,http://xubo0712.asuscomm.cn:9999/rtp/239.93.0.118:2191$四川cmc1+
 
 WA安徽卫视,http://tnvcn.com:8012/rtp/239.3.1.211:8064$北京uni1+
 WB北京卫视,http://tnvcn.com:8012/rtp/239.3.1.241:8000$北京uni1+
