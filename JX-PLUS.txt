@@ -215,10 +215,10 @@ S川N黑水新闻,http://live.schstv.com:90/live/xwzh.m3u8
 湖N湘潭新闻综合,http://live.hnxttv.com:9601/live/xwzh/800K/tzwj_video.m3u8?zhund
 
 
-黑龙J哈尔滨新闻综合,http://stream.hrbtv.net/xwzh/sd/live.m3u8?zheild
-黑龙J哈尔滨影视,http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild
-黑龙J哈尔滨生活,http://stream.hrbtv.net/shpd/sd/live.m3u8?zheild
-黑龙J哈尔滨生活,https://stream.hrbtv.net/shpd/sd/live.m3u8
+黑龙江哈尔滨新闻综合,http://stream.hrbtv.net/xwzh/sd/live.m3u8?zheild
+黑龙江哈尔滨影视,http://stream.hrbtv.net/yspd/sd/live.m3u8?zheild
+黑龙江哈尔滨生活,http://stream.hrbtv.net/shpd/sd/live.m3u8?zheild
+黑龙江哈尔滨生活,https://stream.hrbtv.net/shpd/sd/live.m3u8
 
 江S常熟民生经济,http://cstvplay.21cs.cn/cstv2/cstv2.m3u8
 江S常熟综合,http://cstvplay.21cs.cn/cstv1/cstv1.m3u8
@@ -241,39 +241,39 @@ S川N黑水新闻,http://live.schstv.com:90/live/xwzh.m3u8
 江X赣州新闻,http://wb.jxgztv.com/live/gztv1.flv
 
 
-宁X公共,https://hls.ningxiahuangheyun.com/live/nxgg1M.flv
-宁X经济,https://hls.ningxiahuangheyun.com/live/nxjj1M.flv
-宁X文旅,https://hls.ningxiahuangheyun.com/live/nxwl1M.flv
-宁X少儿,https://hls.ningxiahuangheyun.com/live/nxse1M.flv
-宁X石嘴山综合,https://pili-live-hls-jrszs.szsnews.com:443/jrszs/zhpd.m3u8
-宁X吴忠公共,http://live.kanwz.net/ggpd/sd/live.m3u8?zningxd
-宁X吴忠综合,http://live.kanwz.net/zhpd/sd/live.m3u8?zningxd
-宁X安多卫视,http://stream.qhbtv.com/adws/playlist.m3u8?_upt=739abf201649062902
-宁X安多卫视,http://stream.qhbtv.com/adws/sd/live.m3u8
-宁X安多卫视,http://stream.qhbtv.com/adws/playlist.m3u8
-宁X门源综合,http://livecdn.dmqhyadmin.com/hls/xjmenyuan.m3u8?zqinghd
-宁X化隆综合,http://livecdn.dmqhyadmin.com/hls/xjhualong.m3u8
-宁X民和综合,http://livecdn.dmqhyadmin.com/hls/xjminhe.m3u8?zqinghd
-宁X兴海综合,http://lived.dmqhyadmin.com/xhzhpd/sd/live.m3u8
-宁X大通电视台,http://dtrmlive.qhdtrm.cn/testpush/sd/live.m3u8
-宁X湟中电视台,http://livecdn.dmqhyadmin.com/hls/xjhuangzhong.m3u8
-宁X公共,https://livepgc.cmc.ningxiahuangheyun.com/tv/nxgg.m3u8
-宁X卫视,https://livepgc.cmc.ningxiahuangheyun.com/tv/nxws.m3u8
+宁夏公共,https://hls.ningxiahuangheyun.com/live/nxgg1M.flv
+宁夏经济,https://hls.ningxiahuangheyun.com/live/nxjj1M.flv
+宁夏文旅,https://hls.ningxiahuangheyun.com/live/nxwl1M.flv
+宁夏少儿,https://hls.ningxiahuangheyun.com/live/nxse1M.flv
+宁夏石嘴山综合,https://pili-live-hls-jrszs.szsnews.com:443/jrszs/zhpd.m3u8
+宁夏吴忠公共,http://live.kanwz.net/ggpd/sd/live.m3u8?zningxd
+宁夏吴忠综合,http://live.kanwz.net/zhpd/sd/live.m3u8?zningxd
+宁夏安多卫视,http://stream.qhbtv.com/adws/playlist.m3u8?_upt=739abf201649062902
+宁夏安多卫视,http://stream.qhbtv.com/adws/sd/live.m3u8
+宁夏安多卫视,http://stream.qhbtv.com/adws/playlist.m3u8
+宁夏门源综合,http://livecdn.dmqhyadmin.com/hls/xjmenyuan.m3u8?zqinghd
+宁夏化隆综合,http://livecdn.dmqhyadmin.com/hls/xjhualong.m3u8
+宁夏民和综合,http://livecdn.dmqhyadmin.com/hls/xjminhe.m3u8?zqinghd
+宁夏兴海综合,http://lived.dmqhyadmin.com/xhzhpd/sd/live.m3u8
+宁夏大通电视台,http://dtrmlive.qhdtrm.cn/testpush/sd/live.m3u8
+宁夏湟中电视台,http://livecdn.dmqhyadmin.com/hls/xjhuangzhong.m3u8
+宁夏公共,https://livepgc.cmc.ningxiahuangheyun.com/tv/nxgg.m3u8
+宁夏卫视,https://livepgc.cmc.ningxiahuangheyun.com/tv/nxws.m3u8
 
 
-青H经视,http://stream.qhbtv.com/qhsh/playlist.m3u8
-青H经视,http://stream.qhbtv.com/qhsh/sd/live.m3u8?_upt=a7ec5e491648026933
-青H经视,http://stream.qhbtv.com/qhsh/sd/live.m3u8?_upt=ba357f031594546763
-青H经视,http://stream.qhbtv.com/qhsh/sd/live.m3u8
-青H都市,http://stream.qhbtv.com/qhds/playlist.m3u8
-青H都市,http://stream.qhbtv.com/qhds/sd/live.m3u8
-青H都市,http://stream.qhbtv.com/qhds/sd/live.m3u8?_upt=f868bafe1594546577
-青H门源综合,http://livecdn.dmqhyadmin.com/hls/xjmenyuan.m3u8?zqinghd
-青H民和综合,http://livecdn.dmqhyadmin.com/hls/xjminhe.m3u8?zqinghd
-青H大通电视台,http://dtrmlive.qhdtrm.cn/testpush/sd/live.m3u8
-青H湟中电视台,http://livecdn.dmqhyadmin.com/hls/xjhuangzhong.m3u8
-青H兴海综合,http://lived.dmqhyadmin.com/xhzhpd/sd/live.m3u8
-青H化隆综合,http://livecdn.dmqhyadmin.com/hls/xjhualong.m3u8
+青海经视,http://stream.qhbtv.com/qhsh/playlist.m3u8
+青海经视,http://stream.qhbtv.com/qhsh/sd/live.m3u8?_upt=a7ec5e491648026933
+青海经视,http://stream.qhbtv.com/qhsh/sd/live.m3u8?_upt=ba357f031594546763
+青海经视,http://stream.qhbtv.com/qhsh/sd/live.m3u8
+青海都市,http://stream.qhbtv.com/qhds/playlist.m3u8
+青海都市,http://stream.qhbtv.com/qhds/sd/live.m3u8
+青海都市,http://stream.qhbtv.com/qhds/sd/live.m3u8?_upt=f868bafe1594546577
+青海门源综合,http://livecdn.dmqhyadmin.com/hls/xjmenyuan.m3u8?zqinghd
+青海民和综合,http://livecdn.dmqhyadmin.com/hls/xjminhe.m3u8?zqinghd
+青海大通电视台,http://dtrmlive.qhdtrm.cn/testpush/sd/live.m3u8
+青海湟中电视台,http://livecdn.dmqhyadmin.com/hls/xjhuangzhong.m3u8
+青海兴海综合,http://lived.dmqhyadmin.com/xhzhpd/sd/live.m3u8
+青海化隆综合,http://livecdn.dmqhyadmin.com/hls/xjhualong.m3u8
 
 
 
