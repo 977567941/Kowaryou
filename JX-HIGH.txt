@@ -1,21 +1,4 @@
 
-CETV1,http://ds920.dsmynas.net:5555/rtp/226.0.2.181:9360$山西uni2+
-CETV5,http://ds920.dsmynas.net:5555/rtp/226.0.2.99:8704$山西uni2+
-
-CETV1,http://istore4.qnas.net:8889/rtp/226.0.2.181:9360$山西uni3+
-CETV5,http://istore4.qnas.net:8889/rtp/226.0.2.99:8704$山西uni3+
-
-
-
-CHC高清电影,http://ds920.dsmynas.net:5555/rtp/226.0.2.93:8004$山西uni2+
-CHC动作电影,http://ds920.dsmynas.net:5555/rtp/226.0.2.94:8012$山西uni2+
-CHC家庭影院,http://ds920.dsmynas.net:5555/rtp/226.0.2.240:9820$山西uni2+
-
-CHC高清电影,http://istore4.qnas.net:8889/rtp/226.0.2.93:8004$山西uni3+
-CHC动作电影,http://istore4.qnas.net:8889/rtp/226.0.2.94:8012$山西uni3+
-CHC家庭影院,http://istore4.qnas.net:8889/rtp/226.0.2.240:9820$山西uni3+
-
-
 CHC高清电影,http://czkeji.vip:9000/rtp/239.252.219.83:5140$江西cmc1+
 CHC家庭影院,http://czkeji.vip:9000/rtp/239.252.219.84:5140$江西cmc1+
 CHC动作电影,http://czkeji.vip:9000/rtp/239.252.219.85:5140$江西cmc1+
