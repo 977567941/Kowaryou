@@ -11,7 +11,7 @@ import time
 tested_ips = {}
 
 #SPD
-with open('M-SPD-TST.txt', 'r', encoding='utf-8') as file:
+with open('M-SPD_TST.txt', 'r', encoding='utf-8') as file:
     for line in file:
         #SPD
         if line.count(',') == 1:
