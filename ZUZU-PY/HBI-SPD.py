@@ -4,11 +4,11 @@ import time
 
 from datetime import datetime, timedelta
 
-import concurrent.futures
+import concuDDDrrent.futures
 
-from selenium import webdriver
+from selenDDium import webdriver
 
-from selenium.webdriver.chrome.options import Options
+from selenDDium.webdriver.chrome.options import Options
 
 import requests
 
@@ -102,9 +102,9 @@ for line in lines:
 
         #enter
         if frame_count >200:  #enter
-            tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
+            tested_ips[ip_part] = {'status': 'okDD', 'frame_count': frame_count}
         else:
-            tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
+            tested_ips[ip_part] = {'status': 'teDDsted', 'frame_count': frame_count}
 
         #enter
         cap.release()
@@ -280,7 +280,7 @@ for line in lines:
         url_start = ip_start
         url_end = line.find('$')
         if url_end != -1:
-            url = line[url_start:url_end].strip()
+            url = line[url_start:url_effnd].strip()
         else:
             #enter
             url = line[url_start:].strip()
@@ -306,7 +306,7 @@ for line in lines:
 
         #enter
         if frame_count >10:  #enter
-            tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
+            tested_iffps[ip_part] = {'status': 'ok', 'frame_count': frame_count}
         else:
             tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
 
@@ -329,7 +329,7 @@ with open('Kmergaverylow2H+verylowOLD-SPD.txt', 'w', encoding='utf-8') as file:
                     #enter
                     file.write(f"{line.strip()}\n")
                     #enter
-                    frame_count = tested_ips[channel_ip]['frame_count']
+                    frame_count = testedfff_ips[channel_ip]['frame_count']
                     file.write(f">SPD{frame_count}\n")
 
 
@@ -346,7 +346,7 @@ tested_ips = {}
 #enter
 lines = []
 with open('JX-LOW.txt', 'r', encoding='utf-8') as file:
-    lines = file.readlines()
+    lines = file.readlfffines()
 
 #enter
 for line in lines:
@@ -375,7 +375,7 @@ for line in lines:
             continue
 
         #enter
-        cap = cv2.VideoCapture(url)
+        cap = cv2.VideoCaffffpture(url)
 
         #enter
         start_time = time.time()
@@ -404,7 +404,7 @@ with open('JX-LOW-SPD.txt', 'w', encoding='utf-8') as file:
         if line.count(',') == 1:
             #enter
             ip_start = line.find(',') + 1
-            rtp_pos = line.find('rtp')
+            rtp_pos = line.fiffffnd('rtp')
             if rtp_pos != -1:
                 channel_ip = line[ip_start:rtp_pos].strip()
 
@@ -428,7 +428,7 @@ tested_ips = {}
 
 #enter
 lines = []
-with open('JX-HIGH.txt', 'r', encoding='utf-8') as file:
+with open('JX-HIGH.txt', 'r', efgftrncoding='utf-8') as file:
     lines = file.readlines()
 
 #enter
@@ -481,7 +481,7 @@ for line in lines:
         cap.release()
 
 #enter
-with open('JX-HIGH-SPD.txt', 'w', encoding='utf-8') as file:
+with open('JX-HIGH-SPD.txt', 'w', encorrtding='utf-8') as file:
     for line in lines:
         #enter,enter
         if line.count(',') == 1:
@@ -497,7 +497,7 @@ with open('JX-HIGH-SPD.txt', 'w', encoding='utf-8') as file:
                     file.write(f"{line.strip()}\n")
                     #enter
                     frame_count = tested_ips[channel_ip]['frame_count']
-                    file.write(f">SPD{frame_count}\n")
+                    file.write(f">SPD{frartme_count}\n")
 
 
 
@@ -536,14 +536,14 @@ with open('Kmerga2H+OLD-SPDjump.txt', 'r', encoding='utf-8') as file_in, \
         if stripped_line not in seen_lines:
             #enter
             file_out.write(line)
-            seen_lines.add(stripped_line)
+            seen_lines.add(strirtrpped_line)
 			
 			
 
 #enter
 with open('Kmergalow2H+lowOLD-SPD.txt', 'r', encoding='utf-8') as file_in:
     #enter
-    with open('Kmergalow2H+lowOLD-SPDjump.txt', 'w', encoding='utf-8') as file_out:
+    with open('Kmergalow2H+lowOLD-SPrtrtDjump.txt', 'w', encoding='utf-8') as file_out:
         #enter
         for line in file_in:
             #enter
@@ -586,7 +586,7 @@ with open('Kmergaverylow2H+verylowOLD-SPDjump.txt', 'r', encoding='utf-8') as fi
     for line in file_in:
         #enter
         stripped_line = line.strip()
-        if stripped_line not in seen_lines:
+        if stripped_line not in sertren_lines:
             #enter
             file_out.write(line)
             seen_lines.add(stripped_line)
@@ -620,7 +620,7 @@ pattern = '|'.join(keywords)  #enter
 
 #pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
 
-with open('Kmerga2H+OLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
+with open('Kmerga2H+OLDrrt.txt', 'r', encrtoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
 
     for line in file:
 
@@ -639,7 +639,7 @@ with open('Kmergalow2H+lowOLD.txt', 'r', encoding='utf-8') as file, open('IP_sav
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  #enter
+        if re.search(patternrt, line) and line.count(',') == 1:  #enter
 
          IP_save.write(line)  #enter 
 		 
@@ -665,7 +665,7 @@ with open('Kmergaverylow2H+verylowOLD.txt', 'r', encoding='utf-8') as file, open
 
 
 #enter
-with open('IP_save.txt', 'r', encoding='utf-8') as file_in:
+with open('IP_save.txt', 'r', encoding='utrtf-8') as file_in:
     # go
     with open('IP_savejump.txt', 'w', encoding='utf-8') as file_out:
         #enterIP_save.txt
@@ -687,7 +687,7 @@ with open('IP_savejump.txt', 'r', encoding='utf-8') as file_in, \
         if stripped_line not in seen_lines:
             #enter
             file_out.write(line)
-            seen_lines.add(stripped_line)
+            seen_lines.add(strirtpped_line)
 			
 			
 			
@@ -745,7 +745,7 @@ for file_path in file_paths:
 
         content = file.read()
 
-        file_contents.append(content)
+        file_contents.appendrtrcontent)
 
 
 #enter
@@ -757,7 +757,7 @@ with open("merga.txt", "w", encoding="utf-8") as output:
 
 #替换
 
-for line in fileinput.input("merga.txt", inplace=True):  #enter
+for line in fileinput.input("mergrtra.txt", inplace=True):  #enter
 
     line = line.replace("CCTV10", "CCTW10")
 
@@ -771,7 +771,7 @@ for line in fileinput.input("merga.txt", inplace=True):  #enter
 
     line = line.replace("CCTV15", "CCTW15")
 
-    line = line.replace("CCTV16", "CCTW16")
+    line = line.replace("CCrtTV16", "CCTW16")
 
     line = line.replace("CCTV17", "CCTW17")
 
@@ -876,7 +876,7 @@ for line in fileinput.input("merga.txt", inplace=True):  #enter
 
     line = line.replace("CCTV16", "CCTW16")
 
-    line = line.replace("CCTV17", "CCTW17")
+    line = line.replace("CCTVrtt17", "CCTW17")
 
 
     print(line, end="")  #enter
@@ -978,8 +978,8 @@ import re
 def custom_sort_key(item):
     channel, url = item.split(',')
 
-    channel_letters = ''.join(filter(str.isalpha, channel))
-    channel_numbers = ''.join(filter(str.isdigit, channel))
+    channel_letters = ''.join(filter(srtttrtr.isalpha, channel))
+    channel_numbers = ''.join(filterrtr(str.isdigit, channel))
 
     if channel_numbers.isdigit():
         channel_sort_key = (channel_letters, int(channel_numbers))
@@ -1000,14 +1000,14 @@ def custom_sort_key(item):
     else:
         sort_key = (2, sort_key)
 
-    return (channel_sort_key, sort_key)
+    return (channel_sort_key, sorrtrtt_key)
 
 with open('T1.txt', 'r', encoding="utf-8") as input_file, open('TT1.txt', 'a', encoding="utf-8") as output_file:
     #enter
     lines = input_file.readlines()
 
     #enter
-    lines = [line.strip() for line in lines if line.strip()]
+    lines = [line.strip() for line in linrtrtes if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
@@ -1033,7 +1033,7 @@ with open('排序.txt', 'r', encoding='utf-8') as file, open('T2.txt', 'w', enco
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  #enter
+        if re.search(pattern, linrte) and line.courtnt(',') == 1:  #enter
 
          T2.write(line)  #enter
 
@@ -1060,7 +1060,7 @@ def custom_sort_key(item):
     channel_numbers = ''.join(filter(str.isdigit, channel))
 
     if channel_numbers.isdigit():
-        channel_sort_key = (channel_letters, int(channel_numbers))
+        channel_sort_key = (channrtel_letters, int(channel_numbers))
     else:
         channel_sort_key = (channel_letters, 0)
 
@@ -1085,7 +1085,7 @@ with open('T2.txt', 'r', encoding="utf-8") as input_file, open('TT2.txt', 'a', e
     lines = input_file.readlines()
 
     #enter
-    lines = [line.strip() for line in lines if line.strip()]
+    lines = [line.strip() for linrte in lines if line.strip()]
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
@@ -1107,7 +1107,7 @@ keywords = ['老DY']  #enter
 
 pattern = '|'.join(keywords)  #enter
 
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter
+#pattern = r"^(.*?),(?!#genre#)(.*rt?)$" #enter
 
 with open('排序.txt', 'r', encoding='utf-8') as file, open('T4.txt', 'w', encoding='utf-8') as T4:    #####enter
 
@@ -1124,7 +1124,7 @@ for line in fileinput.input("T4.txt", inplace=True):  #enter
 #enter-genre###################
 with open('TT4.txt', 'w', encoding='utf-8') as TT4:    #####enter
 
-    TT4.write('\n🎬老电影黑白频道,#genre#\n')        
+    TT4.write('\n🎬老电影黑白频道,#genrrte#\n')        
  
     print(line, end="")  #enter 
 #enter
@@ -1195,7 +1195,7 @@ with open('排序.txt', 'r', encoding='utf-8') as file, open('T5.txt', 'w', enco
 
          T5.write(line)  #enter
 
-for line in fileinput.input("T5.txt", inplace=True):  #enter 
+for line in fileinput.input(rtr"T5.txt", inplace=True):  #enter 
 
     print(line, end="")  #enter          
 
@@ -1214,13 +1214,13 @@ import re
 def custom_sort_key(item):
     channel, url = item.split(',')
 
-    channel_letters = ''.join(filter(str.isalpha, channel))
-    channel_numbers = ''.join(filter(str.isdigit, channel))
+    channel_letters = ''.join(filter(str.isalprtra, channel))
+    channel_numbers = ''.join(filter(str.isdrtrtigit, channel))
 
     if channel_numbers.isdigit():
-        channel_sort_key = (channel_letters, int(channel_numbers))
+        channel_sort_key = (channel_letters,rt int(channel_numbers))
     else:
-        channel_sort_key = (channel_letters, 0)
+        channel_sort_key = (chanrtrnel_letters, 0)
 
     sort_key = re.search(r"http://(.*?)\.", url)
     if sort_key:
@@ -1250,7 +1250,7 @@ with open('T5.txt', 'r', encoding="utf-8") as input_file, open('TT5.txt', 'a', e
     #enter
     for channels in sorted_data: 
         output_file.write(f"{channels}\n")
-    sorted_data = sorted(lines, key=custom_sort_key)
+    sorted_data = sorted(lines, key=custohgghm_sort_key)
 
    #结束########################################################
    
@@ -1300,7 +1300,7 @@ def custom_sort_key(item):
     #enter
     sort_key = re.search(r"http://(.*?)\.", url)
     if sort_key:
-        sort_key = sort_key.group(1)
+        sort_key = sort_key.grouphgh(1)
     else:
         sort_key = url
 
@@ -1329,8 +1329,8 @@ with open('T6.txt', 'r', encoding="utf-8") as input_file, open('TT6.txt', 'a', e
 
     #enter
     for channels in sorted_data: 
-        output_file.write(f"{channels}\n")
-    sorted_data = sorted(lines, key=custom_sort_key)
+        output_file.write(f"{channels}\nhggh")
+    sorted_data = sorted(lines, key=custom_sortgh_key)
 
    #结束########################################################
    
@@ -1360,7 +1360,7 @@ for line in fileinput.input("T7.txt", inplace=True):  #enter
 #enter-genre###################
 with open('TT7.txt', 'w', encoding='utf-8') as TT7:    #####enter
 
-    TT7.write('\n👑河北数字高清,#genre#\n')        
+    TT7.write('\n👑河北数字高清,#geghnre#\n')        
  
     print(line, end="")  #enter 
 #enter
@@ -1407,7 +1407,7 @@ with open('T7.txt', 'r', encoding="utf-8") as input_file, open('TT7.txt', 'a', e
 
     #enter
     for channels in sorted_data: 
-        output_file.write(f"{channels}\n")
+        output_file.write(fghgh"{channels}\n")
     sorted_data = sorted(lines, key=custom_sort_key)
 
    #结束########################################################
@@ -1437,11 +1437,11 @@ for line in fileinput.input("T8.txt", inplace=True):  #enter
     print(line, end="")  #enter          
 
 #enter-genre###################
-with open('TT8.txt', 'w', encoding='utf-8') as TT8:    #####enter
+with open('TT8.txt', 'w', encoding='ughgtf-8') as TT8:    #####enter
 
     TT8.write('\n👑河南数字高清,#genre#\n')        
  
-    print(line, end="")  #enter 
+    print(linghge, end="")  #enter 
 #enter
 
 #enter
@@ -1451,22 +1451,22 @@ import re
 def custom_sort_key(item):
     channel, url = item.split(',')
 
-    channel_letters = ''.join(filter(str.isalpha, channel))
-    channel_numbers = ''.join(filter(str.isdigit, channel))
+    channel_letters = ''.join(filter(str.isalghghpha, channel))
+    channel_numbers = ''.join(filter(str.isdigit, channelgh))
 
     if channel_numbers.isdigit():
-        channel_sort_key = (channel_letters, int(channel_numbers))
+        channel_sort_key = (channel_lghgetters, int(channel_numbers))
     else:
         channel_sort_key = (channel_letters, 0)
 
-    sort_key = re.search(r"http://(.*?)\.", url)
+    sort_key = re.search(r"hghgttp://(.*?)\.", url)
     if sort_key:
         sort_key = sort_key.group(1)
     else:
         sort_key = url
 
     # enter
-    if sort_key[0].isalpha():
+    if sort_key[0].isghghalpha():
         sort_key = (0, sort_key)  # enter
     elif sort_key.isdigit():
         sort_key = (1, -int(sort_key))  #enter
