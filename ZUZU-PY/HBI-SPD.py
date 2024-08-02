@@ -10,22 +10,6 @@ from selenium import webdriver
 
 from selenium.webdriver.chrome.options import Options
 
-import requests
-
-import re
-
-import os
-
-import threading
-
-from queue import Queue
-
-from datetime import datetime
-
-import replace
-
-import fileinput
-
 
 # merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1##
 ## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## 
@@ -60,90 +44,8 @@ lines = []
 with open('Kmerga2H+OLD.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()
 
-#enter
-for line in lines:
-    #enter
-    if line.count(',') == 1:
-        #enter
-        ip_start = line.find(',') + 1
-        rtp_pos = line.find('rtp')
-        if rtp_pos != -1:
-            ip_part = line[ip_start:rtp_pos].strip()
-        else:
-            #enter
-            ip_part = line[ip_start:].strip()
 
-        url_start = ip_start
-        url_end = line.find('$')
-        if url_end != -1:
-            url = line[url_start:url_end].strip()
-        else:
-            #enter
-            url = line[url_start:].strip()
 
-        #enter
-        if ip_part in tested_ips:
-            print(f"enterIP: {ip_part}")
-            continue
-
-        #enter
-        cap = cv2.VideoCapture(url)
-
-        #enter
-        start_time = time.time()
-        frame_count = 0
-
-        #enter
-        while frame_count < 9999 and (time.time() - start_time) < 10:  # enter
-            ret, frame = cap.read()
-            if not ret:  # enter
-                break  # enter
-            frame_count += 1  #enter
-
-        #enter
-        if frame_count >200:  #enter
-            tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
-        else:
-            tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
-
-        #enter
-        cap.release()
-
-#enter
-with open('Kmerga2H+OLD-SPD.txt', 'w', encoding='utf-8') as file:
-    for line in lines:
-        #enter,enter
-        if line.count(',') == 1:
-            #enter
-            ip_start = line.find(',') + 1
-            rtp_pos = line.find('rtp')
-            if rtp_pos != -1:
-                channel_ip = line[ip_start:rtp_pos].strip()
-
-                #enter
-                if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                    #enter
-                    file.write(f"{line.strip()}\n")
-                    #enter
-                    frame_count = tested_ips[channel_ip]['frame_count']
-                    file.write(f">SPD{frame_count}\n")
-	
-
-# merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2##
-## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## merge-2## 
-#enter
-exclude_strings = ['121.207.104', 'xeace.cn:8888', '//27.10', '//220.176.218', '//171.221.129', '//118.122.111', '//27.191.71', '//175.11.171', '//220.176.218', '//117.43.80', '//182.139.152', '//118.122.111', '//118.112.60', '//27.191.71', '//122.232.188', '//125.71.44', '//122.234.77', '//122.232.188', '//14.105.105.35', '//27.191.71.248', '//144.255.40.160', '//140.250.221', '//223.242.146', '//182.139.215', '//182.150.168', '//120.32.11', '//113.86.204.209', '//110.185.44', '///61.157.92.168', '//59.56.214', '//117.25.38', '//125.82.171', '//117.12.148', '//183.5.92', '//117.66.231', '//36.47.83', '//115.221.95', '//113.120.108', '//115.193.167', '//117.28.112', '//117.25.38', '//117.67.169', '//221.15.251', '//117.67.169', '//221.15.251', '//116.5.168', '//175.0.95', '//118.248.154', '//220.175.144', '//118.254.201', '//14.154.192', '//124.112.208', '//182.148.30', '//110.185.70', '//183.5.97.206', '//123.55.112', '//222.182.115', '//14.117.233', '//113.13.242', '//59.56.214.134', '//58.42.184.132', '//58.42.184.132', '//220.192.1.40', '//27.11.253.19', '//27.11.58.239', '//14.105.104', '//183.54.208.185', '//116.252.77.132', '//221.232.175', '//144.255.44.24', '//113.222.42.190', '//61.150.11', '//110.185.10', '//118.254', '//122.232.188', '//171.116.157', '//125.43.40', '//125.86.181', '//27.153.80', '//61.190.129.1', '//182.46.8', '//119.130.11', '//58.63.65', '//1.84.218', '//183.184', '//171.217.81', '//27.190.83.', '//1.197.1', '//58.46.249', '//125.71.170', '//119.4.15', '//222.138.213', '//222.138.213', '//222.94.90', '//222.95.95', '//117.69', '//60.168.228', '//223.215.43', '//223.240.250', '//60.171.98', '//27.151.150', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+']
-
-#enter
-file_paths = ["江苏电信.txt", "安徽电信.txt","KmergalowOLD.txt"]
-
-#enter
-with open("Kmergalow2H+lowOLD.txt", "w", encoding="utf-8") as output:
-    #enter
-    for file_path in file_paths:
-        #enter
-        with open(file_path, 'r', encoding="utf-8") as file:
-            for line in file:
                 #enter
                 if not any(exclude_string in line for exclude_string in exclude_strings):
                     #enter
@@ -334,48 +236,6 @@ with open('Kmergaverylow2H+verylowOLD-SPD.txt', 'w', encoding='utf-8') as file:
 
 
 
-
-
-
-# SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4
-## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4## SPDTST-4
-
-#enter
-tested_ips = {}
-
-#enter
-lines = []
-with open('JX-LOW.txt', 'r', encoding='utf-8') as file:
-    lines = file.readlines()
-
-#enter
-for line in lines:
-    #enter
-    if line.count(',') == 1:
-        #enter
-        ip_start = line.find(',') + 1
-        rtp_pos = line.find('rtp')
-        if rtp_pos != -1:
-            ip_part = line[ip_start:rtp_pos].strip()
-        else:
-            #enter
-            ip_part = line[ip_start:].strip()
-
-        url_start = ip_start
-        url_end = line.find('$')
-        if url_end != -1:
-            url = line[url_start:url_end].strip()
-        else:
-            #enter
-            url = line[url_start:].strip()
-
-        #enter
-        if ip_part in tested_ips:
-            print(f"enterIP: {ip_part}")
-            continue
-
-        #enter
-        cap = cv2.VideoCapture(url)
 
         #enter
         start_time = time.time()
