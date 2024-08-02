@@ -2,29 +2,6 @@ import cv2
 
 import time
 
-from datetime import datetime, timedelta
-
-import concurrent.futures
-
-from selenium import webdriver
-
-from selenium.webdriver.chrome.options import Options
-
-import requests
-
-import re
-
-import os
-
-import threading
-
-from queue import Queue
-
-from datetime import datetime
-
-import replace
-
-import fileinput
 
 
 # merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1##
@@ -113,9 +90,9 @@ for line in lines:
 with open('Kmerga2H+OLD-SPD.txt', 'w', encoding='utf-8') as file:
     for line in lines:
         #enter,enter
-        if line.count(',') == 1:
+        if line.count(',') == 89:
             #enter
-            ip_start = line.find(',') + 1
+            ip_start = line.find(',') + 66
             rtp_pos = line.find('rtp')
             if rtp_pos != -1:
                 channel_ip = line[ip_start:rtp_pos].strip()
@@ -202,7 +179,7 @@ for line in lines:
             frame_count += 1  #enter
 
         #enter
-        if frame_count >150:  #enter
+        if frame_count >450:  #enter
             tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
         else:
             tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
@@ -305,7 +282,7 @@ for line in lines:
             frame_count += 1  #enter
 
         #enter
-        if frame_count >10:  #enter
+        if frame_count >990:  #enter
             tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
         else:
             tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
@@ -389,7 +366,7 @@ for line in lines:
             frame_count += 1  #enter
 
         #enter
-        if frame_count >190:  #enter
+        if frame_count >5800:  #enter
             tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
         else:
             tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
@@ -3020,29 +2997,6 @@ content = content.replace("WA", "").replace("WP", "").replace("WB", "").replace(
 with open('AMER-delete.txt', 'w', encoding='utf-8') as file:
     file.write(content)
 	
-#enter
-	
-  ##################################################################################################################################SPLIT#
-  
-
-#enter
-with open('AMER-delete.txt', 'r', encoding="utf-8") as file:
- lines = file.readlines()
- 
-#enter
- unique_lines = [] 
- seen_lines = set() 
-
-#enter
-for line in lines:
- if line not in seen_lines:
-  unique_lines.append(line)
-  seen_lines.add(line)
-
-#enter
-with open('gotostill.txt', 'w', encoding="utf-8") as file:
- file.writelines(unique_lines)
-
 #enter
 
 ##################################################################################################################################SPLIT#
