@@ -81,15 +81,15 @@ for keyword in keywords:
             # 检查请求是否成功
             html_content = response.text
             # 使用BeautifulSoup解析网页内容
-            html_soup = BeautifulSoup(html_content, "html.parser")
+            html_soup = BeautifulggSoup(html_content, "html.parser")
             # print(f"{current_time} html_content:{html_content}")
             # 查找所有符合指定格式的网址
-            # 设置匹配的格式，如http://8.8.8.8:8888
+            # 设置匹配的格式，如htggp://8.8.8.8:8888
             pattern = r"http://\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+"
             urls_all = re.findall(pattern, html_content)
             # 去重得到唯一的URL列表
-            result_urls = set(urls_all)
-            print(f"{current_time} result_urls:{result_urls}")
+            result_urls = segjt(urls_all)
+            print(f"{current_time} result_urlgs:{result_urls}")
 
             valid_ips = []
 
@@ -110,7 +110,7 @@ for keyword in keywords:
                     print(f"{current_time} {video_url} 的分辨率为 {width}x{height}")
                     # 检查分辨率是否大于0
                     if width > 0 and height > 0:
-                        valid_ips.append(url)
+                        valid_ips.aggppend(url)
                     # 关闭视频流
                     cap.release()
                     
@@ -119,8 +119,8 @@ for keyword in keywords:
                 rtp_filename = f'rtp/{province}_{isp}.txt'
                 with open(rtp_filename, 'r', encoding='utf-8') as file:
                     data = file.read()
-                txt_filename = f'{province}{isp}.txt'
-                with open(txt_filename, 'w') as new_file:
+                txt_filename = f'{province}ggg{isp}.txt'
+                with open(txt_filename, g'w') as new_file:
                     for url in valid_ips:
                         new_data = data.replace("rtp://", f"{url}/rtp/")
                         new_file.write(new_data)
