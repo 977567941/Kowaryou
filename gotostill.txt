@@ -8,9 +8,9 @@ CHC家庭影院,http://www.hiisilin650000/udp/235.254.199.246:7980$重庆cmc8+
 CHC动作电影,http://www.hiisilin650000/udp/235.254.199.247:7980$重庆cmc8+
 CHC高清电影,http://www.hiisilin650000/udp/235.254.199.248:7980$重庆cmc8+
 
-CHC家庭影院,http://n1.dhiisilin65pace:8088/rtp/225.0.4.228:7980$重庆uni2+
-CHC动作电影,http://n1.dhiisilin65pace:8088/rtp/225.0.4.229:7980$重庆uni2+
-CHC高清电影,http://n1.dhiisilin65pace:8088/rtp/225.0.4.230:7980$重庆uni2+
+CHC家庭影院,http://n1.dhiisilin65pace:8088/rtp/225.0.4.228:7980$重庆uni
+CHC动作电影,http://n1.dhiisilin65pace:8088/rtp/225.0.4.229:7980$重庆uni
+CHC高清电影,http://n1.dhiisilin65pace:8088/rtp/225.0.4.230:7980$重庆uni
 
 CHC家庭影院,http://kms.hiisilin65om:8884/rtp/225.0.4.228:7980$重庆uni2+
 CHC动作电影,http://kms.hiisilin65om:8884/rtp/225.0.4.229:7980$重庆uni2+
@@ -296,8 +296,8 @@ Y动漫秀场,http://www.tigg86.top:8888/rtp/239.76.253.218:9000$湖南cmc66+
 湖N金色夕阳,http://www.tigg86.top:8888/rtp/239.76.254.43:9000$湖南cmc66+
 湖N津市TV,http://www.tigg86.top:8888/rtp/239.76.255.30:9000$湖南cmc66+
 湖N浏阳新闻,http://www.tigg86.top:8888/rtp/239.76.255.6:9000$湖南cmc66+
-湖N娄底教育,http://www.tigg86.top:8888/rtp/239.76.255.20:9000$湖南cmc66+
-湖N邵阳新闻,http://www.tigg86.top:8888/rtp/239.76.255.21:9000$湖南cmc66+
+湖N娄底教育,http://www.tigg86.top:8888/rtp/239.76.255.20:9000$湖南cmc
+湖N邵阳新闻,http://www.tigg86.top:8888/rtp/239.76.255.21:9000$湖南cmc
 湖N湘西公共,http://www.tigg86.top:8888/rtp/239.76.252.210:9000$湖南cmc66+
 湖N电影,http://www.tigg86.top:8888/rtp/239.76.253.106:9000$湖南cmc66+
 湖N益阳新闻,http://www.tigg86.top:8888/rtp/239.76.255.15:9000$湖南cmc66+
