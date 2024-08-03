@@ -4,33 +4,12 @@ import time
 
 from datetime import datetime, timedelta
 
-import concuDDDrrent.futures
-
-from selenDDium import webdriver
-
-from selenDDium.webdriver.chrome.options import Options
-
-import requests
-
-import re
-
-import os
-
-import threading
-
-from queue import Queue
-
-from datetime import datetime
-
-import replace
-
-import fileinput
 
 
 # merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1##
 ## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## merge-1## 
 #enter
-exclude_strings = ['121.207.104', 'xeace.cn:8888', '//27.10', '//220.176.218', '//171.221.129', '//118.122.111', '//27.191.71', '//175.11.171', '//220.176.218', '//117.43.80', '//182.139.152', '//118.122.111', '//118.112.60', '//27.191.71', '//122.232.188', '//125.71.44', '//122.234.77', '//122.232.188', '//14.105.105.35', '//27.191.71.248', '//144.255.40.160', '//140.250.221', '//223.242.146', '//182.139.215', '//182.150.168', '//120.32.11', '//113.86.204.209', '//110.185.44', '///61.157.92.168', '//59.56.214', '//117.25.38', '//125.82.171', '//117.12.148', '//183.5.92', '//117.66.231', '//36.47.83', '//115.221.95', '//113.120.108', '//115.193.167', '//117.28.112', '//117.25.38', '//117.67.169', '//221.15.251', '//117.67.169', '//221.15.251', '//116.5.168', '//175.0.95', '//118.248.154', '//220.175.144', '//118.254.201', '//14.154.192', '//124.112.208', '//182.148.30', '//110.185.70', '//183.5.97.206', '//123.55.112', '//222.182.115', '//14.117.233', '//113.13.242', '//59.56.214.134', '//58.42.184.132', '//58.42.184.132', '//220.192.1.40', '//27.11.253.19', '//27.11.58.239', '//14.105.104', '//183.54.208.185', '//116.252.77.132', '//221.232.175', '//144.255.44.24', '//113.222.42.190', '//61.150.11', '//110.185.10', '//118.254', '//122.232.188', '//171.116.157', '//125.43.40', '//125.86.181', '//27.153.80', '//61.190.129.1', '//182.46.8', '//119.130.11', '//58.63.65', '//1.84.218', '//183.184', '//171.217.81', '//27.190.83.', '//1.197.1', '//58.46.249', '//125.71.170', '//119.4.15', '//222.138.213', '//222.138.213', '//222.94.90', '//222.95.95', '//117.69', '//60.168.228', '//223.215.43', '//223.240.250', '//60.171.98', '//27.151.150', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+']
+exclude_strings = ['121.207.104', 'xee.cn:8888', '//27.10', '//220.176.218', '//171.221.129', '//118.122.111', '//27.191.71', '//175.11.171', '//220.176.218', '//117.43.80', '//182.139.152', '//118.122.111', '//118.112.60', '//27.191.71', '//122.232.188', '//125.71.44', '//122.234.77', '//122.232.188', '//14.105.105.35', '//27.191.71.248', '//144.255.40.160', '//140.250.221', '//223.242.146', '//182.139.215', '//182.150.168', '//120.32.11', '//113.86.204.209', '//110.185.44', '///61.157.92.168', '//59.56.214', '//117.25.38', '//125.82.171', '//117.12.148', '//183.5.92', '//117.66.231', '//36.47.83', '//115.221.95', '//113.120.108', '//115.193.167', '//117.28.112', '//117.25.38', '//117.67.169', '//221.15.251', '//117.67.169', '//221.15.251', '//116.5.168', '//175.0.95', '//118.248.154', '//220.175.144', '//118.254.201', '//14.154.192', '//124.112.208', '//182.148.30', '//110.185.70', '//183.5.97.206', '//123.55.112', '//222.182.115', '//14.117.233', '//113.13.242', '//59.56.214.134', '//58.42.184.132', '//58.42.184.132', '//220.192.1.40', '//27.11.253.19', '//27.11.58.239', '//14.105.104', '//183.54.208.185', '//116.252.77.132', '//221.232.175', '//144.255.44.24', '//113.222.42.190', '//61.150.11', '//110.185.10', '//118.254', '//122.232.188', '//171.116.157', '//125.43.40', '//125.86.181', '//27.153.80', '//61.190.129.1', '//182.46.8', '//119.130.11', '//58.63.65', '//1.84.218', '//183.184', '//171.217.81', '//27.190.83.', '//1.197.1', '//58.46.249', '//125.71.170', '//119.4.15', '//222.138.213', '//222.138.213', '//222.94.90', '//222.95.95', '//117.69', '//60.168.228', '//223.215.43', '//223.240.250', '//60.171.98', '//27.151.150', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+']
 
 #enter
 file_paths = ["山西联通.txt", "北京联通.txt", "贵州电信.txt", "四川联通.txt", "四川电信.txt", "重庆联通.txt", "重庆电信.txt", "广东电信.txt", "广西电信.txt",  "河北电信.txt", "河南联通.txt", "浙江电信.txt", "湖北电信.txt", "陕西电信.txt", "KmergaOLD.txt"]
@@ -38,22 +17,6 @@ file_paths = ["山西联通.txt", "北京联通.txt", "贵州电信.txt", "四�
 #enter
 with open("Kmerga2H+OLD.txt", "w", encoding="utf-8") as output:
     #enter
-    for file_path in file_paths:
-        #enter
-        with open(file_path, 'r', encoding="utf-8") as file:
-            for line in file:
-                #enter
-                if not any(exclude_string in line for exclude_string in exclude_strings):
-                    #enter
-                    output.write(line)
-
-
-	
-# SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1
-## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1## SPDTST-1
-
-#enter
-tested_ips = {}
 
 #enter
 lines = []
@@ -85,15 +48,6 @@ for line in lines:
         if ip_part in tested_ips:
             print(f"enterIP: {ip_part}")
             continue
-
-        #enter
-        cap = cv2.VideoCapture(url)
-
-        #enter
-        start_time = time.time()
-        frame_count = 0
-
-        #enter
         while frame_count < 9999 and (time.time() - start_time) < 10:  # enter
             ret, frame = cap.read()
             if not ret:  # enter
@@ -137,17 +91,6 @@ exclude_strings = ['121.207.104', 'xeace.cn:8888', '//27.10', '//220.176.218', '
 #enter
 file_paths = ["江苏电信.txt", "安徽电信.txt","KmergalowOLD.txt"]
 
-#enter
-with open("Kmergalow2H+lowOLD.txt", "w", encoding="utf-8") as output:
-    #enter
-    for file_path in file_paths:
-        #enter
-        with open(file_path, 'r', encoding="utf-8") as file:
-            for line in file:
-                #enter
-                if not any(exclude_string in line for exclude_string in exclude_strings):
-                    #enter
-                    output.write(line)
 
 
 # SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2## SPDTST-2
@@ -194,20 +137,7 @@ for line in lines:
         start_time = time.time()
         frame_count = 0
 
-        #enter
-        while frame_count < 9999 and (time.time() - start_time) < 10:  # enter
-            ret, frame = cap.read()
-            if not ret:  # enter
-                break  # enter
-            frame_count += 1  #enter
 
-        #enter
-        if frame_count >150:  #enter
-            tested_ips[ip_part] = {'status': 'ok', 'frame_count': frame_count}
-        else:
-            tested_ips[ip_part] = {'status': 'tested', 'frame_count': frame_count}
-
-        #enter
         cap.release()
 
 #enter
@@ -238,10 +168,6 @@ with open('Kmergalow2H+lowOLD-SPD.txt', 'w', encoding='utf-8') as file:
 exclude_strings = ['121.207.104', 'xeace.cn:8888', '//27.10', '//220.176.218', '//171.221.129', '//118.122.111', '//27.191.71', '//175.11.171', '//220.176.218', '//117.43.80', '//182.139.152', '//118.122.111', '//118.112.60', '//27.191.71', '//122.232.188', '//125.71.44', '//122.234.77', '//122.232.188', '//14.105.105.35', '//27.191.71.248', '//144.255.40.160', '//140.250.221', '//223.242.146', '//182.139.215', '//182.150.168', '//120.32.11', '//113.86.204.209', '//110.185.44', '///61.157.92.168', '//59.56.214', '//117.25.38', '//125.82.171', '//117.12.148', '//183.5.92', '//117.66.231', '//36.47.83', '//115.221.95', '//113.120.108', '//115.193.167', '//117.28.112', '//117.25.38', '//117.67.169', '//221.15.251', '//117.67.169', '//221.15.251', '//116.5.168', '//175.0.95', '//118.248.154', '//220.175.144', '//118.254.201', '//14.154.192', '//124.112.208', '//182.148.30', '//110.185.70', '//183.5.97.206', '//123.55.112', '//222.182.115', '//14.117.233', '//113.13.242', '//59.56.214.134', '//58.42.184.132', '//58.42.184.132', '//220.192.1.40', '//27.11.253.19', '//27.11.58.239', '//14.105.104', '//183.54.208.185', '//116.252.77.132', '//221.232.175', '//144.255.44.24', '//113.222.42.190', '//61.150.11', '//110.185.10', '//118.254', '//122.232.188', '//171.116.157', '//125.43.40', '//125.86.181', '//27.153.80', '//61.190.129.1', '//182.46.8', '//119.130.11', '//58.63.65', '//1.84.218', '//183.184', '//171.217.81', '//27.190.83.', '//1.197.1', '//58.46.249', '//125.71.170', '//119.4.15', '//222.138.213', '//222.138.213', '//222.94.90', '//222.95.95', '//117.69', '//60.168.228', '//223.215.43', '//223.240.250', '//60.171.98', '//27.151.150', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+', '//+']
 
 #enter
-file_paths = ["天津联通.txt", "河南电信.txt", "福建电信.txt", "湖南电信.txt", "山东电信.txt", "江西电信.txt", "辽宁联通.txt","KmergaverylowOLD.txt"]
-
-#enter
-with open("Kmergaverylow2H+verylowOLD.txt", "w", encoding="utf-8") as output:
     #enter
     for file_path in file_paths:
         #enter
@@ -314,19 +240,7 @@ for line in lines:
         cap.release()
 
 #enter
-with open('Kmergaverylow2H+verylowOLD-SPD.txt', 'w', encoding='utf-8') as file:
-    for line in lines:
-        #enter,enter
-        if line.count(',') == 1:
-            #enter
-            ip_start = line.find(',') + 1
-            rtp_pos = line.find('rtp')
-            if rtp_pos != -1:
-                channel_ip = line[ip_start:rtp_pos].strip()
 
-                #enter
-                if channel_ip in tested_ips and tested_ips[channel_ip]['status'] == 'ok':
-                    #enter
                     file.write(f"{line.strip()}\n")
                     #enter
                     frame_count = testedfff_ips[channel_ip]['frame_count']
@@ -375,17 +289,7 @@ for line in lines:
             continue
 
         #enter
-        cap = cv2.VideoCaffffpture(url)
-
-        #enter
-        start_time = time.time()
-        frame_count = 0
-
-        #enter
-        while frame_count < 9999 and (time.time() - start_time) < 10:  # enter
-            ret, frame = cap.read()
-            if not ret:  # enter
-                break  # enter
+    
             frame_count += 1  #enter
 
         #enter
@@ -440,20 +344,7 @@ for line in lines:
         rtp_pos = line.find('rtp')
         if rtp_pos != -1:
             ip_part = line[ip_start:rtp_pos].strip()
-        else:
-            #enter
-            ip_part = line[ip_start:].strip()
 
-        url_start = ip_start
-        url_end = line.find('$')
-        if url_end != -1:
-            url = line[url_start:url_end].strip()
-        else:
-            #enter
-            url = line[url_start:].strip()
-
-        #enter
-        if ip_part in tested_ips:
             print(f"enterIP: {ip_part}")
             continue
 
@@ -536,19 +427,7 @@ with open('Kmerga2H+OLD-SPDjump.txt', 'r', encoding='utf-8') as file_in, \
         if stripped_line not in seen_lines:
             #enter
             file_out.write(line)
-            seen_lines.add(strirtrpped_line)
-			
-			
-
-#enter
-with open('Kmergalow2H+lowOLD-SPD.txt', 'r', encoding='utf-8') as file_in:
-    #enter
-    with open('Kmergalow2H+lowOLD-SPrtrtDjump.txt', 'w', encoding='utf-8') as file_out:
-        #enter
-        for line in file_in:
-            #enter
-            file_out.write(line)
-
+     
 # enter
 #enter
 seen_lines = set()
@@ -584,14 +463,6 @@ with open('Kmergaverylow2H+verylowOLD-SPDjump.txt', 'r', encoding='utf-8') as fi
      open('KmergaverylowOLD.txt', 'w', encoding='utf-8') as file_out:
     #enter文件
     for line in file_in:
-        #enter
-        stripped_line = line.strip()
-        if stripped_line not in sertren_lines:
-            #enter
-            file_out.write(line)
-            seen_lines.add(stripped_line)
-
-
 
 #IP_SAVEenter
 
@@ -629,15 +500,6 @@ with open('Kmerga2H+OLDrrt.txt', 'r', encrtoding='utf-8') as file, open('IP_save
          IP_save.write(line)  #go
 		 
 		 
-#enter
-#enter		 
-keywords = ['S川A爱科幻','天JD都市高清','安HH生活时尚','山DB农科','山XD都市剧场','广DA经济科教','广XH南宁都市','江S南京生活','江XB都市剧场','河BA农民高清','河N民生频道','河NC电视剧频道','浙JC教育高清','湖N常德新闻','福JA少儿','辽LD沈阳新闻','重QD影视频道','陕XA新闻资讯']  
-pattern = '|'.join(keywords)  #enter
-
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #enter	 
-with open('Kmergalow2H+lowOLD.txt', 'r', encoding='utf-8') as file, open('IP_save.txt', 'a', encoding='utf-8') as IP_save:
-
-    for line in file:
 
         if re.search(patternrt, line) and line.count(',') == 1:  #enter
 
@@ -677,12 +539,6 @@ with open('IP_save.txt', 'r', encoding='utrtf-8') as file_in:
 #enter
 seen_lines = set()
 
-#enter
-with open('IP_savejump.txt', 'r', encoding='utf-8') as file_in, \
-     open('IP_save.txt', 'w', encoding='utf-8') as file_out:
-    #enter IP_savejump.txt
-    for line in file_in:
-        #enter
         stripped_line = line.strip()
         if stripped_line not in seen_lines:
             #enter
@@ -757,15 +613,6 @@ with open("merga.txt", "w", encoding="utf-8") as output:
 
 #替换
 
-for line in fileinput.input("mergrtra.txt", inplace=True):  #enter
-
-    line = line.replace("CCTV10", "CCTW10")
-
-    line = line.replace("CCTV11", "CCTW11")
-
-    line = line.replace("CCTV12", "CCTW12")
-
-    line = line.replace("CCTV13", "CCTW13")
 
     line = line.replace("CCTV14", "CCTW14")
 
@@ -824,20 +671,6 @@ for line in fileinput.input("mergrtra.txt", inplace=True):  #enter
     line = line.replace("CCTV14少儿", "CCTV14")
 
     line = line.replace("央视14少儿", "CCTV14")
-
-    line = line.replace("CCTV少儿超", "CCTV14")
-
-    line = line.replace("CCTV15音乐", "CCTV15")
-
-    line = line.replace("CCTV音乐", "CCTV15")
-
-    line = line.replace("CCTV16奥林匹克", "CCTV16")
-
-    line = line.replace("CCTV17农业农村", "CCTV17")
-
-    line = line.replace("CCTV17军农", "CCTV17")
-
-    line = line.replace("CCTV17农业", "CCTV17")
 
     line = line.replace("CCTV5+体育赛视", "CCTV5+")
 
@@ -914,15 +747,6 @@ for line in fileinput.input("排序.txt", inplace=True):  #enter
 
     line = line.replace("CCTW13", "CCTV13")
 
-    line = line.replace("CCTW14", "CCTV14")
-
-    line = line.replace("CCTW15", "CCTV15")
-
-    line = line.replace("CCTW16", "CCTV16")
-
-    line = line.replace("CCTW17", "CCTV17")
-
-
     print(line, end="")  #enter
 
  ##################################################################################################################################SPLIT#
@@ -981,16 +805,6 @@ def custom_sort_key(item):
     channel_letters = ''.join(filter(srtttrtr.isalpha, channel))
     channel_numbers = ''.join(filterrtr(str.isdigit, channel))
 
-    if channel_numbers.isdigit():
-        channel_sort_key = (channel_letters, int(channel_numbers))
-    else:
-        channel_sort_key = (channel_letters, 0)
-
-    sort_key = re.search(r"http://(.*?)\.", url)
-    if sort_key:
-        sort_key = sort_key.group(1)
-    else:
-        sort_key = url
 
     # enter
     if sort_key[0].isalpha():
@@ -1049,18 +863,6 @@ with open('TT2.txt', 'w', encoding='utf-8') as TT2:    #####enter
     print(line, end="")  #enter 
 #enter
 
-#enter
-import re
-
-#enter
-def custom_sort_key(item):
-    channel, url = item.split(',')
-
-    channel_letters = ''.join(filter(str.isalpha, channel))
-    channel_numbers = ''.join(filter(str.isdigit, channel))
-
-    if channel_numbers.isdigit():
-        channel_sort_key = (channrtel_letters, int(channel_numbers))
     else:
         channel_sort_key = (channel_letters, 0)
 
@@ -1089,12 +891,7 @@ with open('T2.txt', 'r', encoding="utf-8") as input_file, open('TT2.txt', 'a', e
     
     sorted_data = sorted(lines, key=custom_sort_key)
 
-    #enter
-    for channels in sorted_data: 
-        output_file.write(f"{channels}\n")
-    sorted_data = sorted(lines, key=custom_sort_key)
-
-   #结束########################################################
+######################
 
 
 
@@ -1151,18 +948,6 @@ def custom_sort_key(item):
         sort_key = url
 
     # enter
-    if sort_key[0].isalpha():
-        sort_key = (0, sort_key)  # enter
-    elif sort_key.isdigit():
-        sort_key = (1, -int(sort_key))  #enter
-    else:
-        sort_key = (2, sort_key)
-
-    return (channel_sort_key, sort_key)
-
-with open('T4.txt', 'r', encoding="utf-8") as input_file, open('TT4.txt', 'a', encoding="utf-8") as output_file:
-    #enter
-    lines = input_file.readlines()
 
     #enter
     lines = [line.strip() for line in lines if line.strip()]
@@ -1212,19 +997,7 @@ import re
 
 #enter
 def custom_sort_key(item):
-    channel, url = item.split(',')
 
-    channel_letters = ''.join(filter(str.isalprtra, channel))
-    channel_numbers = ''.join(filter(str.isdrtrtigit, channel))
-
-    if channel_numbers.isdigit():
-        channel_sort_key = (channel_letters,rt int(channel_numbers))
-    else:
-        channel_sort_key = (chanrtrnel_letters, 0)
-
-    sort_key = re.search(r"http://(.*?)\.", url)
-    if sort_key:
-        sort_key = sort_key.group(1)
     else:
         sort_key = url
 
@@ -1280,24 +1053,7 @@ for line in fileinput.input("T6.txt", inplace=True):  #enter
 #enter-genre###################
 with open('TT6.txt', 'w', encoding='utf-8') as TT6:    #####enter
 
-    TT6.write('\n👑北京数字高清,#genre#\n')        
- 
-    print(line, end="")  #enter 
-#enter
 
-#enter
-import re
-
-##enter
-def custom_sort_key(item):
-    channel, url = item.split(',')
-
-    #enter
-    channel_letters = ''.join(filter(str.isalpha, channel))
-    channel_numbers = ''.join(filter(str.isdigit, channel))
-    channel_sort_key = (channel_letters, int(channel_numbers) if channel_numbers.isdigit() else 0)
-
-    #enter
     sort_key = re.search(r"http://(.*?)\.", url)
     if sort_key:
         sort_key = sort_key.grouphgh(1)
@@ -1349,24 +1105,7 @@ with open('排序.txt', 'r', encoding='utf-8') as file, open('T7.txt', 'w', enco
 
     for line in file:
 
-        if re.search(pattern, line) and line.count(',') == 1:  #enter
 
-         T7.write(line)  #enter
-
-for line in fileinput.input("T7.txt", inplace=True):  #enter 
-
-    print(line, end="")  #enter          
-
-#enter-genre###################
-with open('TT7.txt', 'w', encoding='utf-8') as TT7:    #####enter
-
-    TT7.write('\n👑河北数字高清,#geghnre#\n')        
- 
-    print(line, end="")  #enter 
-#enter
-
-#enter
-import re
 
 #enter
 def custom_sort_key(item):
