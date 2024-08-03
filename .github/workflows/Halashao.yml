@@ -18,9 +18,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - name: Install numpy          
-        run: pip install 'numpy==1.26.4'
-      - name: Install dependencies
+
       - name: Run iptv
         run: python ${{ github.workspace }}/ZUZU-PY/HBI-SPD.py
          
