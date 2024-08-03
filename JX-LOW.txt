@@ -4,9 +4,9 @@ CHC家庭影院,http://hiisilin65.cn:8888/udp/235.254.199.246:7980$重庆cmc2+
 CHC动作电影,http://hiisilin65.cn:8888/udp/235.254.199.247:7980$重庆cmc2+
 CHC高清电影,http://hiisilin65.cn:8888/udp/235.254.199.248:7980$重庆cmc2+
 
-CHC家庭影院,http://www.hiisilin650000/udp/235.254.199.246:7980$重庆cmc8+
-CHC动作电影,http://www.hiisilin650000/udp/235.254.199.247:7980$重庆cmc8+
-CHC高清电影,http://www.hiisilin650000/udp/235.254.199.248:7980$重庆cmc8+
+CHC家庭影院,http://www.hiisilin650000/udp/235.254.199.246:7980$重庆cmc8+1
+CHC动作电影,http://www.hiisilin650000/udp/235.254.199.247:7980$重庆cmc8+1
+CHC高清电影,http://www.hiisilin650000/udp/235.254.199.248:7980$重庆cmc8+1
 
 CHC家庭影院,http://n1.dhiisilin65pace:8088/rtp/225.0.4.228:7980$重庆uni2+
 CHC动作电影,http://n1.dhiisilin65pace:8088/rtp/225.0.4.229:7980$重庆uni2+
