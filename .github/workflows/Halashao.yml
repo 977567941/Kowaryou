@@ -2,8 +2,7 @@ name: Halashao
 
 on:
   schedule:
-  - cron: '42 14,16,18,20,22,0,2,4,6,8,10,12 * * *'  #6>8>10>12>14>16>18>20>22>0>2>4&&&
-  workflow_dispatch:
+  - cron: '42 14 * * *'  #6>8>10>1
     分支:
       - main
       
@@ -22,18 +21,6 @@ jobs:
       - name: Install numpy          
         run: pip install 'numpy==1.26.4'
       - name: Install dependencies
-        run: pip install selenium requests futures eventlet
-      - name: Install dependencies
-        run: pip install opencv-python requests 
-      - name: Install dependencies
-        run: pip install Beautifulsoup4 requests 
-      - name: Install dependencies
-        run: pip install translate requests 
-      - name: Install dependencies
-        run: pip install replace
-      - name: Install dependencies
-        run: pip install input
-        
       - name: Run iptv
         run: python ${{ github.workspace }}/ZUZU-PY/HBI-SPD.py
          
@@ -42,7 +29,7 @@ jobs:
             git config --local user.email "actions@github.com"
             git config --local user.name "GitHub Action"
             if [ -n "$(git status --porcelain)" ]; then
-            git commit -am "Automatic update"
+            git commit -a "Automatic update"
             git push
             else
               echo "No changes detected, skipping commit."
