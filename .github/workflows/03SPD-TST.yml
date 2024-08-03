@@ -20,19 +20,7 @@ jobs:
         with:
           python-version: 3.x
       - name: Install numpy          
-        run: pip install 'numpy==1.26.4'
-      - name: Install dependencies
-        run: pip install selenium requests futures eventlet
-      - name: Install dependencies
-        run: pip install opencv-python requests 
-      - name: Install dependencies
-        run: pip install Beautifulsoup4 requests 
-      - name: Install dependencies
-        run: pip install translate requests 
-      - name: Install dependencies
-        run: pip install replace
-      - name: Install dependencies
-        run: pip install input
+  
         
       - name: Run iptv
         run: python ${{ github.workspace }}/ZUZU-PY/#SPED-TST.py
