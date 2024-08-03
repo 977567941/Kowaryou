@@ -7,27 +7,6 @@ import cv2
 import time
 
 #SPD
-#SPD
-tested_ips = {}
-
-#SPD
-with open('M-SPD_TST.txt', 'r', encoding='utf-8') as file:
-    for line in file:
-        #SPD
-        if line.count(',') == 1:
-            #SPD
-            channel = line.strip()
-            
-            #SPD
-            ip_start = line.find(',') + 1
-            rtp_pos = line.find('rtp')
-            if rtp_pos != -1:
-                ip_part = line[ip_start:rtp_pos].strip()
-            
-            url_start = ip_start
-            url_end = line.find('$')
-            if url_end != -1:
-                url = line[url_start:url_end].strip()
             else:
                 #SPD
                 url = line[url_start:].strip()
