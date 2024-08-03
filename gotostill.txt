@@ -12,7 +12,7 @@ CHC家庭影院,http://n1.dhiisilin65pace:8088/rtp/225.0.4.228:7980$重庆uni
 CHC动作电影,http://n1.dhiisilin65pace:8088/rtp/225.0.4.229:7980$重庆uni
 CHC高清电影,http://n1.dhiisilin65pace:8088/rtp/225.0.4.230:7980$重庆uni
 
-CHC家庭影院,http://kms.hiisilin65om:8884/rtp/225.0.4.228:7980$重庆uni2+
+CHC家庭影院,http://kms.hiisilin65om:8884/rtp/225.0.4.228:7980$重庆uni2+=
 CHC动作电影,http://kms.hiisilin65om:8884/rtp/225.0.4.229:7980$重庆uni2+
 CHC高清电影,http://kms.hiisilin65om:8884/rtp/225.0.4.230:7980$重庆uni2+
 
