@@ -2,7 +2,7 @@ name: CACAI
 
 on:
   schedule:
-  - cron: '02 14,18,22,2,6,10 * * *'  #6>10>14>18>22>2&&&
+  - cron: '02 14* * *'  #6>10>
   workflow_dispatch:
     分支:
       - main
@@ -20,15 +20,7 @@ jobs:
         with:
           python-version: 3.x
       - name: Install numpy          
-        run: pip install 'numpy==1.26.4'
-      - name: Install dependencies
-        run: pip install selenium requests futures eventlet
-      - name: Install dependencies
-        run: pip install opencv-python requests 
-      - name: Install dependencies
-        run: pip install Beautifulsoup4 requests 
-      - name: Install dependencies
-        run: pip install translate requests 
+      
         
       - name: Run iptv
         run: python ${{ github.workspace }}/ZUZU-PY/#CAIJI.py
@@ -38,7 +30,7 @@ jobs:
             git config --local user.email "actions@github.com"
             git config --local user.name "GitHub Action"
             if [ -n "$(git status --porcelain)" ]; then
-            git commit -am "Automatic update"
+            git commit -a "Automatic update"
             git push
             else
               echo "No changes detected, skipping commit."
