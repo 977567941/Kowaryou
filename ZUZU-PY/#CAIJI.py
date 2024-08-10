@@ -16,42 +16,6 @@ provinces_isps = [name for name in files_name if name.count('_') == 1]
 
 # 打印结果
 print(f"本次查询：{provinces_isps}的组播节目") 
-
-keywords = []
-
-for province_isp in provinces_isps:
-    # 读取文件并删除空白行
-    try:
-        with open(f'rtp/{province_isp}.txt', 'r', encoding='utf-8') as file:
-            lines = file.readlines()
-            lines = [line.strip() for line in lines if line.strip()]
-        # 获取第一行中以包含 "rtp://" 的值作为 mcast
-        if lines:
-            first_line = lines[0]
-            if "rtp://" in first_line:
-                mcast = first_line.split("rtp://")[1].split(" ")[0]
-                keywords.append(province_isp + "_" + mcast)
-    except FileNotFoundError:
-    # 如果文件不存在，则捕获 FileNotFoundError 异常并打印提示信息
-        print(f"文件 '{province_isp}.txt' 不存在. 跳过此文件.")
-
-for keyword in keywords:
-    province, isp, mcast = keyword.split("_")
-#    else:
-#        org = ""
-
-    current_time = datetime.now()
-    timeout_cnt = 0
-    result_urls = set() 
-    while len(result_urls) == 0 and timeout_cnt <= 5:
-        try:
-            search_url = 'https://fofa.info/result?qbase64='
-            search_txt = f'\"udpxy\" && country=\"CN\" && region=\"{province}\" && org=\"{org}\"'
-                # 将字符串编码为字节流
-            bytes_string = search_txt.encode('utf-8')
-                # 使用 base64 进行编码
-            search_txt = base64.b64encode(bytes_string).decode('utf-8')
-            search_url += search_txt
             print(f"{current_time} 查询运营商 : {province}{isp} ，查询网址 : {search_url}")
             response = requests.get(search_url, timeout=5)
             # 处理响应
