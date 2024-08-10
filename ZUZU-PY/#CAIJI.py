@@ -1,19 +1,6 @@
 import os
 import requests
 
-
-
-files = os.listdir('rtp')
-
-files_name = []
-
-for file in files:
-    name, extension = os.path.splitext(file)
-    files_name.append(name)
-
-
-provinces_isps = [name for name in files_name if name.count('_') == 1]
-
 # 打印结果
 print(f"本次查询：{provinces_isps}的组播节目") 
             print(f"{current_time} 查询运营商 : {province}{isp} ，查询网址 : {search_url}")
@@ -24,21 +11,6 @@ print(f"本次查询：{provinces_isps}的组播节目")
             html_content = response.text
             # 使用BeautifulSoup解析网页内容
             html_soup = BeautifulSoup(html_content, "html.parser")
-
-
-            # 遍历所有视频链接
-            for url in result_urls:
-                video_url = url + "/rtp/" + mcast
-
-                # 用OpenCV读取视频
-                cap = cv2.VideoCapture(video_url)
-
-                # 检查视频是否成功打开
-                if not cap.isOpened():
-                    print(f"{current_time} {video_url} 无效")
-                else:
-                    cap.release()
-                    
             if valid_ips:
                 #生成节目列表 省份运营商.txt
                 rtp_filename = f'rtp/{province}_{isp}.txt'
