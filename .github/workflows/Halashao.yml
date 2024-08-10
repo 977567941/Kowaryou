@@ -18,17 +18,3 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
-
-      - name: Run iptv
-        run: python ${{ github.workspace }}/ZUZU-PY/HBI-SPD.py
-         
-      - name: Commit results
-        run: |
-            git config --local user.email "actions@github.com"
-            git config --local user.name "GitHub Action"
-            if [ -n "$(git status --porcelain)" ]; then
-            git commit -a "Automatic update"
-            git push
-            else
-              echo "No changes detected, skipping commit."
-            fi
