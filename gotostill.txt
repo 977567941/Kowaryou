@@ -101,11 +101,6 @@ CHC高清电影,http://n1.dddmmh.space:8088/rtp/225.0.4.230:7980$重庆uni2+
 金色学堂,http://ds920.dsmynas.net:5555/rtp/226.0.2.182:9368$山西uni2+
 优优宝贝,http://ds920.dsmynas.net:5555/rtp/226.0.2.119:8864$山西uni2+
 #shougong
-CETV1,http://ds920.dsmynas.net:5555/rtp/226.0.2.181:9360$山西uni2+
-CETV5,http://ds920.dsmynas.net:5555/rtp/226.0.2.99:8704$山西uni2+
-CHC动作电影,http://ds920.dsmynas.net:5555/rtp/226.0.2.94:8012$山西uni2+
-CHC家庭影院,http://ds920.dsmynas.net:5555/rtp/226.0.2.240:9820$山西uni2+
-CHC高清电影,http://ds920.dsmynas.net:5555/rtp/226.0.2.93:8004$山西uni2+
 安徽卫视,http://dx.pcc.icu:8123/rtp/239.21.1.159:5002$山东cmc6+
 北京卫视,http://dx.pcc.icu:8123/rtp/239.21.1.88:5002$山东cmc6+
 重庆卫视,http://dx.pcc.icu:8123/rtp/239.21.1.233:5002$山东cmc6+
