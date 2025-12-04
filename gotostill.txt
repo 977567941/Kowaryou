@@ -101,8 +101,6 @@ CHC高清电影,http://n1.dddmmh.space:8088/rtp/225.0.4.230:7980$重庆uni2+
 金色学堂,http://ds920.dsmynas.net:5555/rtp/226.0.2.182:9368$山西uni2+
 优优宝贝,http://ds920.dsmynas.net:5555/rtp/226.0.2.119:8864$山西uni2+
 #shougong
-CETV1,http://ds920.dsmynas.net:5555/rtp/226.0.2.181:9360$山西uni2+
-CETV5,http://ds920.dsmynas.net:5555/rtp/226.0.2.99:8704$山西uni2+
 世界地理,http://czkeji.vip:9000/rtp/239.252.219.93:5140$江西cmc1+
 兵器科技,http://czkeji.vip:9000/rtp/239.252.219.98:5140$江西cmc1+
 央视台球,http://czkeji.vip:9000/rtp/239.252.219.80:5140$江西cmc1+
@@ -116,11 +114,8 @@ CETV5,http://ds920.dsmynas.net:5555/rtp/226.0.2.99:8704$山西uni2+
 风云音乐,http://czkeji.vip:9000/rtp/239.252.219.87:5140$江西cmc1+
 高尔夫网球,http://czkeji.vip:9000/rtp/239.252.219.95:5140$江西cmc1+
 CHC动作电影,http://czkeji.vip:9000/rtp/239.252.219.85:5140$江西cmc1+
-CHC动作电影,http://ds920.dsmynas.net:5555/rtp/226.0.2.94:8012$山西uni2+
 CHC家庭影院,http://czkeji.vip:9000/rtp/239.252.219.84:5140$江西cmc1+
-CHC家庭影院,http://ds920.dsmynas.net:5555/rtp/226.0.2.240:9820$山西uni2+
 CHC高清电影,http://czkeji.vip:9000/rtp/239.252.219.83:5140$江西cmc1+
-CHC高清电影,http://ds920.dsmynas.net:5555/rtp/226.0.2.93:8004$山西uni2+
 安徽卫视,http://czkeji.vip:9000/rtp/239.252.220.83:5140$江西cmc1+
 北京卫视,http://czkeji.vip:9000/rtp/239.252.219.206:5140$江西cmc1+
 重庆卫视,http://czkeji.vip:9000/rtp/239.252.220.94:5140$江西cmc1+
