@@ -135,9 +135,12 @@ CHC高清电影,http://czkeji.vip:9000/rtp/239.252.219.83:5140$江西cmc1+
 江苏卫视,http://czkeji.vip:9000/rtp/239.252.219.214:5140$江西cmc1+
 江西卫视,http://czkeji.vip:9000/rtp/239.252.220.63:5140$江西cmc1+
 辽宁卫视,http://czkeji.vip:9000/rtp/239.252.220.62:5140$江西cmc1+
+青海卫视,http://home.oneself.tech:3000/rtp/239.76.254.132:9000$湖南cmc55+
+三沙卫视,http://home.oneself.tech:3000/rtp/239.76.253.74:9000$湖南cmc55+
 四川卫视,http://czkeji.vip:9000/rtp/239.252.220.93:5140$江西cmc1+
 山东卫视,http://czkeji.vip:9000/rtp/239.252.219.228:5140$江西cmc1+
 深圳卫视,http://czkeji.vip:9000/rtp/239.252.219.212:5140$江西cmc1+
+陕西卫视,http://home.oneself.tech:3000/rtp/239.76.254.76:9000$湖南cmc55+
 天津卫视,http://czkeji.vip:9000/rtp/239.252.219.187:5140$江西cmc1+
 天津卫视,http://czkeji.vip:9000/rtp/239.252.220.61:5140$江西cmc1+
 云南卫视,http://czkeji.vip:9000/rtp/239.252.219.185:5140$江西cmc1+
@@ -145,8 +148,12 @@ CHC高清电影,http://czkeji.vip:9000/rtp/239.252.219.83:5140$江西cmc1+
 求索记录,http://czkeji.vip:9000/rtp/239.252.220.224:5140$江西cmc1+
 纪实人文,http://czkeji.vip:9000/rtp/239.252.219.227:5140$江西cmc1+
 金鹰纪实,http://czkeji.vip:9000/rtp/239.252.220.155:5140$江西cmc1+
+金鹰纪实,http://home.oneself.tech:3000/rtp/239.76.252.122:9000$湖南cmc55+
+动漫秀场,http://home.oneself.tech:3000/rtp/239.76.253.124:9000$湖南cmc55+
+动漫秀场,http://home.oneself.tech:3000/rtp/239.76.253.218:9000$湖南cmc55+
 动漫秀场,http://www.sjwyp.com:4022/rtp/239.254.201.165:6358$河北cmc1+
 卡酷少儿,http://tnvcn.com:8012/rtp/239.3.1.189:8000$北京uni1+
+金鹰卡通,http://home.oneself.tech:3000/rtp/239.76.253.107:9000$湖南cmc55+
 兵团卫视,https://liveout.btzx.com.cn/62ds9e/yil08g.m3u8
 宁夏卫视,https://livepgc.cmc.ningxiahuangheyun.com/tv/nxws.m3u8
 宁夏安多卫视,http://stream.qhbtv.com/adws/playlist.m3u8
