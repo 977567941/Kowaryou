@@ -1,0 +1,558 @@
+{        "spider": "./xs.jar",
+
+
+    "sites": [
+    
+    {
+            "key": "豆瓣",
+            "name": "豆瓣｜首页",
+            "type": 3,
+            "api": "csp_Douban",
+            "searchable": 0
+        },
+
+
+                   
+                        
+                                   
+          {       "key": "爱电影",
+            "name": "爱影视｜APP",
+            "type": 3,
+            "searchable": 1,
+            "api": "./py/getapp.py",
+            "ext": {
+             "host":"https://aysappto.oss-cn-chengdu.aliyuncs.com/q16.txt",
+              "datakey": "dj382hsyqp98kqn8" , "api": "2",
+              "ua": "okhttp/3.14.9" } },                               
+                                  
+                                       
+
+
+                
+                           
+
+                
+        
+
+{
+     "key": "心┃APP",
+     "name": "心动ⁿᵒˣ┃APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "https://noxapp.lengai.love",
+        "verCode": "21",
+        "verName": "2.1",
+        "deviceId": "ee0b3ae17bbf6218",
+        "package": "com.xdsj.app",
+        "signature": "09:A4:5B:09:4D:85:8F:C7:74:46:A7:29:A2:48:55:0F:73:0B:D7:BD:73:19:BC:21:BB:3F:CA:89:C1:7B:A3:58"
+    }
+},
+
+
+
+
+{
+     "key": "星空┃APP",
+     "name": "星空ⁿᵒˣ┃APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "http://nox.xkdm.cloud",
+        "verCode": "100",
+        "verName": "1.0.0",
+        "deviceId": "ee0b3ae17bbf6218",
+        "package": "com.fulelol.app",
+        "signature": "70:40:EC:F2:54:3E:4C:06:B3:B1:AE:7D:F9:B2:28:C4:5A:B0:41:1A:62:4E:72:53:37:17:DA:8D:42:65:50:EF"
+    }
+},
+
+                                  
+
+                            
+
+
+  {
+"key": "幕悦┃APP",
+    "name": "幕悦ⁿᵒˣ┃APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "http://111.170.7.114:8081",
+        "verCode": "12",
+        "verName": "0.1.2",
+        "deviceId": "ee0b3ae17bbf6218",
+        "package": "com.muyuesg.app",
+        "signature": "3D:D7:7B:07:B0:81:49:AF:90:5E:39:2B:B8:59:A9:99:89:EB:D5:35:6E:06:C0:A4:BE:44:B6:16:43:33:C4:C3"
+    }
+},
+
+
+{
+            "key": "金┃APP",
+            "name": "金牌ⁿᵒˣ┃APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "https://jp5.ggtvb.cc",
+        "verCode": "12",
+        "verName": "5.2",
+        "deviceId": "c783c416da48328c",
+        "package": "cc.xzsc.user",
+        "signature": "11:05:5B:0E:DD:14:6A:96:38:28:CB:29:7D:5F:04:57:3F:D6:EC:6A:C4:54:4F:4D:44:72:0A:C1:8E:DD:A9:58"
+    }
+},
+
+
+
+
+{
+            "key": "火花影院┃APP",
+            "name": "火花ⁿᵒˣ┃APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "http://nox.itcxo.cn",
+        "verCode": "44",
+        "verName": "1.2.0",
+        "deviceId": "ee0b3ae17bbf6218",
+        "package": "com.hhyy.app",
+        "signature": "DD:78:90:EA:BD:D3:C2:EA:A4:E1:42:2B:CF:3E:A2:9F:9C:0E:BF:94:1E:85:43:B5:3C:FE:4E:1B:51:39:22:98"
+    }
+},
+
+
+
+
+{
+     "key": "橘猫┃",
+            "name": "橘猫ⁿᵒˣ┃APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "https://nox.jm4k.top",
+        "verCode": "1",
+        "verName": "2.4.0",
+        "deviceId": "ee0b3ae17bbf6218",
+        "package": "com.gnzhis.nru",
+        "signature": "A4:0D:A8:0A:59:D1:70:CA:A9:50:CF:15:C1:8C:45:4D:47:A3:9B:26:98:9D:8B:64:0E:CD:74:5B:A7:1B:F5:DC"
+    }
+},
+
+
+
+
+{
+     "key": "爱电影┃",
+            "name": "爱影ⁿᵒˣ┃APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "http://111.170.7.206:8181",
+        "verCode": "50",
+        "verName": "1.3.0",
+        "deviceId": "ee0b3ae17bbf6218",
+        "package": "com.noxni.app",
+        "signature": "2B:09:1C:E6:7C:AD:58:21:35:02:4D:FC:78:6D:C5:30:CE:D8:96:7F:1F:AD:2F:F9:32:85:BD:23:62:D9:9C:CF"
+    }
+},
+
+
+
+
+
+
+
+
+
+
+{
+   "key": "随看",
+    "name": "随看ⁿᵒˣ┃APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "https://skapp.tpmbt.cn",
+        "verCode": "320",
+        "verName": "3.2.0",
+        "deviceId": "b3915d9ebf9a2ae1",
+        "package": "com.mfbrjy.aqb",
+        "signature": "D4:CE:AF:2B:E0:4E:85:5F:91:48:A1:61:5D:5C:5E:08:61:B0:E0:AA:CB:B6:92:E2:BE:E3:15:A0:75:0E:88:F6"
+    }
+},
+
+
+
+
+
+
+
+
+{
+    "key": "粉象-",
+    "name": "粉象ⁿᵒˣ┃APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "http://64.64.252.93:8080",
+        "verCode": "1",
+        "verName": "1.0.0",
+        "deviceId": "b3915d9ebf9a2ae7",
+        "package": "com.fenxiang.make",
+        "signature": "DD:78:90:EA:BD:D3:C2:EA:A4:E1:42:2B:CF:3E:A2:9F:9C:0E:BF:94:1E:85:43:B5:3C:FE:4E:1B:51:39:22:98"
+    }
+},
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+    
+    {   "key": "零度",
+            "name": "零度ⁿᵒˣ┃APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "http://ld.ldysapp.cn",
+        "verCode": "26",
+        "verName": "2.2.3",
+        "deviceId": "b0d2ee192bc0c004",
+        "package": "com.mjyx.jhxq",
+        "signature": "C1:E7:F6:91:DF:90:F8:0A:70:21:4B:B3:45:16:37:61:56:81:73:8A:09:F4:C1:22:10:99:EF:C0:82:9D:2B:47"}},      
+    
+    
+    
+        
+
+
+
+
+         {   "key": "追片猫1",
+            "name": "追片猫ⁿᵒˣ┃APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "https://svip.2video.cc",
+        "verCode": "56",
+        "verName": "1.2.6",
+        "deviceId": "487b19ac91451b4f",
+        "package": "com.ds.wlss",
+        "signature": "70:DF:B1:2A:AE:C3:E3:73:6E:23:0F:67:B9:3B:C5:63:2D:EA:2A:2C:9E:9D:52:82:1D:3F:3C:3C:B9:10:9E:EE"}},      
+
+
+
+
+
+
+
+
+{
+    "key": "星影视频",
+    "name": "星影ⁿᵒˣ｜APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "http://110.81.153.7:8081",
+        "verCode": "5",
+        "verName": "1.3.9",
+        "deviceId": "8765432112345678",
+        "package": "com.asxkkc.jbz",
+        "signature": "82:A0:BB:65:41:5D:F5:BC:23:FF:71:8A:E9:C7:39:90:EA:70:63:77:C3:53:A2:E0:4C:C4:FB:BC:90:F1:30:C9"}},      
+
+{
+    "key": "追视频",
+    "name": "追忆ⁿᵒˣ｜APP",
+    "type": 3,
+    "api": "./py/nox.min.js",
+    "ext": {
+        "host": "http://110.42.37.69:8080",
+        "verCode": "20",
+        "verName": "2.0.0",
+        "deviceId": "b707107eba814929",
+        "package": "com.recall.app",
+        "signature": "EB:19:FD:A7:8F:67:99:CD:6C:F0:6F:A4:72:3F:7A:C7:E9:2E:95:79:6F:5B:60:EA:CD:D8:05:CF:3E:06:D9:71"}},      
+
+        
+
+{
+            "key": "热播影视大全",
+            "name": "热播┃APP",
+            "type": 3,
+               "api": "./py/RJAPP.py",
+            "ext": "http://v.rbotv.cn"
+        },
+
+
+
+       {
+            "key": "顾我",
+            "name": "顾我┃APP",
+            "type": 3,
+            "api": "csp_AppQi",
+            "changeable": "1",
+            "quickSearch": 0,
+            "filterable": 1,
+            "ext": {
+                "site": "https://guwozj-1319364746.cos.ap-guangzhou.myqcloud.com/gwzj.txt",
+                "dataKey": "ca94b06ca3c7d80e",
+                "dataIv": "ca94b06ca3c7d80e",
+                "version": "305",
+                "ua": "okhttp/3.10.0"
+            }
+        },
+
+       
+           { "key": "假段友get",
+            "name": "段友┃APP",
+            "type": 3,
+            "quickSearch": 1,
+            "api": "./py/getapp.py",
+            "ext": {
+             "host": "https://shangjihuoke.com",
+            "datakey": "8E2DC386FD452D05"}},    
+
+
+
+    { "key": "人人影视4",
+            "name": "人人┃影视",
+            "type": 3,
+            "api": "./py/人人影视.py",
+            "searchable": 1,
+            "changeable": 1,
+            "quickSearch": 1,
+            "filterable": 1},
+
+
+
+
+
+
+  
+
+
+
+
+
+   
+
+
+
+
+{
+            "key": "茉莉",
+            "name": "茉莉┃APP",
+            "type": 3,
+            "searchable": 1,
+            "api": "csp_AppGet",
+            "ext": {
+                "site": "https://gitee.com/wmmoliill/wimg/raw/master/img/bk/9.txt",
+                "dataKey": "88689667dce61725",
+                "dataIv": "88689667dce61725"
+            }
+        },
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+{
+        "key": "TVB云播",
+        "name": "云播┃APP",
+        "type": 3,
+        "changeable": 0,
+        "api": "./py/Appfox.py",
+        "ext": "http://app.hktvyb.cc"
+    },
+
+   
+    {
+            "key": "永乐视频",
+            "name": "永乐┃APP",
+            "type": 3,
+            "api": "csp_XBPQ",
+            //"jar": "./lib/XBPQ.jar",
+            "ext": {
+            "线路数组": "data-dropdown-value=\"&&\"",
+"线路标题": "data-dropdown-value=\"&&\"",
+                "请求头": "User-Agent$MOBILE_UA",
+                "编码": "UTF-8",
+                "分类url": "https://www.ylys.tv/vodshow/{cateId}-{area}-{by}-{class}-{lang}-{letter}---{catePg}---{year}/;;mrc",
+                "分类": "电影$1#剧集$2#综艺$3#动漫$4#" }},
+
+     
+
+
+
+{
+            "key": "丫丫",
+            "name": "丫丫┃APP",
+            "type": 3,
+            "quickSearch": 1,
+
+            "api": "csp_AppGet",
+            "ext": {
+                "url": "http://tv.yy-fun.cc",
+                "dataKey": "qkxnwkfjwpcnwycl",
+                "dataIv": "qkxnwkfjwpcnwycl",
+                "deviceId": "",
+                "version": ""
+            }
+        },
+
+
+
+
+
+                   { "key": "柯南影视",
+            "name": "柯南┃APP",
+            "type": 3,
+           
+            
+             "api": "./py/柯南.py",
+              
+               
+            "ext": ""
+        },
+        
+
+
+
+
+
+
+         
+
+    
+   
+        
+        
+ 
+
+   
+
+
+{
+            "key": "鲸鱼",
+            "name": "鲸鱼┃APP",
+            "type": 3,
+
+            "quickSearch": 1,
+           "api": "csp_AppQi",
+            "ext": {
+                "url": "",
+                "site": "https://jingyu4k-1312635929.cos.ap-nanjing.myqcloud.com/1.json",
+                "dataKey": "AAdgrdghjfgswerA",
+                "dataIv": "AAdgrdghjfgswerA",
+                "deviceId": "",
+                "version": ""
+            }
+        },
+
+
+        
+        {
+            "key": "金牌1",
+            "name": "金牌┃APP",
+            "type": 3,
+            "api": "csp_AppQi",
+            "changeable": "1",
+            "quickSearch": 0,
+            "filterable": 1,
+            "ext": {
+                "site": "https://dtqj.ggtvb.cc/dtjp.txt",
+                "dataKey": "eecbio48dsq131ee",
+                "dataIv": "eecbio48dsq131ee",
+                "search": "searchList4",
+                "version": "305",
+                "init": "initV122",
+                "ua": "okhttp/3.10.0"
+            }
+        },
+        
+        
+           
+        
+        
+        
+ {
+    "key": "快映44K",
+    "name": "快映｜APP",
+    "type": 3,
+    "changeable": 0,
+    "api": "./py/Appfox.py",
+    "ext": {
+        "host": "https://www.ky4k671x.top",
+
+
+        "ver": 3
+    }
+},
+
+        
+   {"key":"风铃┃动漫","name":"风铃动漫剧场","type":3,"api":"./py/getapp3.4.5.py","ext":{"host":"https://www.aafun.cc","datakey":"e9727e7592c7e54c"}},     
+          
+ { "key": "盗版囧次元",
+"name": "盗版囧┃次元","type":3,
+"api": "./py/getapp.py",
+"ext": {"host":
+"https://jciyuan.com",
+"datakey":
+"xQ5yT8zW2vU7sR4t" } },         
+
+{ "key": "卡卡动漫",
+"name": "卡卡┃动漫",
+"type":3,
+"api": "./py/getapp.py",
+"ext": {"host":
+"http://154.201.90.53:8002",
+"datakey":"123456789abcdefg" } }, 
+
+        { "key": "魔方get",
+            "name": "魔方┃APP",
+            "type": 3,
+            "searchable": 1,
+            "api": "./py/getapp3.4.5.py",
+            "ext": {
+             "host":"https://snysw.xyz/mf4kzs327.txt",
+              "datakey": "1234567887654321"   } }          
+         
+                               
+    
+                                                              
+                                                                                                                                                                                  
+             
+ 
+             
+             
+          
+             
+
+
+        
+    ],
+    "parses": [
+        {
+            "name": "自定义解析",
+            "type": 1,
+            "url": "https://niubi.69mini.com/api/?key=gxXYmlvw4xX4PaXlCJ&url="
+        }
+    ]
+
+}
