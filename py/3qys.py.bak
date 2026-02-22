@@ -1,0 +1,150 @@
+# -*- coding: utf-8 -*-
+# 本资源来源于互联网公开渠道，仅可用于个人学习爬虫技术。
+# 严禁将其用于任何商业用途，下载后请于 24 小时内删除，搜索结果均来自源站，本人不承担任何责任。
+
+import re,sys,urllib3
+from base.spider import Spider
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+sys.path.append('..')
+
+class Spider(Spider):
+    headers,host = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.104 Safari/537.36',
+         'accept-language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+        'sec-ch-ua-mobile': "?0",
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': "empty",
+        'sec-fetch-mode': "cors",
+        'sec-fetch-site': "same-origin"
+    },'https://qqqys.com'
+
+    def homeContent(self, filter):
+        if not self.host: return None
+        response = self.fetch(f'{self.host}/api.php/index/home', headers=self.headers, verify=False).json()
+        categories = response['data']['categories']
+        videos,classes = [],[]
+        for i in categories:
+            classes.append({'type_id': i['type_name'],'type_name': i['type_name']})
+            videos.extend(self.json2vods(i['videos']))
+        return {'class': classes, 'list': videos}
+
+    def categoryContent(self, tid, pg, filter, extend):
+        response = self.fetch(f'{self.host}/api.php/filter/vod?type_name={tid}&page={pg}&sort=hits', headers=self.headers, verify=False).json()
+        return {'list': self.json2vods(response['data']), 'pagecount':response['pageCount'], 'page': pg}
+
+    def searchContent(self, key, quick, pg='1'):
+        response = self.fetch(f'{self.host}/api.php/search/index?wd={key}&page={pg}&limit=15', headers=self.headers, verify=False).json()
+        videos = self.json2vods(response['data'])
+        return {'list': videos, 'pagecount':response['pageCount'], 'page': pg}
+
+    def detailContent(self, ids):
+        response = self.fetch(f'{self.host}/api.php/vod/get_detail?vod_id={ids[0]}', headers=self.headers, verify=False).json()
+        data = response['data'][0]
+        shows,play_urls = [],[]
+        raw_shows = data['vod_play_from'].split('$$$')
+        raw_urls_list = data['vod_play_url'].split('$$$')
+        for show_code, urls_str in zip(raw_shows, raw_urls_list):
+            need_parse = 0
+            name = show_code
+            for i in response['vodplayer']:
+                if i['from'] == show_code:
+                    need_parse = i['decode_status']
+                    if show_code.casefold() != i['show'].casefold():
+                        name = f"{i['show']}\u2005({show_code})"
+                    break
+            urls = []
+            for url_item in urls_str.split('#'):
+                if '$' in url_item:
+                    episode, url = url_item.split('$',1)
+                    urls.append(f"{episode}${show_code}@{int(need_parse)}@{url}")
+            if urls:
+                play_urls.append('#'.join(urls))
+                shows.append(name)
+        video = {
+            'vod_id': data['vod_id'],
+            'vod_name': data['vod_name'],
+            'vod_pic': data['vod_pic'],
+            'vod_remarks': data['vod_remarks'],
+            'vod_year': data['vod_year'],
+            'vod_area': data['vod_area'],
+            'vod_actor': data['vod_actor'],
+            'vod_director': data['vod_director'],
+            'vod_content': data['vod_content'],
+            'vod_play_from': '$$$'.join(shows),
+            'vod_play_url': '$$$'.join(play_urls),
+            'type_name': data['vod_class']
+        }
+        return {'list': [video]}
+
+    def playerContent(self, flag, vid, vip_flags):
+        play_from, need_parse, raw_url = vid.split('@', 2)
+        jx,url = 0,''
+        if need_parse == '1':
+            auth_token = ''
+            for i in range(2):
+                try:
+                    response = self.fetch(f'{self.host}/api.php/decode/url/?url={raw_url}&vodFrom={play_from}{auth_token}',headers=self.headers,timeout=30,verify=False).json()
+                    if response['code'] == 2 and 'challenge' in response:
+                        token = self.run_js(response['challenge'])
+                        auth_token = f'&token={token}'
+                    play_url = response['data']
+                    if play_url.startswith('http'):
+                        url = play_url
+                        break
+                except Exception:
+                    pass
+        if not url:
+            url = raw_url
+            if re.search(r'(?:www\.iqiyi|v\.qq|v\.youku|www\.mgtv|www\.bilibili)\.com', raw_url):
+                jx = 1
+        return { 'jx': jx, 'parse': 0, 'url': url, 'header': self.headers['User-Agent']}
+
+    def json2vods(self,arr):
+        videos = []
+        for i in arr:
+            type_name = i.get('type_name')
+            if i.get('vod_class'):
+                type_name = f"{type_name},{i.get('vod_class','')}"
+            videos.append({
+                'vod_id': i['vod_id'],
+                'vod_name': i['vod_name'],
+                'vod_pic': i['vod_pic'],
+                'vod_remarks': i['vod_remarks'],
+                'type_name': type_name,
+                'vod_year': i.get('vod_year')
+            })
+        return videos
+
+    def run_js(self,js_code):
+        from com.whl.quickjs.wrapper import QuickJSContext, QuickJSException
+        context = None
+        try:
+            context = QuickJSContext.create()
+            result = context.evaluate(js_code)
+            if hasattr(result, "getPointer"): result = context.stringify(result)
+            return result
+        except QuickJSException:
+            return ''
+        finally:
+            if context: context.close()
+
+    def init(self, extend=''):
+        pass
+
+    def homeVideoContent(self):
+        pass
+
+    def getName(self):
+        pass
+
+    def isVideoFormat(self, url):
+        pass
+
+    def manualVideoCheck(self):
+        pass
+
+    def destroy(self):
+        pass
+
+    def localProxy(self, param):
+        pass
